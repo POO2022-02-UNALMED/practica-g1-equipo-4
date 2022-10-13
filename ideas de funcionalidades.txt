@@ -1,0 +1,4 @@
+1. Reembolso : Una funcionalidad en la cual si sse cumplen ciertas reglas de el cilente pueda pedir un reembolso
+2. Promociones : Una funcionalidad en la cual se muestren como quedarian el costo de los combos y las boletas en ciertos días con la membresia
+
+	
