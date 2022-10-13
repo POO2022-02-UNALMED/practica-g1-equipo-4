@@ -15,7 +15,7 @@ public class prueba {
         tiendaComida.agregarInventario("Papas", 10);
         tiendaComida.agregarInventario("Gaseosa", 10);
         tiendaComida.agregarInventario("Caramelos", 10);
-        tiendaComida.agregarInventario("Guaro", 10);
+        tiendaComida.agregarInventario("Vino", 10);
         tiendaComida.agregarInventario("Chocolates", 10);
 
 
