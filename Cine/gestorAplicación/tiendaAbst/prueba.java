@@ -9,14 +9,16 @@ public class prueba {
         tiendaComida.agregarProducto("Papas", 10);
         tiendaComida.agregarProducto("Gaseosa", 10);
         tiendaComida.agregarProducto("Caramelos", 10);
-        tiendaComida.agregarProducto("Guaro", 10);
+        tiendaComida.agregarProducto("Vino", 10);
         tiendaComida.agregarProducto("Chocolates", 10);
+        tiendaComida.agregarProducto("Crispetas", 10");
 
         tiendaComida.agregarInventario("Papas", 10);
         tiendaComida.agregarInventario("Gaseosa", 10);
         tiendaComida.agregarInventario("Caramelos", 10);
         tiendaComida.agregarInventario("Vino", 10);
         tiendaComida.agregarInventario("Chocolates", 10);
+        tiendaComida.agregarInventario("Crispetas", 10);
 
 
         //Print the name of the store
