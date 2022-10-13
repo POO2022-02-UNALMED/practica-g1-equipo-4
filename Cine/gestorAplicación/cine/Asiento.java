@@ -1,5 +1,13 @@
 package Cine.gestiorAplicacion.cine;
 
-public class Asiento {
+import java.util.ArrayList;
 
+public class Asiento {
+  
+  private String Letra();
+  
+  private int Numero();
+  
+  ArrayList <String> Estado;
+   
 }
