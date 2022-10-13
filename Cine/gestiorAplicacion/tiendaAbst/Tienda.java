@@ -4,8 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Tienda {
-    public String nombre;
-    Map<String, Integer> inventario = new HashMap<String, Integer >();
+
+    protected String nombre;
+    protected Map<String, Integer> inventario = new HashMap<String, Integer >();
     protected Map<String, Integer> productos = new HashMap<String, Integer >();
 
     public Tienda(String nombre) {
