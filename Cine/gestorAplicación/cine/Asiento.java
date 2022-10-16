@@ -1,4 +1,4 @@
-package Cine.gestiorAplicacion.cine;
+package Cine.gestorAplicación.cine;
 
 import java.util.Scanner;
 

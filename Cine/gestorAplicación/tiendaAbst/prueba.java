@@ -1,4 +1,4 @@
-package Cine.gestiorAplicacion.tiendaAbst;
+package Cine.gestorAplicación.tiendaAbst;
 
 public class prueba {
     public static void name(String[] args) {
@@ -11,7 +11,7 @@ public class prueba {
         tiendaComida.agregarProducto("Caramelos", 10);
         tiendaComida.agregarProducto("Vino", 10);
         tiendaComida.agregarProducto("Chocolates", 10);
-        tiendaComida.agregarProducto("Crispetas", 10");
+        tiendaComida.agregarProducto("Crispetas", 10);
 
         tiendaComida.agregarInventario("Papas", 10);
         tiendaComida.agregarInventario("Gaseosa", 10);

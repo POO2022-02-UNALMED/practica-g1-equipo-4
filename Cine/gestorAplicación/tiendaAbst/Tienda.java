@@ -1,4 +1,4 @@
-package Cine.gestiorAplicacion.tiendaAbst;
+package Cine.gestorAplicación.tiendaAbst;
 
 import java.util.HashMap;
 import java.util.Map;

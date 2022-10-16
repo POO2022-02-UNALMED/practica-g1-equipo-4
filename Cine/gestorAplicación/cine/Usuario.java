@@ -1,7 +1,7 @@
-package Cine.gestiorAplicacion.cine;
+package Cine.gestorAplicación.cine;
 
 public class Usuario {
-	public class Usuario {
+	
 		private String Nombre;
 		private int Cedula;
 		private Boolean Membresia;
@@ -39,5 +39,5 @@ public class Usuario {
 			this.Cedula = Cedula;
 		}
 		
-		
-}
+}	
+

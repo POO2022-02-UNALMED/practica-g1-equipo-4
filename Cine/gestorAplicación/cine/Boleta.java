@@ -1,4 +1,4 @@
-package Cine.gestiorAplicacion.cine;
+package Cine.gestorAplicación.cine;
 
 public class Boleta {
     private Usuario usuario;
