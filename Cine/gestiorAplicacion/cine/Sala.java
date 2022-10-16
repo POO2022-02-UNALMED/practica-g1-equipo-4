@@ -1,33 +1,34 @@
 package Cine.gestiorAplicacion.cine;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ArrayList;
 
 public class Sala {
-    ArrayList<Pelicula> pelicula = new ArrayList<Pelicula>();
-    ArrayList<Asiento> asientos = new ArrayList<Asiento>();
-    int numero;
 
-    public Sala(ArrayList<Pelicula> pelicula, ArrayList<Asiento> asientos, int numero) {
-        this.pelicula = pelicula;
-        this.asientos = asientos;
-        this.numero = numero;
-    }
+    private String nombre; // nombre de la sala, por ejemplo Sala 1
+    private ArrayList<String> asientosOcupados = new ArrayList<String>(); // lista de asientos ocupados
     
-    public ArrayList<Pelicula> getPeliculas() {
-        return pelicula;
+    public Sala(String nombre) {
+        this.nombre = nombre;
     }
 
-
-    public ArrayList<Asiento> getAsientos() {
-        return asientos;
+    public String getNombre() {
+        return nombre;
     }
 
-    public int getNumero() {
-        return numero;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public ArrayList<String> getAsientosOcupados() {
+        return asientosOcupados;
     }
+
+    public void setAsientosOcupados(ArrayList<String> asientosOcupados) {
+        this.asientosOcupados = asientosOcupados;
+    }
+
+    
 
 }
