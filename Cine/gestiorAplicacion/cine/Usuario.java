@@ -35,25 +35,7 @@ public class Usuario {
         this.boleta = boleta;
     }
 
-    public void comprarBoleta(Boleta boleta) {
-        this.boleta = boleta;
-    }
 
-    public void comprarBoleta(Boleta boleta, Boolean suscripcion) {
-        this.boleta = boleta;
-        this.suscripcion = suscripcion;
-    }
-
-    public void comprarBoleta(Boleta boleta, Boolean suscripcion, int cedula) {
-        this.boleta = boleta;
-        this.suscripcion = suscripcion;
-        this.cedula = cedula;
-    }
-
-    public void comprarBoleta(Boleta boleta, int cedula) {
-        this.boleta = boleta;
-        this.cedula = cedula;
-    }
 
 
     

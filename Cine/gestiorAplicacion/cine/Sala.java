@@ -6,9 +6,11 @@ import java.util.ArrayList;
 
 public class Sala {
 
-    private String nombre; // nombre de la sala, por ejemplo Sala 1
+    String nombre; // nombre de la sala, por ejemplo Sala 1
     private ArrayList<String> asientosOcupados = new ArrayList<String>(); // lista de asientos ocupados
     
+
+
     public Sala(String nombre) {
         this.nombre = nombre;
     }
