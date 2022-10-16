@@ -24,7 +24,6 @@ public class prueba {
 
         //Create a new TiendaUN object and set its name
         TiendaUN tiendaUN = new TiendaUN("Tienda de la UN");
-        tiendaUN.setNombre("Tienda de la UN");
         //Add a new product to the store
         tiendaUN.agregarMixto("Camisetas", 10, 15);
         tiendaUN.agregarMixto("Pantalones", 10, 15);
