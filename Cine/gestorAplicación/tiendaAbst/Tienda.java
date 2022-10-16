@@ -9,6 +9,8 @@ public abstract class Tienda {
     protected Map<String, Integer> inventario = new HashMap<String, Integer >();
     protected Map<String, Integer> productos = new HashMap<String, Integer >();
 
+    abstract public void saludo();
+
     public Tienda(String nombre) {
         this.nombre = nombre;
     }
@@ -30,16 +32,15 @@ public abstract class Tienda {
     }
 
     public void setProductos(Map<String, Integer> productos) {
-        this.productos = productos;
+        
     }
 
     public void setInventario(Map<String, Integer> inventario) {
         this.inventario = inventario;
     }
-
-    
-
-
+  
+    public void venderProducto(String nombre, Integer cantidad) {
+    }
 
 }
 

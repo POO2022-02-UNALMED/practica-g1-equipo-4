@@ -2,21 +2,27 @@ package Cine.gestorAplicación.tiendaAbst;
 
 import java.util.HashMap;
 import java.util.Map;
-import Cine.gestorAplicación.cine.Usuario;
 
-public class TiendaComida extends Tienda{
+public class TiendaUN extends Tienda {
 
-    public TiendaComida(String nombre) {
+    public TiendaUN(String nombre) {
         super(nombre);
     }
-    
-    private Map <String, Integer> productos = new HashMap <String, Integer>();
-    private Map <String, Integer> inventario = new HashMap <String, Integer>();
 
+    protected Map<String, Integer> inventario = new HashMap<String, Integer >();
+    protected Map<String, Integer> productos = new HashMap<String, Integer >();
 
     @Override
     public void saludo() {
-        System.out.println("Bienvenido a la tienda de comida del cine UNAL");
+        System.out.println("Bienvenido a la tienda del cine UNAL");
+    }
+
+    public Map<String, Integer> getInventario() {
+        return inventario;
+    }
+
+    public void setInventario(Map<String, Integer> inventario) {
+        this.inventario = inventario;
     }
 
     public Map<String, Integer> getProductos() {
@@ -31,24 +37,21 @@ public class TiendaComida extends Tienda{
         productos.put(nombre, cantidad);
     }
 
-    public Map<String, Integer> getInventario() {
-        return inventario;
-    }
-
-    public void setInventario(Map<String, Integer> inventario) {
-        this.inventario = inventario;
-    }
-
     public void agregarInventario(String nombre, Integer cantidad) {
         inventario.put(nombre, cantidad);
+    }
+
+    public void venderProducto(String nombre, Integer cantidad) {
+        if (inventario.get(nombre) >= cantidad) {
+            inventario.put(nombre, inventario.get(nombre) - cantidad);
+        }
     }
 
     public void agregarMixto (String nombre, Integer cantidadProducto, Integer precioDelProducto) {
         productos.put(nombre, cantidadProducto);
         inventario.put(nombre, precioDelProducto);
     }
-
     
 
-
+    
 }
