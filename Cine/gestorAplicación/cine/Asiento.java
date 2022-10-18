@@ -1,3 +1,5 @@
+package Cine.gestorAplicación.cine;
+
 import java.util.ArrayList;
 
 public class Asiento {
