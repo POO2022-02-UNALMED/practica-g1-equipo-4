@@ -4,3 +4,10 @@
 - Interfaz de usuario: Sebastian, Julian, Juanjo.
 
 .jar y .bat: todos, al final.
+
+Pelicula: Juanjo
+Asiento: Tomas
+Usuario: Sebastian
+Sala: Camilo y Juanjo
+Boleta: Julian
+Tienda: Camilo
