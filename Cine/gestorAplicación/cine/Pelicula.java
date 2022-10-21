@@ -1,11 +1,11 @@
 package gestorAplicación.cine;
 
 public class Pelicula {
-	private string nombre;
-	private string horario;
-	private string genero;
+	private String nombre;
+	private String horario;
+	private String genero;
 	
-	public string getnombre() {
+	public String getnombre() {
 		return nombre;		
 	}
 	
@@ -13,7 +13,7 @@ public class Pelicula {
         this.nombre = nombre;
     }
     
-	public string getHorario() {
+	public String getHorario() {
 		return horario;		
 	}
 	
@@ -21,7 +21,7 @@ public class Pelicula {
         this.horario = horario;
     }
 
-	public string getGenero() {
+	public String getGenero() {
 		return genero;		
 	}
 	
