@@ -1,4 +1,4 @@
-package Cine.gestorAplicación.cine;
+package gestorAplicación.cine;
 
 import java.util.HashMap;
 import java.util.Map;

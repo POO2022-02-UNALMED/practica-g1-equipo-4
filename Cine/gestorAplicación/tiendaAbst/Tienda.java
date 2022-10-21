@@ -1,4 +1,4 @@
-package Cine.gestorAplicación.tiendaAbst;
+package gestorAplicación.tiendaAbst;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,8 +8,10 @@ public abstract class Tienda {
     protected String nombre;
     protected Map<String, Integer> inventario = new HashMap<String, Integer >();
     protected Map<String, Integer> productos = new HashMap<String, Integer >();
+    protected int repartidores = 3; 
 
     abstract public void saludo();
+    abstract public void venderProducto(String nombre, Integer cantidad);
 
     public Tienda(String nombre) {
         this.nombre = nombre;
@@ -39,8 +41,23 @@ public abstract class Tienda {
         this.inventario = inventario;
     }
   
-    public void venderProducto(String nombre, Integer cantidad) {
+    public void agragarRepardidor(){
+        repartidores++;
     }
+
+    public int getRepardidores(){
+        return repartidores;
+    }
+
+    public void agregarProducto(String nombre, Integer cantidad) {
+        productos.put(nombre, cantidad);
+    }
+
+    public void agregarInventario(String nombre, Integer cantidad) {
+        inventario.put(nombre, cantidad);
+    }
+
+
 
 }
 

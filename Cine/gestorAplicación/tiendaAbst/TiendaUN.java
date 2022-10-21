@@ -1,4 +1,4 @@
-package Cine.gestorAplicación.tiendaAbst;
+package gestorAplicación.tiendaAbst;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +15,13 @@ public class TiendaUN extends Tienda {
     @Override
     public void saludo() {
         System.out.println("Bienvenido a la tienda del cine UNAL");
+    }
+
+    @Override
+    public void venderProducto(String nombre, Integer cantidad) {
+        if (inventario.get(nombre) >= cantidad) {
+            inventario.put(nombre, inventario.get(nombre) - cantidad);
+        }
     }
 
     public Map<String, Integer> getInventario() {
@@ -41,11 +48,6 @@ public class TiendaUN extends Tienda {
         inventario.put(nombre, cantidad);
     }
 
-    public void venderProducto(String nombre, Integer cantidad) {
-        if (inventario.get(nombre) >= cantidad) {
-            inventario.put(nombre, inventario.get(nombre) - cantidad);
-        }
-    }
 
     public void agregarMixto (String nombre, Integer cantidadProducto, Integer precioDelProducto) {
         productos.put(nombre, cantidadProducto);

@@ -1,4 +1,4 @@
-package Cine.gestorAplicación.cine;
+package gestorAplicación.cine;
 
 public class Horario {
 	private String HoraInicio;

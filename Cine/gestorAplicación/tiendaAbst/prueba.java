@@ -1,4 +1,4 @@
-package Cine.gestorAplicación.tiendaAbst;
+package gestorAplicación.tiendaAbst;
 
 public class prueba {
     

@@ -1,4 +1,4 @@
-package Cine.gestorAplicación.cine;
+package gestorAplicación.cine;
 
 import java.util.ArrayList; 
 
@@ -66,7 +66,7 @@ public class Usuario {
 			this.Boletas.add(Boleta);
 		}
 		
-		public eliminarBoleta(Boleta Boleta) {
-		}
+		// public eliminarBoleta(Boleta Boleta) {
+		// }
 }	
 

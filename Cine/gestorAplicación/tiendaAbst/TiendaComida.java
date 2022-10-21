@@ -1,8 +1,8 @@
-package Cine.gestorAplicación.tiendaAbst;
+package gestorAplicación.tiendaAbst;
 
 import java.util.HashMap;
 import java.util.Map;
-import Cine.gestorAplicación.cine.Usuario;
+import gestorAplicación.cine.Usuario;
 
 public class TiendaComida extends Tienda{
 
@@ -10,13 +10,20 @@ public class TiendaComida extends Tienda{
         super(nombre);
     }
     
-    private Map <String, Integer> productos = new HashMap <String, Integer>();
-    private Map <String, Integer> inventario = new HashMap <String, Integer>();
-
-
+    private Map <String, Integer> productos = new HashMap <String, Integer>();  // producto - cantidad en inventario
+    private Map <String, Integer> inventario = new HashMap <String, Integer>(); // producto - precio
+    public int repartidores = 3;
+    
     @Override
     public void saludo() {
         System.out.println("Bienvenido a la tienda de comida del cine UNAL");
+    }
+
+    @Override
+    public void venderProducto(String nombre, Integer cantidad) {
+        if (inventario.get(nombre) >= cantidad) {
+            inventario.put(nombre, inventario.get(nombre) - cantidad);
+        }
     }
 
     public Map<String, Integer> getProductos() {
