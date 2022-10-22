@@ -17,13 +17,13 @@ public class Asiento {
 		
 	}
 	
-	public boolean[] get_asientos() {
+	public boolean[] getAsientos() {
 		
 		return asientos;
 		
 	}
 	
-	public String Comprar_asiento(String n_asiento) {
+	public String comprarAsiento(String n_asiento) {
 		
 		String[] a = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
 		
@@ -57,15 +57,15 @@ public class Asiento {
 		
 	}
 	
-	public String Comprar_varios_asientos(String x) {
+	public String compraAsientos(String x) {
 		
-		String[] boleta = x.split(", ");
+		String[] silla = x.split(", ");
 		
 		boolean q = true;
 		
 		ArrayList<String> falla = new ArrayList<String>();
 		
-		for (String e: boleta) {
+		for (String e: silla) {
 			
 			String inicial = e.substring(0,1);
 			
@@ -83,9 +83,9 @@ public class Asiento {
 		}
 		
 		if (q) {
-			for (String e: boleta) {
+			for (String e: silla) {
 				
-				Comprar_asiento(e);
+				comprarAsiento(e);
 				
 			}
 			
