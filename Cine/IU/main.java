@@ -61,9 +61,9 @@ public class main {
         
             switch (opcion) {
             	case 1: break;
-            	case 2: menuTienda(tiendaComida, tiendaUN, usuario); break;
-            	case 3: break;
-            	case 4: break;
+            	case 2: comprar(tienda, usuario) break;
+            	case 3:	break;
+            	case 4: menuTienda(tiendaComida, tiendaUN, usuario); break;
             	case 5: break;
             	case 6: salirDelSistema(usuario); break;
             }
