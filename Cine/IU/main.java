@@ -36,13 +36,39 @@ public class main {
         tiendaUN.agregarMixto("Termos", 10, 15);   
         tiendaUN.agregarMixto("Gorras", 10, 15);
 
-        int opcion = 1;
-        switch (opcion) {
-            case 1:
-            menuTienda(tiendaComida, tiendaUN, usuario);
-            break;
-        }
-    }
+        
+        int opcion;
+        
+        do {
+            System.out.println("---- Bienvenido al cine unal----");
+            System.out.println("¿Que operación desea realizar? ");
+            System.out.println("1. Comprar Boleta");
+     
+            System.out.println("2. Comprar comida");
+           
+            System.out.println("3. Reembolso");
+            
+            System.out.println("4. Encargar comida");
+           
+            System.out.println("5. Hacerse miembro VIP");
+            
+            System.out.println("6. Terminar");
+           
+            System.out.println("Por favor escoja una opción:");
+            
+            opcion = entrada.nextInt();
+        
+        
+            switch (opcion) {
+            	case 1: break;
+            	case 2: menuTienda(tiendaComida, tiendaUN, usuario); break;
+            	case 3: break;
+            	case 4: break;
+            	case 5: break;
+            	case 6: salirDelSistema(usuario); break;
+            }
+          } while (opcion != 6); 
+       }
 
     public static void menuTienda(TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
         Scanner sc = new Scanner(System.in);
@@ -143,10 +169,13 @@ public class main {
             menuTienda((TiendaComida) tienda, (TiendaUN) tienda, usuario);
         }
     }
-
-
-
-
+    
+    //metodo estatico que cierra el sistema de forma correcta
+    private static void salirDelSistema(Usuario usuario) {
+    	System.out.println("Vuelva Pronto");
+    	//aqui iria la funcion del serializador
+    	System.exit(0);
+    }
 }
 
 
