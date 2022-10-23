@@ -12,116 +12,143 @@ import java.util.Scanner;
 import java.util.Map.Entry;
 public class main {
     public static void main(String[] args) {
-        //Crear una sala de cine
-        Sala sala1 = new Sala();
-        sala1.setNombre("Sala 1");
-        //Crear una pelicula
-        Pelicula pelicula1 = new Pelicula("Avengers", "Accion");
-        //Crear un horario
-        Horario horario1 = new Horario("12:00", "14:00");
-
-        //Agregar la pelicula a la cartelera de la sala
-        sala1.agregarPelicula(pelicula1, horario1);
-        //imprimir cartelera
-        for (Entry<Pelicula, Horario> entry : sala1.getCartelera().entrySet()) {
-            System.out.println("Pelicula: " + entry.getKey().getnombre() + " | Horario: " + entry.getValue().getHoraInicio() + " - " + entry.getValue().getHoraFinal());
-        }
-
-
         
+        Usuario usuario = new Usuario("Juan", 1152452 , 50000);
+        //Create a new TiendaComida object and set its name
+        TiendaComida tiendaComida = new TiendaComida("Tienda de comida");
+        tiendaComida.setNombre("Comida Unal");
+        //Add a new product and prices to the store Comida Unal
+        tiendaComida.agregarMixto("Papas", 10, 5000);
+        tiendaComida.agregarMixto("Papas con queso", 10, 6000);
+        tiendaComida.agregarMixto("Papas con queso y tocino", 10, 7000);
+        tiendaComida.agregarMixto("Crispetas", 10, 8000);
+        tiendaComida.agregarMixto("Gaseosa", 10, 9000);
+        tiendaComida.agregarMixto("Agua", 10, 1000);
+        tiendaComida.agregarMixto("Perro Caliente", 10, 20000);
 
 
+        //Create a new TiendaUN object and set its name
+        TiendaUN tiendaUN = new TiendaUN("Tienda UN");
+        //Add a new product to the store
+        tiendaUN.agregarMixto("Camisetas", 10, 15);
+        tiendaUN.agregarMixto("Pantalones", 10, 15);
+        tiendaUN.agregarMixto("Termos", 10, 15);   
+        tiendaUN.agregarMixto("Gorras", 10, 15);
 
-    //     Usuario usuario = new Usuario("Juan", 1152452 , 50000);
-    //     //Create a new TiendaComida object and set its name
-    //     TiendaComida tiendaComida = new TiendaComida("Tienda de comida");
-    //     tiendaComida.setNombre("Comida Unal");
-    //     //Add a new product and prices to the store Comida Unal
-    //     tiendaComida.agregarMixto("Papas", 10, 5000);
-    //     tiendaComida.agregarMixto("Papas con queso", 10, 6000);
-    //     tiendaComida.agregarMixto("Papas con queso y tocino", 10, 7000);
-    //     tiendaComida.agregarMixto("Crispetas", 10, 8000);
-    //     tiendaComida.agregarMixto("Gaseosa", 10, 9000);
-
-
-    //     //Create a new TiendaUN object and set its name
-    //     TiendaUN tiendaUN = new TiendaUN("Tienda UN");
-    //     //Add a new product to the store
-    //     tiendaUN.agregarMixto("Camisetas", 10, 15);
-    //     tiendaUN.agregarMixto("Pantalones", 10, 15);
-    //     tiendaUN.agregarMixto("Termos", 10, 15);   
-    //     tiendaUN.agregarMixto("Gorras", 10, 15);
-
-    //     int opcion = 1;
-    //     switch (opcion) {
-    //         case 1:
-    //         menuTienda(tiendaComida, tiendaUN, usuario);
-    //         break;
-    //     }
-    // }
-
-    // public static void menuTienda(TiendaComida tienda, TiendaUN tiendaUN, Usuario usuario) {
-    //     Scanner sc = new Scanner(System.in);
-    //     System.out.println("Bienvenido a la tienda de comida del cine UNAL");
-    //     System.out.println("1. Comprar productos");
-    //     System.out.println("2. Salir");
-    //     System.out.println("Ingrese una opción: ");
-    //     int opcion = sc.nextInt();
-    //     switch (opcion) {
-    //         case 1:
-    //             System.out.println("Productos disponibles: ");
-    //             int i = 1;
-    //             for (String producto : tienda.getProductos().keySet()) {
-    //                 System.out.println(i+"."+producto + " - " + tienda.getInventario().get(producto));
-    //                 i++;
-    //             }
-    //             System.out.println("Ingrese el numero del producto que desea comprar: ");
-    //             String nombreProducto = sc.next();                
-    //             if (nombreProducto.equals("1")) {
-    //                 nombreProducto = "Papas";
-    //                 System.out.println("Desea adicionar queso o tocino? (S/N)");
-    //                 String opcion2 = sc.next();
-    //                 if (opcion2.equals("S")) {
-    //                     System.out.println("Desea adicionar tocino? (S/N)");
-    //                     String opcion3 = sc.next();
-    //                     if (opcion3.equals("S")) {
-    //                         nombreProducto = "Papas con queso y tocino";
-    //                     } else {
-    //                         nombreProducto = "Papas con queso";
-    //                     }
-    //                 }
-    //             } else if (nombreProducto.equals("2")) {
-    //                 nombreProducto = "Papas con queso";
-    //             }else if (nombreProducto.equals("3")) {
-    //                 nombreProducto = "Gaseosa";
-    //             }else if (nombreProducto.equals("4")) {
-    //                 nombreProducto = "Papas con queso y tocino";
-    //             } else if (nombreProducto.equals("5")) {
-    //                 nombreProducto = "Crispetas";
-    //             } 
-    //             System.out.println("Ingrese la cantidad que desea comprar: ");
-    //             int cantidad = sc.nextInt();
-    //             if (tienda.getInventario().get(nombreProducto) >= cantidad) {
-    //                 tienda.agregarInventario(nombreProducto, -cantidad);
-    //                 usuario.setSaldo(usuario.getSaldo()-tienda.getProductos().get(nombreProducto)*cantidad);
-    //                 System.out.println("Compra exitosa");
-    //             } else {
-    //                 System.out.println("No hay suficiente inventario");
-    //             }
-    //             menuTienda(tienda, tiendaUN, usuario);
-    //             break;
-    //         case 2:
-    //             System.out.println("Gracias por su compra");
-    //             break;
-    //         default:
-    //             System.out.println("Opción inválida");
-    //             break;
-    //     }
-    //     sc.close();
-
-
+        int opcion = 1;
+        switch (opcion) {
+            case 1:
+            menuTienda(tiendaComida, tiendaUN, usuario);
+            break;
+        }
     }
 
-}   
+    public static void menuTienda(TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Bienvenido a la tienda de comida del cine UNAL");
+        System.out.println("1. Ver Menú de la tienda");
+        System.out.println("2. Ver souvenirs de la tienda UN");
+        System.out.println("3. Encargar comida durante la funcion"); 
+        System.out.println("4. Salir");
+        int opcion = sc.nextInt();
+        do{
+        switch (opcion) {
+            case 1: //Menu de la tienda de comida
+            tiendaComida.saludo();
+            System.out.println("Productos disponibles:");
+            for (Entry<String, Integer> entry : tiendaComida.getInventario().entrySet()) {
+                System.out.println(entry.getKey() + " - " + entry.getValue());
+            }
+            System.out.println("Desea comprar algo? (1. Si, 2. No)");
+            int opcion2 = sc.nextInt();
+            if (opcion2 == 1) {
+                comprar(tiendaComida, usuario);
+            } else {
+                menuTienda(tiendaComida, tiendaUN, usuario);
+            }
+            break;
+
+            case 2:// souvenirs de la tienda UN
+            int i = 1;
+            System.out.println("En la tienda UNAL ofrecemos los siguientes productos:");
+            for (Entry<String, Integer> entry : tiendaUN.getInventario().entrySet()) {
+                System.out.println(i+". "+entry.getKey() + " - " + entry.getValue());
+                i++;
+
+            }
+            
+            System.out.println("Desea comprar algo? (1. Si, 2. No)");
+            int opcion3 = sc.nextInt();
+            if (opcion3 == 1) {
+                comprar(tiendaUN, usuario);
+            } else {
+                break;
+            }
+            break;
+
+            case 3: //Encargar comida durante la funcion
+            System.out.println("Hola! Esta nueva opción te permite encargar comida facilmente y te será traída"+
+            " durante la función por uno de nuestros repartidores.");
+            System.out.println("Solo debes ingresar el nombre del producto que deseas y la cantidad");
+            System.out.println("¿Qué producto deseas?");
+            String producto = sc.next();
+            System.out.println("¿Cuántos deseas?");
+            int cantidad = sc.nextInt();
+            if (cantidad < tiendaComida.getInventario().get(producto)) {
+                System.out.println("Su pedido ha sido registrado, en unos minutos llegará a su asiento");
+                tiendaComida.getInventario().put(producto, tiendaComida.getInventario().get(producto) - cantidad);
+                usuario.agregarCarrito(producto, cantidad);
+                tiendaComida.agregarColaPedidos(usuario);
+            } else {
+                System.out.println("Lo sentimos, no tenemos suficiente producto en inventario");
+            }
+            break;
+        }
+        }while(opcion != 4);
+    }
+
+    public static void comprar (Tienda tienda, Usuario usuario) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ofrecemos los siguientes productos:");
+        int i = 1;
+        for (Entry<String, Integer> entry : tienda.getInventario().entrySet()) {
+            System.out.println(i+". "+entry.getKey() + " - $: " + entry.getValue());
+            i++;
+        }
+        
+        System.out.println("ingrese el nombre del producto que desea comprar: ");
+        String producto = sc.nextLine();
+        System.out.println("ingrese la cantidad que desea comprar: ");
+        int cantidad = sc.nextInt();
+        tienda.venderProducto(producto, cantidad, usuario);
+        usuario.agregarCarrito(producto, cantidad);
+        System.out.println("Desea comprar algo mas? (1. Si, 2. No)");
+        int opcion2 = sc.nextInt();
+        if (opcion2 == 1) {
+            comprar(tienda, usuario);
+        } else {
+            System.out.println("Factura: ");
+            System.out.println("Nombre: "+usuario.getNombre());
+            System.out.println("Cedula: "+usuario.getCedula());
+            System.out.println("Productos: ");
+            System.out.println("Producto - Cantidad - Precio");
+            for (Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
+                System.out.println(entry.getKey() + " - " + entry.getValue() + " - " + tienda.getPrecio(entry.getKey()));
+            }
+            
+            System.out.println("Su saldo actual es: "+usuario.getSaldo());
+            
+            menuTienda((TiendaComida) tienda, (TiendaUN) tienda, usuario);
+        }
+    }
+
+
+
+
+}
+
+
+
     
 

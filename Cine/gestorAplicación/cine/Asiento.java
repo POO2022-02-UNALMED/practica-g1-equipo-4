@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Asiento {
 	
 	private boolean[] asientos;
-	 
+
 	public Asiento() {
 		
 		asientos = new boolean[200];
