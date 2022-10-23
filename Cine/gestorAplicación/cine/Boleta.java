@@ -12,6 +12,7 @@ public class Boleta {
         this.usuario = usuario;
         this.pelicula = pelicula;
         this.sala = sala;
+        
         this.asiento = asiento;
         this.horario = horario;
         
