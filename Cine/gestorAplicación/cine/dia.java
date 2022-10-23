@@ -1,7 +1,6 @@
 package gestorAplicación.cine;
 
 import java.util.ArrayList; 
-import java.util.random;
 
 public class dia{
 

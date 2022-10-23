@@ -13,6 +13,7 @@ import java.util.Map.Entry;
 public class main {
     public static void main(String[] args) {
         
+        
         Usuario usuario = new Usuario("Juan", 1152452 , 50000);
         //Create a new TiendaComida object and set its name
         TiendaComida tiendaComida = new TiendaComida("Tienda de comida");
