@@ -1,4 +1,4 @@
-# Practica grupo 1 - equipo 4
+# PROYECTO CINE 
 Cine, proyecto de la asignatura POO 2022-2S
 
 
