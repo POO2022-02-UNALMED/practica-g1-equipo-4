@@ -1,13 +1,13 @@
-# PROYECTO CINE 
-Cine, proyecto de la asignatura POO 2022-2S
+# Proyecto cine
+Prácitca 1: Asignatura POO Universidad Nacional de Colombia
 
 
 ## Integrantes del Equipo
-* Camilo Echeverri Castrillón
-* Sebastián Olaya Pérez 
-* Tomás Gutiérrez Orrego 
-* Juan Jose Marín Álvarez 
-* Julián Orrego Martínez
+* Camilo Echeverri Castrillón // cecheverric@unal.edu.co
+* Sebastián Olaya Pérez       // solayap@unal.edu.co
+* Tomás Gutiérrez Orrego      // tgutierrez@unal.edu.co
+* Juan Jose Marín Álvarez     // jumarina@unal.edu.co
+* Julián Orrego Martínez      // jorrego@unal.edu.co
 
 # Memoria escrita:
 [Memoria escrita](https://docs.google.com/document/d/11Qf4zBuOvO5GLZcEMh0-uA8zlVj0IfINa72QW3mNZdA/edit)
