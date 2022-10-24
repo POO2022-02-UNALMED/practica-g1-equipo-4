@@ -349,29 +349,30 @@ public class main {
     	System.exit(0);
     }
 
-    private static void VIP (TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Esta es la oportunidad para que pueda vivir una experiencia mejorada siendo VIP");
-        System.out.println("Estos son los beneficios de volverse cliente VIP");
+    private static void VIP(TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Esta es la oportunidad para que pueda vivir una experiencia mejorada siendo VIP");
+	System.out.println("Estos son los beneficios de volverse cliente VIP");
         System.out.println("Descuentos en la tienda UNAL");
-        System.out.println("Cliente regular                     Cliente VIP");
-    for (Entry<String, Integer> entry : tiendaUN.getInventario().entrySet()) {
-        System.out.println(entry.getKey() + " - " + entry.getValue() + entry.getValue()*0.7 );}
-    System.out.println("Descuentos en comida");
-    for (Entry<String, Integer> entry : tiendaComida.getInventario().entrySet()) {
-        System.out.println(entry.getKey() + " - " + entry.getValue() + + entry.getValue()*0.7 );
-    }
-        System.out.println("Adicionalmente a esto, se tendra un descuento del  40% en la compra de tus boletas");
-        System.out.println("Volverse VIP tiene un costo de $30000");
-        System.out.println("Desea volverse cliente VIP? (1. Si, 2. No)");
-        int opcion1 = sc.nextInt();
-        if (opcion1 == 1) {
-       if(usuario.getSaldo()>=30000) {usuario.comprarMembresia();
-           System.out.println("Se ha convertido en miembor VIP del cine unal");} 
-       else {System.out.println("Saldo insuficente para volverse VIP");}
-       }
-        else {System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
-    }
+        System.out.println("\t Cliente regular\t Cliente VIP");
+        for (Entry<String, Integer> entry : tiendaUN.getInventario().entrySet()) {
+            System.out.println(entry.getKey()+"\t"+ entry.getValue()+"\t" + (entry.getValue()*0.7 ));}
+        System.out.println("Descuentos en comida");
+        System.out.println("\t Cliente regular\t Cliente VIP");
+        for (Entry<String, Integer> entry : tiendaComida.getInventario().entrySet()) {
+            System.out.println(entry.getKey() + "\t" + entry.getValue() +"\t"+ (entry.getValue()*0.7));
+        }
+	System.out.println("Adicionalmente a esto, se tendra un descuento del  40% en la compra de tus boletas");
+	System.out.println("Volverse VIP tiene un costo de $30000");
+	System.out.println("Desea volverse cliente VIP? (1. Si, 2. No)");
+	int opcion1 = sc.nextInt();
+	if (opcion1 == 1) {
+	    if(usuario.getSaldo>=30000) {usuario.comprarMembresia();
+	       	System.out.println("Se ha convertido en miembor VIP del cine unal"); System.out.println("Su saldo actual es: "+usuario.getSaldo())} 
+	       	else {System.out.println("Saldo insuficente para volverse VIP");}
+	       }
+	    else {System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
+	    }
 
     
 }
