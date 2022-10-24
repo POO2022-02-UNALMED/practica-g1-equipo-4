@@ -9,7 +9,7 @@ public class Usuario {
 		private int Cedula;
 		private Boolean Membresia;
 		private int Saldo;
-		private ArrayList<Boleta> Boletas= new ArrayList<Boleta>();
+		private ArrayList<Boleta> Boletas = new ArrayList<Boleta>();
 		private HashMap<String,Integer> Carrito = new HashMap<String,Integer>();
 		private static ArrayList<Usuario> PrimeraVez= new ArrayList<Usuario>();
 		

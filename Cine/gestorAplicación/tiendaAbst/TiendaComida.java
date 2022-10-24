@@ -9,12 +9,12 @@ public class TiendaComida extends Tienda{
 
     public TiendaComida(String nombre) {
         super(nombre);
+        
     }
     
     private Map <String, Integer> productos = new HashMap <String, Integer>();  // producto - cantidad en inventario
     private Map <String, Integer> inventario = new HashMap <String, Integer>(); // producto - precio
     private Map <Integer, Usuario> colaPedidos = new HashMap <Integer, Usuario>();     //  - usuario
-    
     
     public void venderProducto(String nombre, Integer cantidad, Usuario usuario) {
         if (inventario.get(nombre) >= cantidad) {

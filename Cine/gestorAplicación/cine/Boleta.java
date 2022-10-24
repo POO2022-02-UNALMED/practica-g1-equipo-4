@@ -7,12 +7,13 @@ public class Boleta {
     private Sala sala;
     private Asiento asiento;
     private Horario horario;
+    private Dia dia;
+    
 
     public Boleta(Usuario usuario, Pelicula pelicula, Sala sala, Asiento asiento, Horario horario) {
         this.usuario = usuario;
         this.pelicula = pelicula;
         this.sala = sala;
-        
         this.asiento = asiento;
         this.horario = horario;
         

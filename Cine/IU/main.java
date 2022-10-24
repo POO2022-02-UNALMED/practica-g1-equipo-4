@@ -3,6 +3,13 @@ package IU;
 import gestorAplicación.tiendaAbst.*;
 import gestorAplicación.cine.*;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+import java.text.SimpleDateFormat;  
+import java.text.DateFormat;  
+import java.text.DateFormatSymbols;  
 
 // La funcionalidad de reembolso que tome la fecha del reembolso y la transforme al día de la semana correspondiente y lo
 // compare con el día en el que se presenta la pélcula.
@@ -12,8 +19,7 @@ import java.util.Scanner;
 import java.util.Map.Entry;
 public class main {
     public static void main(String[] args) {
-        
-        
+
         Usuario usuario = new Usuario("Juan", 1152452 , 50000);
         //Create a new TiendaComida object and set its name
         TiendaComida tiendaComida = new TiendaComida("Tienda de comida");
@@ -27,48 +33,75 @@ public class main {
         tiendaComida.agregarMixto("Agua", 10, 1000);
         tiendaComida.agregarMixto("Perro Caliente", 10, 20000);
 
-
         //Create a new TiendaUN object and set its name
         TiendaUN tiendaUN = new TiendaUN("Tienda UN");
         //Add a new product to the store
         tiendaUN.agregarMixto("Camisetas", 10, 15);
         tiendaUN.agregarMixto("Pantalones", 10, 15);
-        tiendaUN.agregarMixto("Termos", 10, 15);   
+        tiendaUN.agregarMixto("Termos", 10, 15);
         tiendaUN.agregarMixto("Gorras", 10, 15);
+        
+        //Create Peliculas
+        Pelicula pelicula = new Pelicula("Avengers", "Accion" );
+        Pelicula pelicula2 = new Pelicula("Spiderman", "Accion" );
+        Pelicula pelicula3 = new Pelicula("Batman", "Accion" );
+        Pelicula pelicula4 = new Pelicula("Superman", "Accion" );
+
+        //Create Horarios
+        Horario horario = new Horario("12:00", "14:00");
+        Horario horario2 = new Horario("14:00", "16:00");
+        Horario horario3 = new Horario("18:00", "20:00");
+        Horario horario4 = new Horario("16:00", "18:00");
+
+        //Create Cartelera
+        Map<Pelicula, Horario> cartelera = new HashMap<Pelicula, Horario>();
+        cartelera.put(pelicula, horario);
+        cartelera.put(pelicula2, horario2);
+        cartelera.put(pelicula3, horario3);
+        cartelera.put(pelicula4, horario4);
+
+        //Create Sala
+        Sala sala = new Sala("Sala", new ArrayList<Asiento>(), cartelera);
+
+        //Create Dia
+        Dia dia = new Dia("Lunes", sala);
+        Dia dia2 = new Dia("Martes", sala);
+        Dia dia3 = new Dia("Miercoles", sala);
+        Dia dia4 = new Dia("Jueves", sala);
+        Dia dia5 = new Dia("Viernes", sala);
+
 
         
         int opcion;
-        
         do {
             System.out.println("---- Bienvenido al cine unal----");
             System.out.println("¿Que operación desea realizar? ");
             System.out.println("1. Comprar Boleta");
-     
             System.out.println("2. Comprar comida");
-           
             System.out.println("3. Reembolso");
-            
             System.out.println("4. Encargar comida");
-           
             System.out.println("5. Hacerse miembro VIP");
-            
             System.out.println("6. Terminar");
-           
             System.out.println("Por favor escoja una opción:");
             
-            opcion = entrada.nextInt();
+            Scanner sc = new Scanner(System.in);
+            opcion = sc.nextInt();
+
         
         
-            switch (opcion) {
-            	case 1: break;
-            	case 2: comprar(tienda, usuario) break;
-            	case 3:	break;
-            	case 4: menuTienda(tiendaComida, tiendaUN, usuario); break;
-            	case 5: break;
-            	case 6: salirDelSistema(usuario); break;
-            }
-          } while (opcion != 6); 
-       }
+        //     switch (opcion) {
+        //     	case 1: break;
+        //     	case 2: comprar(tienda, usuario) break;
+        //     	case 3:	break;
+        //     	case 4: menuTienda(tiendaComida, tiendaUN, usuario); break;
+        //     	case 5: break;
+        //     	case 6: salirDelSistema(usuario); break;
+        //     }
+        //   } while (opcion != 6); 
+    
+        }
+        while (opcion != 6);
+    }
 
     public static void menuTienda(TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
         Scanner sc = new Scanner(System.in);
@@ -111,6 +144,7 @@ public class main {
             } else {
                 break;
             }
+            sc.close();
             break;
 
             case 3: //Encargar comida durante la funcion
@@ -126,6 +160,7 @@ public class main {
                 tiendaComida.getInventario().put(producto, tiendaComida.getInventario().get(producto) - cantidad);
                 usuario.agregarCarrito(producto, cantidad);
                 tiendaComida.agregarColaPedidos(usuario);
+
             } else {
                 System.out.println("Lo sentimos, no tenemos suficiente producto en inventario");
             }
@@ -135,7 +170,6 @@ public class main {
     }
 
     public static void comprar (Tienda tienda, Usuario usuario) {
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Ofrecemos los siguientes productos:");
         int i = 1;

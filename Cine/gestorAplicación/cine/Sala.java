@@ -7,10 +7,15 @@ import java.util.ArrayList;
 public class Sala {
 
     private String nombre; // nombre de la sala, por ejemplo Sala 1
-    
-    private ArrayList<String> asientosOcupados = new ArrayList<String>(); // lista de asientos ocupados
-    
+    private ArrayList<Asiento> Asiento = new ArrayList<Asiento>(); // lista de asientos ocupados
     private Map<Pelicula, Horario> cartelera = new HashMap<Pelicula, Horario>(); // Cartelera de la sala | Pelicula, Horario
+
+    public Sala(String nombre, ArrayList<Asiento> Asiento, Map<Pelicula, Horario> cartelera) {
+        this.nombre = nombre;
+        this.Asiento = Asiento;
+        this.cartelera = cartelera;
+
+    }
 
     public String getNombre() {
         return nombre;
@@ -22,25 +27,26 @@ public class Sala {
         
     }
 
-    public ArrayList<String> getAsientosOcupados() {
-        return asientosOcupados;
+    public ArrayList<Asiento> getAsiento() {
+        return Asiento;
         
     }
 
-    public void setAsientosOcupados(ArrayList<String> asientosOcupados) {
-        this.asientosOcupados = asientosOcupados;
+    public void setAsiento(ArrayList<Asiento> Asiento) {
+        this.Asiento = Asiento;
         
     }
- 
+
     public Map<Pelicula, Horario> getCartelera() {
         return cartelera;
         
     }
 
-    // Agrega una pelicula a la cartelera de la sala
-    public void agregarPelicula(Pelicula pelicula, Horario horario) {
-        cartelera.put(pelicula, horario);
+    public void setCartelera(Map<Pelicula, Horario> cartelera) {
+        this.cartelera = cartelera;
         
     }
+ 
+    
 
 }
