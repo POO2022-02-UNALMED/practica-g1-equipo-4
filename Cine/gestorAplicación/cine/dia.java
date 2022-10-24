@@ -1,36 +1,34 @@
 package gestorAplicación.cine;
 
 import java.util.ArrayList; 
-import java.util.random;
+import java.util.Random;
 
-public class dia{
+public class Dia{
 
     private String nombreDelDiaDeLaSemana;
-    private ArrayList<Sala> salasDisponibles=new arraylist<Sala>();
+    private Sala sala;
 
-
-    public dia(String nombreDelDiaDeLaSemana, ArrayList<Sala> salasDisponibles){
+    public Dia(String nombreDelDiaDeLaSemana, Sala sala){
         this.nombreDelDiaDeLaSemana=nombreDelDiaDeLaSemana;
-        this.salasDisponibles=salasDisponibles;
+        this.sala=sala;
     }
 
     public String getnombreDelDiaDeLaSemana(){
         return this.nombreDelDiaDeLaSemana;
+    }
     
     public void setnombreDelDiaDeLaSemana(String nombreDelDiaDeLaSemana){
         this.nombreDelDiaDeLaSemana=nombreDelDiaDeLaSemana;
     }
 
-    public ArrayList<Sala> getSalasDisponibles(){
-        return this.salasDisponibles;
+    public Sala getSala(){
+        return this.sala;
     }
 
-    public void setSalasDisponibles(ArrayList<Sala> salasDisponibles){
-        this.salasDisponibles=salasDisponibles;
-    } 
-
-
-
+    public void setSala(Sala sala){
+        this.sala=sala;
+    }
+    
 
 
 }
