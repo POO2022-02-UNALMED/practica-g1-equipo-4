@@ -175,16 +175,16 @@ public class main {
         int precio = 0;
         
         if (asientos == 0) {
-            System.out.println("No hay asientos");
+            System.out.println("No hay asientos libres");
         } else {
             System.out.println("Indicar tipo de membresia: Regular = A / VIP = B");
             String tipoMembresia = sc.nextLine();
-            System.out.println("Indique cuantas entradas desea: ");
+            System.out.println("Indique número de entradas: ");
             int cantidadEntradas = sc.nextInt();
             if (cantidadEntradas > asientos) {
-                System.out.println("NO HAY ASIENTOS LIBRES");
+                System.out.println("No hay asientos libres");
             } else {
-                System.out.println("Elija metodo de pago: E - Efectivo / T - Tarjeta");
+                System.out.println("Elija metodo de pago: E - Efectivo / C - Cupón"); // Acá podemos podemos poner algún descuento
                 String metodoPago = sc.nextLine();
                 if (tipoMembresia.equalsIgnoreCase("A")) {
                     precio = 0;
@@ -192,9 +192,9 @@ public class main {
                 if (tipoMembresia.equalsIgnoreCase("B")) {
                     precio = 0;
                 }
-                if (metodoPago.equalsIgnoreCase("T")) {
-                    precio = (int) (precio + precio*0.18);
-                    System.out.println("VENTA REALIZADA. PRECIO FINAL: " + precio);
+                if (metodoPago.equalsIgnoreCase("C")) {
+                    precio = (int) (precio - precio*0.10);
+                    System.out.println("¡COMPRA REALIZADA! PRECIO FINAL: " + precio);
                 }
                 asientos = asientos - cantidadEntradas;
                 System.out.println("QUEDAN " + asientos + "asientos.");
