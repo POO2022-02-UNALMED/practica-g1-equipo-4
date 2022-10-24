@@ -1,8 +1,8 @@
 package gestorAplicación.cine;
 
 
-public class Dia{
-
+public class Dia {
+ 
     private String nombreDelDiaDeLaSemana;
     private Sala sala;
 
