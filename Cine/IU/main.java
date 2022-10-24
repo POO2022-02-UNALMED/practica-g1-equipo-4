@@ -204,65 +204,55 @@ public class main {
         }
     }
     //Comprar entrada
-    public void comprarEntrada(Asiento asiento, Boleta boleta, Sala sala, Usuario usuario) {
+    public static void comprarEntrada(Sala sala, Usuario usuario) {
+        boolean vip = usuario.verificarMembresia();
         Scanner sc = new Scanner (System.in);
         int precio = 0;
+        System.out.println("Bienvenido a la compra de entradas");
         
-        if (asientos == 0) {
-            System.out.println("No hay asientos libres");
-        } else {
-            System.out.println("Indicar tipo de membresia: Regular = A / VIP = B");
-            String tipoMembresia = sc.nextLine();
-            System.out.println("Indique número de entradas: ");
-            int cantidadEntradas = sc.nextInt();
-            if (cantidadEntradas > asientos) {
-                System.out.println("No hay asientos libres");
-            } else {
-                System.out.println("Elija metodo de pago: E - Efectivo / C - Cupón"); // Acá podemos podemos poner algún descuento
-                String metodoPago = sc.nextLine();
-                if (tipoMembresia.equalsIgnoreCase("A")) {
-                    precio = 0;
-                }
-                if (tipoMembresia.equalsIgnoreCase("B")) {
-                    precio = 0;
-                }
-                if (metodoPago.equalsIgnoreCase("C")) {
-                    precio = (int) (precio - precio*0.10);
-                    System.out.println("¡COMPRA REALIZADA! PRECIO FINAL: " + precio);
-                }
-                asientos = asientos - cantidadEntradas;
-                System.out.println("QUEDAN " + asientos + "asientos.");
-            }
-        }
-    
+        System.out.println("¿Cúantas entradas desea comprar?");
+        int cantidad = sc.nextInt();
+        
+        System.out.println("Qué día de la semana desea comprar la entrada?");
+        System.out.println("1. Lunes");
+        System.out.println("2. Martes");
+        System.out.println("3. Miercoles");
+        System.out.println("4. Jueves");
+        System.out.println("5. Viernes");
+        int dia = sc.nextInt();
+
+        
+        
+
+
+
     }
- 
-	private static void VIP(TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
-	   	 Scanner sc = new Scanner(System.in);
-	   	 System.out.println("Esta es la oportunidad para que pueda vivir una experiencia mejorada siendo VIP");
-	   	 System.out.println("Estos son los beneficios de volverse cliente VIP");
+   
+    private static void VIP(TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
+	   	Scanner sc = new Scanner(System.in);
+	   	System.out.println("Esta es la oportunidad para que pueda vivir una experiencia mejorada siendo VIP");
+	   	System.out.println("Estos son los beneficios de volverse cliente VIP");
         System.out.println("Descuentos en la tienda UNAL");
-        System.out.println("Cliente regular                     Cliente VIP");
+        System.out.println("\t Cliente regular\t Cliente VIP");
         for (Entry<String, Integer> entry : tiendaUN.getInventario().entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue() + entry.getValue()*0.7 );}
+            System.out.println(entry.getKey()+"\t"+ entry.getValue()+"\t" + (entry.getValue()*0.7 ));}
         System.out.println("Descuentos en comida");
+        System.out.println("\t Cliente regular\t Cliente VIP");
         for (Entry<String, Integer> entry : tiendaComida.getInventario().entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue() + + entry.getValue()*0.7 );
+            System.out.println(entry.getKey() + "\t" + entry.getValue() +"\t"+ (entry.getValue()*0.7));
         }
-	   	 System.out.println("Adicionalmente a esto, se tendra un descuento del  40% en la compra de tus boletas");
-	   	 System.out.println("Volverse VIP tiene un costo de $30000");
-	   	 System.out.println("Desea volverse cliente VIP? (1. Si, 2. No)");
-	   	 int opcion1 = sc.nextInt();
-	   	 if (opcion1 == 1) {
+	   	System.out.println("Adicionalmente a esto, se tendra un descuento del  40% en la compra de tus boletas");
+	   	System.out.println("Volverse VIP tiene un costo de $30000");
+	   	System.out.println("Desea volverse cliente VIP? (1. Si, 2. No)");
+	   	int opcion1 = sc.nextInt();
+	   	if (opcion1 == 1) {
 	       if(usuario.getSaldo>=30000) {usuario.comprarMembresia();
 	       	System.out.println("Se ha convertido en miembor VIP del cine unal");} 
 	       else {System.out.println("Saldo insuficente para volverse VIP");}
 	       }
-	   	 else {System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
+	   	else {System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
 	    }
-}
 
-        
     
     //metodo estatico que cierra el sistema de forma correcta
     private static void salirDelSistema(Usuario usuario) {
@@ -270,9 +260,9 @@ public class main {
     	//aqui iria la funcion del serializador
     	System.exit(0);
     }
+
+    
 }
-
-
 
     
 
