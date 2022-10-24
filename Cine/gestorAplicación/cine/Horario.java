@@ -29,5 +29,7 @@ public class Horario {
 		this.HoraFinal = HoraFinal;
 		
 	}
+
+    
 	
 }

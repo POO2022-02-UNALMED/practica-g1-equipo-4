@@ -4,19 +4,17 @@ import gestorAplicación.tiendaAbst.*;
 import gestorAplicación.cine.*;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.text.SimpleDateFormat;  
-import java.text.DateFormat;  
-import java.text.DateFormatSymbols;  
+import java.util.Scanner;
+import java.util.Map.Entry;
 
 // La funcionalidad de reembolso que tome la fecha del reembolso y la transforme al día de la semana correspondiente y lo
 // compare con el día en el que se presenta la pélcula.
 
 
-import java.util.Scanner;
-import java.util.Map.Entry;
+
 public class main {
     public static void main(String[] args) {
 
@@ -60,8 +58,19 @@ public class main {
         cartelera.put(pelicula3, horario3);
         cartelera.put(pelicula4, horario4);
 
+        boolean[] arr = new boolean[28];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = false;
+        }
+        Map<String, boolean[]>  Asientos = new HashMap<String, boolean[]>();
+        //fill Asientos with the movies names and the array of seats
+        Asientos.put("Batman", arr);
+        Asientos.put("Avengers", arr);
+        Asientos.put("Spiderman", arr);
+        Asientos.put("Superman", arr);
+
         //Create Sala
-        Sala sala = new Sala("Sala", new ArrayList<Asiento>(), cartelera);
+        Sala sala = new Sala("Sala", Asientos, cartelera);
 
         //Create Dia
         Dia dia = new Dia("Lunes", sala);
@@ -70,37 +79,51 @@ public class main {
         Dia dia4 = new Dia("Jueves", sala);
         Dia dia5 = new Dia("Viernes", sala);
 
+        ArrayList<Dia> dias = new ArrayList<Dia>();
+        dias.add(dia);
+        dias.add(dia2);
+        dias.add(dia3);
+        dias.add(dia4);
+        dias.add(dia5);
 
-        
-        int opcion;
-        do {
-            System.out.println("---- Bienvenido al cine unal----");
-            System.out.println("¿Que operación desea realizar? ");
-            System.out.println("1. Comprar Boleta");
-            System.out.println("2. Comprar comida");
-            System.out.println("3. Reembolso");
-            System.out.println("4. Encargar comida");
-            System.out.println("5. Hacerse miembro VIP");
-            System.out.println("6. Terminar");
-            System.out.println("Por favor escoja una opción:");
-            
-            Scanner sc = new Scanner(System.in);
-            opcion = sc.nextInt();
+    }
 
+    //Create a main menu for the user
+    public static void menu(Sala sala, Usuario usuario, TiendaComida tiendaComida, TiendaUN tiendaUN, ArrayList<Dia> dias) {
+        System.out.println("Bienvenido a Cine UN");
+        System.out.println("---- Bienvenido al cine unal----");
+        System.out.println("¿Qué operación desea realizar? (Ingrese el número de la operación)");
+        System.out.println("1. Comprar Boleta");
+        System.out.println("2. Comprar comida");
+        System.out.println("3. Reembolso");
+        System.out.println("4. Hacerse miembro VIP");
+        System.out.println("5. Terminar");
+        System.out.println("Por favor escoja una opción:");
         
-        
-        //     switch (opcion) {
-        //     	case 1: break;
-        //     	case 2: comprar(tienda, usuario) break;
-        //     	case 3:	break;
-        //     	case 4: menuTienda(tiendaComida, tiendaUN, usuario); break;
-        //     	case 5: break;
-        //     	case 6: salirDelSistema(usuario); break;
-        //     }
-        //   } while (opcion != 6); 
-    
+        Scanner sc = new Scanner(System.in);
+        int opcion = sc.nextInt();
+
+        switch (opcion) {
+            case 1:
+                comprarEntrada(dias, usuario);
+                break;
+            case 2:
+                menuTienda(tiendaComida, tiendaUN, usuario);
+                break;
+            case 3:
+                reembolso(usuario);
+                break;
+            case 4:
+                hacerseMiembroVIP(usuario);
+                break;
+            case 5:
+                System.out.println("Gracias por su visita");
+                salirDelSistema(usuario);
+                break;
+            default:
+                System.out.println("Opción no válida");
+                break;
         }
-        while (opcion != 6);
     }
 
     public static void menuTienda(TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
@@ -147,26 +170,32 @@ public class main {
             sc.close();
             break;
 
-            case 3: //Encargar comida durante la funcion
-            System.out.println("Hola! Esta nueva opción te permite encargar comida facilmente y te será traída"+
-            " durante la función por uno de nuestros repartidores.");
-            System.out.println("Solo debes ingresar el nombre del producto que deseas y la cantidad");
-            System.out.println("¿Qué producto deseas?");
-            String producto = sc.next();
-            System.out.println("¿Cuántos deseas?");
-            int cantidad = sc.nextInt();
-            if (cantidad < tiendaComida.getInventario().get(producto)) {
-                System.out.println("Su pedido ha sido registrado, en unos minutos llegará a su asiento");
-                tiendaComida.getInventario().put(producto, tiendaComida.getInventario().get(producto) - cantidad);
-                usuario.agregarCarrito(producto, cantidad);
-                tiendaComida.agregarColaPedidos(usuario);
+            case 3: 
+            comidaAsiento(usuario, tiendaComida);
 
-            } else {
-                System.out.println("Lo sentimos, no tenemos suficiente producto en inventario");
-            }
-            break;
+            
         }
         }while(opcion != 4);
+    }
+
+    public static void comidaAsiento (Usuario usuario, TiendaComida tiendaComida){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Hola! Esta nueva opción te permite encargar comida facilmente y te será traída"+
+        " durante la función por uno de nuestros repartidores.");
+        System.out.println("Solo debes ingresar el nombre del producto que deseas y la cantidad");
+        System.out.println("¿Qué producto deseas?");
+        String producto = sc.next();
+        System.out.println("¿Cuántos deseas?");
+        int cantidad = sc.nextInt();
+        if (cantidad < tiendaComida.getInventario().get(producto)) {
+            System.out.println("Su pedido ha sido registrado, en unos minutos llegará a su asiento");
+            tiendaComida.getInventario().put(producto, tiendaComida.getInventario().get(producto) - cantidad);
+            usuario.agregarCarrito(producto, cantidad);
+            tiendaComida.agregarColaPedidos(usuario);
+
+        } else {
+            System.out.println("Lo sentimos, no tenemos suficiente producto en inventario");
+        }
     }
 
     public static void comprar (Tienda tienda, Usuario usuario) {
@@ -203,8 +232,12 @@ public class main {
             menuTienda((TiendaComida) tienda, (TiendaUN) tienda, usuario);
         }
     }
-    //Comprar entrada
-    public static void comprarEntrada(Sala sala, Usuario usuario) {
+
+
+
+    // -------------------------Comprar entrada-----------------------------
+
+    public static void comprarEntrada(ArrayList<Dia> Dias, Usuario usuario) {
         boolean vip = usuario.verificarMembresia();
         Scanner sc = new Scanner (System.in);
         int precio = 0;
@@ -213,25 +246,128 @@ public class main {
         System.out.println("¿Cúantas entradas desea comprar?");
         int cantidad = sc.nextInt();
         
-        System.out.println("Qué día de la semana desea comprar la entrada?");
+        System.out.println("Ingrese el número del día de la semana que desea comprar la entrada?");
         System.out.println("1. Lunes");
         System.out.println("2. Martes");
         System.out.println("3. Miercoles");
         System.out.println("4. Jueves");
         System.out.println("5. Viernes");
-        int dia = sc.nextInt();
+        int dia = sc.nextInt();    
 
+        Dia diaTemp = Dias.get(dia-1);
+
+        System.out.println("Para ese día tenemos las siguientes Peliculas:");
+        int i = 1;
+        for (Map.Entry<Pelicula, Horario> entry : diaTemp.getSala().getCartelera().entrySet()) {
+            System.out.println(i+" "+entry.getKey().getnombre() + " - " + entry.getValue().getHoraInicio()+" - "+entry.getValue().getHoraFinal() );
+            i++;
+        }
+        System.out.println("Ingrese el nombre de la pelicula que desea ver: ");
+        String pelicula = sc.next();
+        boolean[] asientos = diaTemp.getSala().getAsientos().get(pelicula);
+        System.out.println("Los asientos disponibles son: ");
+
+        // Imprimir asientos disponibles por filas de 7
+        int exitos = 0;
+        int [] asientosComprados = new int [cantidad];
+
+        while(exitos < cantidad){
+        int j = 0;
+        System.out.println("\t - \t - Pantalla - \t - \t");
+        for (int k = 0; k < asientos.length; k++) {
+            if (asientos[k] == false) {
+                System.out.print(k+1+"\t");
+                j++;
+            }else{
+                System.out.print("X\t");
+                j++;
+            }
+            if (j == 7) {
+                System.out.println();
+                j = 0;
+            }
+        }
+        System.out.println();
+        System.out.println("Ingrese el número del asiento que desea: ");
+        int asiento = sc.nextInt();
+        if (asientos[asiento-1] == false) {
+            asientos[asiento-1] = true;
+            System.out.println("Asiento reservado");
+            if (vip) {
+                precio = (int) (10000 - 10000*0.40);
+            } else {
+                precio = 10000;
+            }
+            System.out.println("El precio de la entrada es: "+precio);
+            System.out.println("¿Desea comprar la entrada? (1. Si, 2. No)");
+            int opcion = sc.nextInt();
+            if (opcion == 1) {
+                if (usuario.getSaldo() >= precio) {
+                    usuario.setSaldo(usuario.getSaldo() - precio);
+                    System.out.println("Su saldo actual es: "+usuario.getSaldo());
+                    System.out.println("Gracias por su compra");
+                    asientosComprados[exitos] = asiento;
+                    exitos++;
+                } else {
+                    System.out.println("Lo sentimos, no tiene suficiente saldo para comprar la entrada");
+                    asientos[asiento-1] = false;
+                }
+            } else {
+                System.out.println("Gracias por su visita");
+                asientos[asiento-1] = false;
+            }
+        } else {
+            System.out.println("Lo sentimos, ese asiento ya está ocupado");
+
+        }
+    }
+
+        System.out.println("Factura: ");
+        System.out.println("Nombre: "+usuario.getNombre());
+        System.out.println("Cedula: "+usuario.getCedula());
+        System.out.println("Pelicula: "+pelicula);
+        System.out.println("Dia: "+diaTemp.getnombreDelDiaDeLaSemana() );
+        System.out.println("Asientos: ");
+        for (int k = 0; k < asientosComprados.length; k++) {
+            System.out.println(asientosComprados[k]);
+        }
+        System.out.println("Su saldo actual es: "+usuario.getSaldo());    
+        Boleta boleta = new Boleta(usuario,  pelicula, diaTemp.getnombreDelDiaDeLaSemana(), asientosComprados, diaTemp.getSala().getCartelera().get(pelicula), diaTemp.getSala().getNombre());
+        usuario.addBoleta(boleta);
+        System.out.println("Gracias por su compra\n Volviendo al menú principal");
         
-        
-
-
 
     }
+    
     //metodo estatico que cierra el sistema de forma correcta
     private static void salirDelSistema(Usuario usuario) {
     	System.out.println("Vuelva Pronto");
     	//aqui iria la funcion del serializador
     	System.exit(0);
+    }
+
+    private static void VIP (TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Esta es la oportunidad para que pueda vivir una experiencia mejorada siendo VIP");
+        System.out.println("Estos son los beneficios de volverse cliente VIP");
+        System.out.println("Descuentos en la tienda UNAL");
+        System.out.println("Cliente regular                     Cliente VIP");
+    for (Entry<String, Integer> entry : tiendaUN.getInventario().entrySet()) {
+        System.out.println(entry.getKey() + " - " + entry.getValue() + entry.getValue()*0.7 );}
+    System.out.println("Descuentos en comida");
+    for (Entry<String, Integer> entry : tiendaComida.getInventario().entrySet()) {
+        System.out.println(entry.getKey() + " - " + entry.getValue() + + entry.getValue()*0.7 );
+    }
+        System.out.println("Adicionalmente a esto, se tendra un descuento del  40% en la compra de tus boletas");
+        System.out.println("Volverse VIP tiene un costo de $30000");
+        System.out.println("Desea volverse cliente VIP? (1. Si, 2. No)");
+        int opcion1 = sc.nextInt();
+        if (opcion1 == 1) {
+       if(usuario.getSaldo()>=30000) {usuario.comprarMembresia();
+           System.out.println("Se ha convertido en miembor VIP del cine unal");} 
+       else {System.out.println("Saldo insuficente para volverse VIP");}
+       }
+        else {System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
     }
 
     

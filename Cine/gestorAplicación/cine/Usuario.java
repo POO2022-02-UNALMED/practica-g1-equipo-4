@@ -105,6 +105,21 @@ public class Usuario {
 			
 		}
 
+		public void eliminarCarrito(String Nombre) {
+			this.Carrito.remove(Nombre);
+			
+		}
+
+		public void vaciarCarrito() {
+			this.Carrito.clear();
+			
+		}	
+
+		//add a Boleta to the list of Boletas
+		public void addBoleta(Boleta boleta) {
+			this.Boletas.add(boleta);
+		}
+
 
 
 		
