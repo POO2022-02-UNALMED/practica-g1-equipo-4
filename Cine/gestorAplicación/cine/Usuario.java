@@ -7,7 +7,7 @@ public class Usuario {
 	
 		private String Nombre;
 		private int Cedula;
-		private Boolean Membresia;
+		private boolean Membresia;
 		private int Saldo;
 		private ArrayList<Boleta> Boletas = new ArrayList<Boleta>();
 		private HashMap<String,Integer> Carrito = new HashMap<String,Integer>();
@@ -30,7 +30,7 @@ public class Usuario {
 			
 		}
 		
-		public Boolean verificarMembresia() {
+		public boolean verificarMembresia() {
 			return this.Membresia;
 			
 		}

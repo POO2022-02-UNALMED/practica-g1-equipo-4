@@ -204,44 +204,38 @@ public class main {
         }
     }
     //Comprar entrada
-    public void comprarEntrada(Asiento asiento, Boleta boleta, Sala sala, Usuario usuario) {
+    public static void comprarEntrada(Sala sala, Usuario usuario) {
+        boolean vip = usuario.verificarMembresia();
         Scanner sc = new Scanner (System.in);
         int precio = 0;
+        System.out.println("Bienvenido a la compra de entradas");
         
-        if (asientos == 0) {
-            System.out.println("No hay asientos libres");
-        } else {
-            System.out.println("Indicar tipo de membresia: Regular = A / VIP = B");
-            String tipoMembresia = sc.nextLine();
-            System.out.println("Indique número de entradas: ");
-            int cantidadEntradas = sc.nextInt();
-            if (cantidadEntradas > asientos) {
-                System.out.println("No hay asientos libres");
-            } else {
-                System.out.println("Elija metodo de pago: E - Efectivo / C - Cupón"); // Acá podemos podemos poner algún descuento
-                String metodoPago = sc.nextLine();
-                if (tipoMembresia.equalsIgnoreCase("A")) {
-                    precio = 0;
-                }
-                if (tipoMembresia.equalsIgnoreCase("B")) {
-                    precio = 0;
-                }
-                if (metodoPago.equalsIgnoreCase("C")) {
-                    precio = (int) (precio - precio*0.10);
-                    System.out.println("¡COMPRA REALIZADA! PRECIO FINAL: " + precio);
-                }
-                asientos = asientos - cantidadEntradas;
-                System.out.println("QUEDAN " + asientos + "asientos.");
-            }
-        }
+        System.out.println("¿Cúantas entradas desea comprar?");
+        int cantidad = sc.nextInt();
+        
+        System.out.println("Qué día de la semana desea comprar la entrada?");
+        System.out.println("1. Lunes");
+        System.out.println("2. Martes");
+        System.out.println("3. Miercoles");
+        System.out.println("4. Jueves");
+        System.out.println("5. Viernes");
+        int dia = sc.nextInt();
+
+        
+        
+
+
+
+    }
     //metodo estatico que cierra el sistema de forma correcta
     private static void salirDelSistema(Usuario usuario) {
     	System.out.println("Vuelva Pronto");
     	//aqui iria la funcion del serializador
     	System.exit(0);
     }
-}
 
+    
+}
 
 
     
