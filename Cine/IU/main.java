@@ -169,7 +169,37 @@ public class main {
             menuTienda((TiendaComida) tienda, (TiendaUN) tienda, usuario);
         }
     }
-    
+    //Comprar entrada
+    public void comprarEntrada(Asiento asiento, Boleta boleta, Sala sala, Usuario usuario) {
+        Scanner sc = new Scanner (System.in);
+        int precio = 0;
+        
+        if (asientos == 0) {
+            System.out.println("No hay asientos");
+        } else {
+            System.out.println("Indicar tipo de membresia: Regular = A / VIP = B");
+            String tipoMembresia = sc.nextLine();
+            System.out.println("Indique cuantas entradas desea: ");
+            int cantidadEntradas = sc.nextInt();
+            if (cantidadEntradas > asientos) {
+                System.out.println("NO HAY ASIENTOS LIBRES");
+            } else {
+                System.out.println("Elija metodo de pago: E - Efectivo / T - Tarjeta");
+                String metodoPago = sc.nextLine();
+                if (tipoMembresia.equalsIgnoreCase("A")) {
+                    precio = 0;
+                }
+                if (tipoMembresia.equalsIgnoreCase("B")) {
+                    precio = 0;
+                }
+                if (metodoPago.equalsIgnoreCase("T")) {
+                    precio = (int) (precio + precio*0.18);
+                    System.out.println("VENTA REALIZADA. PRECIO FINAL: " + precio);
+                }
+                asientos = asientos - cantidadEntradas;
+                System.out.println("QUEDAN " + asientos + "asientos.");
+            }
+        }
     //metodo estatico que cierra el sistema de forma correcta
     private static void salirDelSistema(Usuario usuario) {
     	System.out.println("Vuelva Pronto");
