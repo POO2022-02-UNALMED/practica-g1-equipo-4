@@ -93,8 +93,8 @@ public class main {
 
     //Create a main menu for the user
     public static void menu(Sala sala, Usuario usuario, TiendaComida tiendaComida, TiendaUN tiendaUN, ArrayList<Dia> dias) {
-        System.out.println("Bienvenido a Cine UN");
-        System.out.println("---- Bienvenido al cine unal----");
+        System.out.println("\033[32m Bienvenido a Cine UN");
+        System.out.println("-\033[32m --- Bienvenido al cine unal----");
         System.out.println("¿Qué operación desea realizar? (Ingrese el número de la operación)");
         System.out.println("1. Comprar Boleta");
         System.out.println("2. Comprar comida");
