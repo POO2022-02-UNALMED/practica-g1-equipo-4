@@ -10,7 +10,7 @@ Cine, proyecto de la asignatura POO 2022-2S
 * Julián Orrego Martínez
 
 # Memoria escrita:
-[Memoria escrita](https://docs.google.com/document/d/1pNBMtg4XIoYGMeoWH8SyqczRXrBrMyxMNjYD_unqU7c/edit)
+[Memoria escrita](https://docs.google.com/document/d/11Qf4zBuOvO5GLZcEMh0-uA8zlVj0IfINa72QW3mNZdA/edit)
 
 # Diagrama de Clases:
 [Diagrama de clases](https://app.genmymodel.com/editor/edit/_tl5a8E9IEe2ck8ytUMEi6A#)
