@@ -9,8 +9,7 @@ public class Boleta {
     private String dia;
     //attribute Asiento as an array of Integers
     private int[] asiento;
-    
-
+  
     public Boleta(Usuario usuario, String pelicula, String sala, int [] asiento, Horario horario, String dia) {
         this.usuario = usuario;
         this.pelicula = pelicula;

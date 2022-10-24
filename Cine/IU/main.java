@@ -18,6 +18,7 @@ import java.util.Map.Entry;
 public class main {
     public static void main(String[] args) {
 
+        if (true){
         Usuario usuario = new Usuario("Juan", 1152452 , 50000);
         //Create a new TiendaComida object and set its name
         TiendaComida tiendaComida = new TiendaComida("Tienda de comida");
@@ -85,7 +86,9 @@ public class main {
         dias.add(dia3);
         dias.add(dia4);
         dias.add(dia5);
-
+        menu(sala, usuario, tiendaComida, tiendaUN, dias);
+        }
+        
     }
 
     //Create a main menu for the user
@@ -111,10 +114,10 @@ public class main {
                 menuTienda(tiendaComida, tiendaUN, usuario);
                 break;
             case 3:
-                reembolso(usuario);
+                //reembolso(usuario);
                 break;
             case 4:
-                hacerseMiembroVIP(usuario);
+                VIP(tiendaComida, tiendaUN, usuario);
                 break;
             case 5:
                 System.out.println("Gracias por su visita");
