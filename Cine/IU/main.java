@@ -221,13 +221,12 @@ public class main {
         System.out.println("5. Viernes");
         int dia = sc.nextInt();
 
-        
-        
-
+    
 
 
     }
-   
+    
+    
     private static void VIP(TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
 	   	Scanner sc = new Scanner(System.in);
 	   	System.out.println("Esta es la oportunidad para que pueda vivir una experiencia mejorada siendo VIP");
@@ -252,7 +251,7 @@ public class main {
 	       }
 	   	else {System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
 	    }
-
+    
     
     //metodo estatico que cierra el sistema de forma correcta
     private static void salirDelSistema(Usuario usuario) {
