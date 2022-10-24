@@ -367,9 +367,11 @@ public class main {
 	System.out.println("Desea volverse cliente VIP? (1. Si, 2. No)");
 	int opcion1 = sc.nextInt();
 	if (opcion1 == 1) {
-	    if(usuario.getSaldo>=30000) {usuario.comprarMembresia();
-	       	System.out.println("Se ha convertido en miembor VIP del cine unal"); System.out.println("Su saldo actual es: "+usuario.getSaldo())} 
-	       	else {System.out.println("Saldo insuficente para volverse VIP");}
+	    if(usuario.getSaldo()>=30000) {
+            usuario.comprarMembresia();
+	       	System.out.println("Se ha convertido en miembor VIP del cine unal"); 
+            System.out.println("Su saldo actual es: "+usuario.getSaldo()); 
+        }else {System.out.println("Saldo insuficente para volverse VIP");}
 	       }
 	    else {System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
 	    }
