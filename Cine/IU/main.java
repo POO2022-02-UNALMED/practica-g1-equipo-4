@@ -202,31 +202,44 @@ public class main {
             
             menuTienda((TiendaComida) tienda, (TiendaUN) tienda, usuario);
         }
-        sc.close();
     }
-
-    public static void reembolsoBoleta (Usuario usuario){
-        System.out.println("Está seguro de que desea reembolsar su boleta? (1. Si, 2. No)");
-        Scanner sc = new Scanner(System.in);
-
-        int opcion = sc.nextInt();
-        if (opcion == 1) {
-            System.out.println("Cuantas boletas desea reembolsar?");
-            int cantidad = sc.nextInt();
-            ArrayList<Boleta> boleta = usuario.getBoletas();
-            //Recorrer boleta
-            if (cantidad <= boleta.size()) {
-                for (int i = 0; i < cantidad; i++) {
-                    Boleta temp = boleta.get(i); 
-                    
+    //Comprar entrada
+    public void comprarEntrada(Asiento asiento, Boleta boleta, Sala sala, Usuario usuario) {
+        Scanner sc = new Scanner (System.in);
+        int precio = 0;
+        
+        if (asientos == 0) {
+            System.out.println("No hay asientos libres");
+        } else {
+            System.out.println("Indicar tipo de membresia: Regular = A / VIP = B");
+            String tipoMembresia = sc.nextLine();
+            System.out.println("Indique número de entradas: ");
+            int cantidadEntradas = sc.nextInt();
+            if (cantidadEntradas > asientos) {
+                System.out.println("No hay asientos libres");
+            } else {
+                System.out.println("Elija metodo de pago: E - Efectivo / C - Cupón"); // Acá podemos podemos poner algún descuento
+                String metodoPago = sc.nextLine();
+                if (tipoMembresia.equalsIgnoreCase("A")) {
+                    precio = 0;
+                }
+                if (tipoMembresia.equalsIgnoreCase("B")) {
+                    precio = 0;
+                }
+                if (metodoPago.equalsIgnoreCase("C")) {
+                    precio = (int) (precio - precio*0.10);
+                    System.out.println("¡COMPRA REALIZADA! PRECIO FINAL: " + precio);
+                }
+                asientos = asientos - cantidadEntradas;
+                System.out.println("QUEDAN " + asientos + "asientos.");
             }
-
         }
+    //metodo estatico que cierra el sistema de forma correcta
+    private static void salirDelSistema(Usuario usuario) {
+    	System.out.println("Vuelva Pronto");
+    	//aqui iria la funcion del serializador
+    	System.exit(0);
     }
-
-
-    }
-
 }
 
 
