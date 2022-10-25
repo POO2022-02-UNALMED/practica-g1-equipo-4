@@ -10,7 +10,7 @@ public class Serializador {{
 		
 		ObjectOutputStream guardandoDatos = new ObjectOutputStream(new FileOutputStream("Cine/baseDatos/temp/usuario.txt"));
 		
-		guardandoDatos.writeObject(usuario);
+		//guardandoDatos.writeObject(usuario);
 		
 		guardandoDatos.close();
 		

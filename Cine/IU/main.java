@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 public class main implements Serializable{
 	
     public static void main(String[] args) {
+
         Horario horario1 = new Horario("12:00", "14:00");
         Usuario usuario1 = new Usuario("Juan", 123456789, 1000000);
         int [] boletas = {1,2,3};
@@ -91,13 +92,15 @@ public class main implements Serializable{
         dias.add(dia3);
         dias.add(dia4);
         dias.add(dia5);
-        menu(sala, usuario, tiendaComida, tiendaUN, dias);
+        menu(sala, usuario1, tiendaComida, tiendaUN, dias);
         }
         
     }
 
     //Create a main menu for the user
     public static void menu(Sala sala, Usuario usuario, TiendaComida tiendaComida, TiendaUN tiendaUN, ArrayList<Dia> dias) {
+        boolean cond = true;
+        while (cond == true){
         System.out.println("\r\n"
         		+ "░█████╗░██╗███╗░░██╗███████╗  ██╗░░░██╗███╗░░██╗\r\n"
         		+ "██╔══██╗██║████╗░██║██╔════╝  ██║░░░██║████╗░██║\r\n"
@@ -109,16 +112,11 @@ public class main implements Serializable{
         System.out.println("¿Qué operación desea realizar? (Ingrese el número de la operación)");
         System.out.println("1. Comprar Boleta");
         System.out.println("2. Comprar comida");
-<<<<<<< HEAD
         System.out.println("3. Comprar mercancia");
         System.out.println("4. Reembolso");
         System.out.println("5. Hacerse miembro VIP");
         System.out.println("6. Terminar");
-=======
-        System.out.println("3. Reembolso");
-        System.out.println("4. Hacerse miembro VIP");
-        System.out.println("5. Terminar");
->>>>>>> 7827a3c932945a896306737420287e5233d22ea1
+
         System.out.println("Por favor escoja una opción:");
         
         Scanner sc = new Scanner(System.in);
@@ -131,28 +129,23 @@ public class main implements Serializable{
             case 2:
                 menuTienda(tiendaComida, tiendaUN, usuario);
                 break;
-<<<<<<< HEAD
-
             case 3: 
                 menuTienda(tiendaComida, tiendaUN, usuario);
                 break;
             case 4:
                 reembolso(usuario);
-=======
-            case 3:
-                //reembolso(usuario);
->>>>>>> 7827a3c932945a896306737420287e5233d22ea1
-                break;
-            case 4:
-                VIP(tiendaComida, tiendaUN, usuario);
                 break;
             case 5:
+                VIP(tiendaComida, tiendaUN, usuario);
+                break;
+            case 6:
                 System.out.println("Gracias por su visita");
                 salirDelSistema(usuario);
                 break;
             default:
                 System.out.println("Opción no válida");
                 break;
+        }
         }
     }
 
