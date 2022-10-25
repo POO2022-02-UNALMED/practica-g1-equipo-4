@@ -6,7 +6,7 @@ import java.util.Map;
 import gestorAplicación.cine.Usuario;
 
 public class TiendaUN extends Tienda implements Serializable{
-	
+	//atributos
 	private static final long serialVersionUID = 1L;
 
     public TiendaUN(String nombre) {
@@ -18,10 +18,10 @@ public class TiendaUN extends Tienda implements Serializable{
     protected Map<String, Integer> productos = new HashMap<String, Integer >();
 
 
-    
+    //constructor
     public void venderProducto(String nombre, Integer cantidad, Usuario usuario) {
-        if (inventario.get(nombre) >= cantidad) {
-            inventario.put(nombre, inventario.get(nombre) - cantidad);
+        if (productos.get(nombre) >= cantidad) {
+            productos.put(nombre, productos.get(nombre) - cantidad);
             if (usuario.verificarMembresia()) {
                 usuario.setSaldo(usuario.getSaldo() - (int)((cantidad * inventario.get(nombre))*0.3) );
             }
@@ -30,7 +30,7 @@ public class TiendaUN extends Tienda implements Serializable{
             }
         }
     }
-
+//metodos get y set
     public Map<String, Integer> getInventario() {
         return inventario;
         
@@ -71,7 +71,7 @@ public class TiendaUN extends Tienda implements Serializable{
         return productos.get(nombre);
         
     }
-
+// sobreescritura de metodo abstract
     @Override
     public void saludo() {
         System.out.println("Bienvenido a la tienda del cine UNAL");

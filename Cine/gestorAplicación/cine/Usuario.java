@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.HashMap; 
 
 public class Usuario implements Serializable {
-	
+	//atributos
 	private static final long serialVersionUID = 1L;
 	
 	private String Nombre;
@@ -32,7 +32,7 @@ public class Usuario implements Serializable {
 	//	Deserializador.deserializar(this);	
 	
 	}
-		
+//constructores		
 	public Usuario (String Nombre, int Cedula, int Saldo) {
 		this.Nombre = Nombre;
 		this.Cedula = Cedula;
@@ -49,7 +49,7 @@ public class Usuario implements Serializable {
 		this.Boletas =Boletas;
 			
 	}
-		
+	//get con boolean	
 		public boolean verificarMembresia() {
 			
 			return this.Membresia;
@@ -62,7 +62,7 @@ public class Usuario implements Serializable {
 			this.Membresia = true;
 			
 		}
-		
+	//metodos get y set	
 		public String getNombre() {
 			
 			return 	this.Nombre;

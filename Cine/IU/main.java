@@ -24,7 +24,7 @@ public class main implements Serializable{
 	
     public static void main(String[] args) {
     	
-        Usuario usuario = new Usuario("Juan", 1152452 , 100000);
+        Usuario usuario = new Usuario("Juan", 1152452 , 150000);
         //Create a new TiendaComida object and set its name
         TiendaComida tiendaComida = new TiendaComida("Tienda de comida");
         tiendaComida.setNombre("Comida Unal");
@@ -40,10 +40,10 @@ public class main implements Serializable{
         //Create a new TiendaUN object and set its name
         TiendaUN tiendaUN = new TiendaUN("Tienda UN");
         //Add a new product to the store
-        tiendaUN.agregarMixto("Camisetas", 10, 1500);
-        tiendaUN.agregarMixto("Pantalones", 10, 1500);
-        tiendaUN.agregarMixto("Termos", 10, 1500);
-        tiendaUN.agregarMixto("Gorras", 10, 3000);
+        tiendaUN.agregarMixto("Camisetas", 10, 15000);
+        tiendaUN.agregarMixto("Pantalones", 10, 15000);
+        tiendaUN.agregarMixto("Termos", 10, 3000);
+        tiendaUN.agregarMixto("Gorras", 10, 5000);
         
         //Create Peliculas
         Pelicula pelicula = new Pelicula("Avengers", "Accion" );
@@ -256,9 +256,9 @@ public class main implements Serializable{
                 System.out.println("Nombre: "+usuario.getNombre());
                 System.out.println("Cedula: "+usuario.getCedula());
                 System.out.println("Productos: ");
-                System.out.println("Producto - Cantidad - Precio");
+                System.out.println("Producto - Cantidad");
                 for (Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
-                    System.out.println(entry.getKey() + " - " + entry.getValue() + " - " + tiendaComida.getPrecio(entry.getKey()));
+                    System.out.println(entry.getKey() + " - " + entry.getValue());
                 }
                 System.out.println("Su saldo actual es: "+usuario.getSaldo());
 
@@ -301,10 +301,12 @@ public class main implements Serializable{
                 System.out.println("Nombre: "+usuario.getNombre());
                 System.out.println("Cedula: "+usuario.getCedula());
                 System.out.println("Productos: ");
-                System.out.println("Producto - Cantidad - Precio");
-                for (Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
-                    System.out.println(entry.getKey() + " - " + entry.getValue() + " - " + tienda.getPrecio(entry.getKey()));
+                System.out.println("Producto - Cantidad");
+                
+                for (Map.Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
+                    System.out.println(entry.getKey() + " - " + entry.getValue());
                 }
+                
                 
                 System.out.println("Su saldo actual es: "+usuario.getSaldo());
             

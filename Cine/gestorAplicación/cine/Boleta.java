@@ -6,16 +6,17 @@ import java.util.ArrayList;
 public class Boleta implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-	
+	// atributos
     private Usuario usuario;    
     private String pelicula;
     private Sala sala;
     private Horario horario;
     private String dia;
-    //attribute Asiento as an array of Integers
+    //attribute Asiento as an array of Integers ya que se va a manejar como lista de asientos
     private int[] asiento;
     public final static int precio = 10000;
 	
+    //constructor
     public Boleta(Usuario usuario, String pelicula, Sala sala, int [] asiento, Horario horario, String dia) {
         this.usuario = usuario;
         this.pelicula = pelicula;
@@ -25,7 +26,7 @@ public class Boleta implements Serializable{
         this.dia = dia;
 
     }
-
+// metodos get y set
     public Usuario getUsuario() {
         return usuario;
     }

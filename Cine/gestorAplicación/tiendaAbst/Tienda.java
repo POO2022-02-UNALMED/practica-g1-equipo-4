@@ -6,7 +6,7 @@ import java.util.Map;
 import gestorAplicación.cine.Usuario;
 
 public abstract class Tienda implements Serializable{
-	
+	//atributos
 	private static final long serialVersionUID = 1L;
 
     protected String nombre;
@@ -16,16 +16,16 @@ public abstract class Tienda implements Serializable{
     protected Map<String, Integer> productos = new HashMap<String, Integer >();
     
     protected int repartidores = 3; 
-    
+    //metodos abstractos que las clases que hereden de esto lo deben implementar
     abstract public void saludo();
 
     abstract public void venderProducto(String nombre, Integer cantidad, Usuario usuario);
-
+// constructor
     public Tienda(String nombre) {
         this.nombre = nombre;
         
     }
-
+//metodos de instancia get y set
     public String getNombre() {
         return nombre;
         
@@ -65,7 +65,7 @@ public abstract class Tienda implements Serializable{
         return repartidores;
         
     }
-
+// el .put es para agragar clave diccionario
     public void agregarProducto(String nombre, Integer cantidad) {
         productos.put(nombre, cantidad);
         
