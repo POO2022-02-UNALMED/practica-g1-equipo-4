@@ -496,7 +496,7 @@ public class main implements Serializable{
 
                     }
                 }
-                System.out.println("Ingrese el numero de la pelicula que desea reembolsar");
+                System.out.println("Ingrese el NOMBRE de la pelicula que desea reembolsar");
                 String pelicula = sc.next();
                 System.out.println("Ingrese el numero del asiento que desea reembolsar");
                 int asiento = sc.nextInt();
@@ -512,9 +512,6 @@ public class main implements Serializable{
                         }
                     }
                 }
-
-
-                
 
             }else{
                 System.out.println("Gracias por su visita");

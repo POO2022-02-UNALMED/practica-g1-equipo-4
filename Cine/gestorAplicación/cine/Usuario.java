@@ -24,7 +24,7 @@ public class Usuario implements Serializable {
 		return cantidadUsuarios;
 	}
 	
-	public Usuario() {this("Sin nombre", 0, 0)}
+	public Usuario() {this("Sin nombre", 0, 0);}
 		
 	public Usuario (String Nombre, int Cedula, int Saldo) {
 		this.Nombre = Nombre;
