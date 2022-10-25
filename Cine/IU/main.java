@@ -352,15 +352,15 @@ public class main implements Serializable{
         System.out.println("4. Jueves");
         System.out.println("5. Viernes");
         int dia = sc.nextInt();    
-
         Dia diaTemp = Dias.get(dia-1);
-
+        
         System.out.println("Para ese día tenemos las siguientes Peliculas:");
         int i = 1;
         for (Map.Entry<Pelicula, Horario> entry : diaTemp.getSala().getCartelera().entrySet()) {
             System.out.println(i+" "+entry.getKey().getnombre() + " - " + entry.getValue().getHoraInicio()+" - "+entry.getValue().getHoraFinal() );
             i++;
         }
+
         System.out.println("Ingrese el NOMBRE de la pelicula que desea ver: ");
         String pelicula = sc.next();
         
