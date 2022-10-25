@@ -14,6 +14,6 @@ Prácitca 1: Asignatura POO Universidad Nacional de Colombia
 
 
 ### `Diagrama de Clases:`
-[Diagrama de clases](https://app.genmymodel.com/editor/edit/_tl5a8E9IEe2ck8ytUMEi6A#)
 
-![CLASS_DIAGRAM](https://user-images.githubusercontent.com/70676228/197695912-ec73508f-0512-45a3-8134-eba74c856dde.png)
+
+![ddd](https://user-images.githubusercontent.com/70676228/197696089-6ee7da57-966f-4127-9fc3-739b8db2bb65.jpeg)
