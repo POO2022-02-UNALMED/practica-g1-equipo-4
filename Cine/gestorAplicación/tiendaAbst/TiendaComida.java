@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import gestorAplicación.cine.Usuario;
 
-public class TiendaComida extends Tienda implements Serializable{
+public class TiendaComida extends TiendaUN implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -56,18 +56,19 @@ public class TiendaComida extends Tienda implements Serializable{
         this.inventario = inventario;
         
     }
-
+   
     public void agregarInventario(String nombre, Integer cantidad) {
         inventario.put(nombre, cantidad);
 
     }
-
+    
     public void agregarMixto (String nombre, Integer cantidadProducto, Integer precioDelProducto) {
         productos.put(nombre, cantidadProducto);
         inventario.put(nombre, precioDelProducto);
         
     }
-
+    
+    
     public int getPrecio(String nombre) {
         return productos.get(nombre);
         
