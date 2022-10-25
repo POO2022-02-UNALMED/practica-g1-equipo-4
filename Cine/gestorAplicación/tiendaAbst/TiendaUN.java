@@ -23,7 +23,7 @@ public class TiendaUN extends Tienda implements Serializable{
         if (inventario.get(nombre) >= cantidad) {
             inventario.put(nombre, inventario.get(nombre) - cantidad);
             if (usuario.verificarMembresia()) {
-                usuario.setSaldo(usuario.getSaldo() - (int)((cantidad * inventario.get(nombre))*0.40) );
+                usuario.setSaldo(usuario.getSaldo() - (int)((cantidad * inventario.get(nombre))*0.3) );
             }
             else {
                 usuario.setSaldo(usuario.getSaldo() - (cantidad * inventario.get(nombre)));

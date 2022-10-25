@@ -461,7 +461,7 @@ public class main implements Serializable{
         System.out.println("Descuentos en comida");
         System.out.println("\t Cliente regular\t Cliente VIP");
         for (Entry<String, Integer> entry : tiendaComida.getInventario().entrySet()) {
-            System.out.println(entry.getKey() + "\t" + entry.getValue() +"\t"+ (entry.getValue()*0.7));
+            System.out.println(entry.getKey() + "\t" + entry.getValue() +"\t"+ (entry.getValue()*0.6));
         }
 	System.out.println("Adicionalmente a esto, se tendra un descuento del  40% en la compra de tus boletas");
 	System.out.println("Volverse VIP tiene un costo de $30000");
