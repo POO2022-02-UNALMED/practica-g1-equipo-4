@@ -43,6 +43,23 @@ public class main implements Serializable{
         Pelicula pelicula2 = new Pelicula("Spiderman", "Accion" );
         Pelicula pelicula3 = new Pelicula("Batman", "Accion" );
         Pelicula pelicula4 = new Pelicula("Superman", "Accion" );
+        Pelicula pelicula5 = new Pelicula("Matrix", "Accion" );
+        Pelicula pelicula6 = new Pelicula("Jhon Wick", "Accion" );
+        Pelicula pelicula7 = new Pelicula("Memento", "Drama" );
+        Pelicula pelicula8 = new Pelicula("Nemo", "Infatil" );
+        Pelicula pelicula9 = new Pelicula("El Conjuro", "Terror" );
+        Pelicula pelicula10 = new Pelicula("El Paseo", "Comedia" );
+        Pelicula pelicula11 = new Pelicula("Terminator", "Accion" );
+        Pelicula pelicula12 = new Pelicula("Troya", "Accion" );
+        Pelicula pelicula13= new Pelicula("Madagascar", "Infantil" );
+        Pelicula pelicula14= new Pelicula("Los Pitufos", "Infantil" );
+        Pelicula pelicula15= new Pelicula("Baki", "Accion" );
+        Pelicula pelicula16= new Pelicula("Your Name", "Drama" );
+        Pelicula pelicula17= new Pelicula("Taxi Driver", "Accion" );
+        Pelicula pelicula18= new Pelicula("El Transportador", "Accion" );
+        Pelicula pelicula19= new Pelicula("Transformers", "Accion" );
+        Pelicula pelicula20= new Pelicula("Interestelar", "Ciencia Ficcion" );
+
 
         //Create Horarios
         Horario horario = new Horario("12:00", "14:00");
@@ -57,6 +74,31 @@ public class main implements Serializable{
         cartelera.put(pelicula3, horario3);
         cartelera.put(pelicula4, horario4);
 
+        Map<Pelicula, Horario> cartelera2 = new HashMap<Pelicula, Horario>();
+        cartelera.put(pelicula5, horario);
+        cartelera.put(pelicula6, horario2);
+        cartelera.put(pelicula7, horario3);
+        cartelera.put(pelicula8, horario4);
+
+        Map<Pelicula, Horario> cartelera3 = new HashMap<Pelicula, Horario>();
+        cartelera.put(pelicula9, horario);
+        cartelera.put(pelicula10, horario2);
+        cartelera.put(pelicula11, horario3);
+        cartelera.put(pelicula12, horario4);
+
+        Map<Pelicula, Horario> cartelera4 = new HashMap<Pelicula, Horario>();
+        cartelera.put(pelicula13, horario);
+        cartelera.put(pelicula14, horario2);
+        cartelera.put(pelicula15, horario3);
+        cartelera.put(pelicula16, horario4);
+
+        Map<Pelicula, Horario> cartelera5 = new HashMap<Pelicula, Horario>();
+        cartelera.put(pelicula17, horario);
+        cartelera.put(pelicula18, horario2);
+        cartelera.put(pelicula19, horario3);
+        cartelera.put(pelicula20, horario4);
+
+
         boolean[] arr = new boolean[28];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = false;
@@ -70,15 +112,51 @@ public class main implements Serializable{
         Asientos.put("Spiderman", arr.clone());
         Asientos.put("Superman", arr.clone());
 
+        Map<String, boolean[]>  Asientos2 = new HashMap<String, boolean[]>();
+
+        //fill Asientos with the movies names and the array of seats
+        Asientos.put("Matrix", arr.clone());
+        Asientos.put("Jhon Wick", arr.clone());
+        Asientos.put("Memento", arr.clone());
+        Asientos.put("Nemo", arr.clone());
+
+        Map<String, boolean[]>  Asientos3 = new HashMap<String, boolean[]>();
+
+        //fill Asientos with the movies names and the array of seats
+        Asientos.put("El Conjuro", arr.clone());
+        Asientos.put("El Paseo", arr.clone());
+        Asientos.put("Terminator", arr.clone());
+        Asientos.put("Troya", arr.clone());
+       
+        Map<String, boolean[]>  Asientos4 = new HashMap<String, boolean[]>();
+
+        //fill Asientos with the movies names and the array of seats
+        Asientos.put("Madagascar", arr.clone());
+        Asientos.put("Los Pitufos", arr.clone());
+        Asientos.put("Baki", arr.clone());
+        Asientos.put("Your Name", arr.clone());
+
+        Map<String, boolean[]>  Asientos5 = new HashMap<String, boolean[]>();
+
+        //fill Asientos with the movies names and the array of seats
+        Asientos.put("Taxi Driver", arr.clone());
+        Asientos.put("El Transportador", arr.clone());
+        Asientos.put("Transformers", arr.clone());
+        Asientos.put("Interestelar", arr.clone());
+
         //Create Sala
         Sala sala = new Sala("Sala", Asientos, cartelera);
+        Sala sala2 = new Sala("Sala", Asientos2, cartelera2);
+        Sala sala3 = new Sala("Sala", Asientos3, cartelera3);
+        Sala sala4 = new Sala("Sala", Asientos4, cartelera4);
+        Sala sala5 = new Sala("Sala", Asientos5, cartelera5);
         
         //Create Dia
         Dia dia = new Dia("Lunes", sala);
-        Dia dia2 = new Dia("Martes", sala);
-        Dia dia3 = new Dia("Miercoles", sala);
-        Dia dia4 = new Dia("Jueves", sala);
-        Dia dia5 = new Dia("Viernes", sala);
+        Dia dia2 = new Dia("Martes", sala2);
+        Dia dia3 = new Dia("Miercoles", sala3);
+        Dia dia4 = new Dia("Jueves", sala4);
+        Dia dia5 = new Dia("Viernes", sala5);
 
         ArrayList<Dia> dias = new ArrayList<Dia>();
         dias.add(dia);
