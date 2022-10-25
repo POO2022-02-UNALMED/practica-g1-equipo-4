@@ -18,10 +18,9 @@ public class Usuario implements Serializable {
 	private HashMap<String,Integer> Carrito = new HashMap<String,Integer>();
 	private static int cantidadUsuarios;
 
-	
-	
 	public static int getCantidadUsuarios() {
 		return cantidadUsuarios;
+		
 	}
 	
 	public Usuario() {this("Sin nombre", 0, 0);}

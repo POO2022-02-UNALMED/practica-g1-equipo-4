@@ -37,7 +37,6 @@ public class Horario implements Serializable{
 	}
 	
 	public void setHoraFinal(String HoraFinal) {
-		
 		this.HoraFinal = HoraFinal;
 		
 	}    

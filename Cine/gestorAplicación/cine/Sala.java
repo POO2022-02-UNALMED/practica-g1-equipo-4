@@ -13,17 +13,12 @@ public class Sala implements Serializable {
 	
     private String nombre; // nombre de la sala, por ejemplo Sala 1
     // lista de asientos ocupados
-    
     private Map<Pelicula, Horario> cartelera = new HashMap<Pelicula, Horario>(); // Cartelera de la sala | Pelicula, Horario
-    
     private Map<String, boolean[] > Asientos = new HashMap<String, boolean[]>();
 
-    public Sala(String nombre, Map<String, boolean[]> Asientos, Map<Pelicula, Horario> cartelera) {
-    	
+    public Sala (String nombre, Map<String, boolean[]> Asientos, Map<Pelicula, Horario> cartelera) {
         this.nombre = nombre;
-        
         this.Asientos = Asientos;
-        
         this.cartelera = cartelera;
 
     }
@@ -59,7 +54,6 @@ public class Sala implements Serializable {
     }
 
     public void setAsientos(Map<String, boolean[] > Asientos) {
-    	
         this.Asientos = Asientos;
         
     }

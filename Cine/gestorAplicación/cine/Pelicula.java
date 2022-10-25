@@ -12,9 +12,7 @@ public class Pelicula implements Serializable {
 	
 
 	public Pelicula(String nombre, String genero) {
-		
 		this.nombre = nombre;
-		
 		this.genero = genero;
 		
 	}

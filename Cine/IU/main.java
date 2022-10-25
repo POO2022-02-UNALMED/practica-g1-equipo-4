@@ -487,7 +487,6 @@ public class main implements Serializable{
             System.out.println("1. Si 2. No");
             int opcion = sc.nextInt();
             if (opcion == 1){
-
                 System.out.println("Estas son las boletas que tiene compradas: ");
                 for (int i = 0; i < usuario.getBoletas().size(); i++) {
                     System.out.println((i+1)+". "+usuario.getBoletas().get(i).getPelicula());
@@ -512,6 +511,7 @@ public class main implements Serializable{
                         }
                     }
                 }
+
 
             }else{
                 System.out.println("Gracias por su visita");

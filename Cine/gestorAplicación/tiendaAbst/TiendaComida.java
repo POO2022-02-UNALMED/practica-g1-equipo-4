@@ -93,8 +93,6 @@ public class TiendaComida extends Tienda implements Serializable{
             
     }
 
-    
-
     @Override
     public void saludo() {
         System.out.println("Bienvenido a la tienda de comida del cine UNAL");
