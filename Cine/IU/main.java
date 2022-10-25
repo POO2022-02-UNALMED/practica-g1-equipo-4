@@ -546,15 +546,21 @@ public class main implements Serializable{
                                 }
                                 usuario.getBoletas().get(i).setAsiento(nuevosAsientos);
 
-
-                                }
-
+                            }
+                            
+                        }
+                        ArrayList<Boleta> boletas2 = new ArrayList<Boleta>();
+                        for (int j = 0; j < usuario.getBoletas().size(); j++) {
+                            if (usuario.getBoletas().get(j).getAsiento().length != 0){
+                                boletas2.add(usuario.getBoletas().get(j));
                             }
                         }
+                        usuario.setBoletas(boletas2);
+                    }
                                 
-                    }System.out.println("Lamentamos tu partida, esperamos que vuelvas a elegirnos para tu proxima experiencia");
+                }System.out.println("Lamentamos tu partida, esperamos que vuelvas a elegirnos para tu proxima experiencia");
    
-             }else{System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
+            }else{System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
         }
      }
         
