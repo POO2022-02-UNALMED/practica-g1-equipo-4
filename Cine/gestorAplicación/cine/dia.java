@@ -1,6 +1,10 @@
 package gestorAplicación.cine;
 
-public class Dia {
+import java.io.Serializable;
+
+public class Dia implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
  
     private String nombreDelDiaDeLaSemana;
     private Sala sala;
@@ -26,5 +30,10 @@ public class Dia {
     public void setSala(Sala sala){
         this.sala=sala;
     }
+
+    
+
+
+
 
 }
