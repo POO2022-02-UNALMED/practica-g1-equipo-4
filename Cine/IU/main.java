@@ -1,6 +1,7 @@
 package IU;
 
 import gestorAplicación.tiendaAbst.*;
+
 import gestorAplicación.cine.*;
 
 import java.io.Serializable;
@@ -10,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import baseDatos.Serializador;
+//import baseDatos.Serializador;
 
 import java.util.Map.Entry;
 
@@ -19,7 +20,7 @@ import java.util.Map.Entry;
 
 public class main implements Serializable{
 	
-	private static final long serialVersionUID = 1L;
+//	private static final long serialVersionUID = 1L;
 	
     public static void main(String[] args) {
     	
@@ -449,7 +450,7 @@ public class main implements Serializable{
     private static void salirDelSistema(Usuario usuario) {
     	System.out.println("Vuelva Pronto");
     	//aqui iria la funcion del serializador
-    	Serializador.serializar(usuario);
+    	//Serializador.serializar(usuario);
     	System.exit(0);
     }
 

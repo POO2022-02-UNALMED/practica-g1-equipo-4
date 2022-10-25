@@ -2,7 +2,7 @@ package gestorAplicación.cine;
 
 import java.util.ArrayList;
 
-import baseDatos.Deserializador;
+//import baseDatos.Deserializador;
 
 import java.io.*;
 
@@ -29,7 +29,7 @@ public class Usuario implements Serializable {
 		
 		this("Sin nombre", 0, 0);
 		
-		Deserializador.deserializar(this);	
+	//	Deserializador.deserializar(this);	
 	
 	}
 		

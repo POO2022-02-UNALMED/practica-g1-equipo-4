@@ -1,4 +1,4 @@
-package baseDatos;
+/*package baseDatos;
 
 import gestorAplicación.cine.*;
 import gestorAplicación.tiendaAbst.*;
@@ -12,7 +12,7 @@ public class Deserializador {
     /**
      * Carga las listas de objetos que hay almacenados
      */
-    public static void deserializar(Usuario usuario){
+/*   public static void deserializar(Usuario usuario){
         File[] docs = rutaTemp.listFiles();
         FileInputStream fis;
         ObjectInputStream ois;
@@ -34,3 +34,4 @@ public class Deserializador {
         }
     }
 }
+*/
