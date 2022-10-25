@@ -29,21 +29,21 @@ public class main implements Serializable{
         TiendaComida tiendaComida = new TiendaComida("Tienda de comida");
         tiendaComida.setNombre("Comida Unal");
         //Add a new product and prices to the store Comida Unal
-        tiendaComida.agregarMixto("Papas", 10, 5000);
-        tiendaComida.agregarMixto("Papas con queso", 10, 6000);
-        tiendaComida.agregarMixto("Papas con queso y tocino", 10, 7000);
-        tiendaComida.agregarMixto("Crispetas", 10, 8000);
-        tiendaComida.agregarMixto("Gaseosa", 10, 9000);
-        tiendaComida.agregarMixto("Agua", 10, 1000);
-        tiendaComida.agregarMixto("Perro Caliente", 10, 20000);
+        tiendaComida.agregarMixto("Papas", 1000, 5000);
+        tiendaComida.agregarMixto("Papas con queso", 1000, 6000);
+        tiendaComida.agregarMixto("Papas con queso y tocino", 1000, 7000);
+        tiendaComida.agregarMixto("Crispetas", 1000, 8000);
+        tiendaComida.agregarMixto("Gaseosa", 1000, 9000);
+        tiendaComida.agregarMixto("Agua", 1000, 1000);
+        tiendaComida.agregarMixto("Perro Caliente", 1000, 20000);
 
         //Create a new TiendaUN object and set its name
         TiendaUN tiendaUN = new TiendaUN("Tienda UN");
         //Add a new product to the store
-        tiendaUN.agregarMixto("Camisetas", 10, 15000);
-        tiendaUN.agregarMixto("Pantalones", 10, 15000);
-        tiendaUN.agregarMixto("Termos", 10, 3000);
-        tiendaUN.agregarMixto("Gorras", 10, 5000);
+        tiendaUN.agregarMixto("Camisetas", 1000, 15000);
+        tiendaUN.agregarMixto("Pantalones", 1000, 15000);
+        tiendaUN.agregarMixto("Termos", 1000, 3000);
+        tiendaUN.agregarMixto("Gorras", 1000, 5000);
         
         //Create Peliculas
         Pelicula pelicula = new Pelicula("Avengers", "Accion" );
