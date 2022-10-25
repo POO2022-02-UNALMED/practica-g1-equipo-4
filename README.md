@@ -9,11 +9,12 @@ Prácitca 1: Asignatura POO Universidad Nacional de Colombia
 * Juan Jose Marín Álvarez     // jumarina@unal.edu.co
 * Julián Orrego Martínez      // jorrego@unal.edu.co
 
-# `Memoria escrita`:
+### `Memoria escrita:`
 [Memoria escrita](https://docs.google.com/document/d/11Qf4zBuOvO5GLZcEMh0-uA8zlVj0IfINa72QW3mNZdA/)
 
-# `Diagrama de Clases`:
+
+### `Diagrama de Clases:`
 [Diagrama de clases](https://app.genmymodel.com/editor/edit/_tl5a8E9IEe2ck8ytUMEi6A#)
 
+![Diagrama_de_clases_final](https://user-images.githubusercontent.com/70676228/197688682-6bbf6345-9c62-41bb-9a14-abea5565865f.jpeg)
 
-[Diagrama prototipo.pdf](https://github.com/POO2022-02-UNALMED/practica-g1-equipo-4/files/9849171/Diagrama.prototipo.pdf)
