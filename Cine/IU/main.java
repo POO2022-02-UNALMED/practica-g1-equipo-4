@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
+import baseDatos.Serializador;
+
 import java.util.Map.Entry;
 
 // La funcionalidad de reembolso que tome la fecha del reembolso y la transforme al día de la semana correspondiente y lo
@@ -442,6 +445,7 @@ public class main implements Serializable{
     private static void salirDelSistema(Usuario usuario) {
     	System.out.println("Vuelva Pronto");
     	//aqui iria la funcion del serializador
+    	Serializador.serializar();
     	System.exit(0);
     }
 

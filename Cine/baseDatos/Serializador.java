@@ -2,20 +2,28 @@ package baseDatos;
 
 import java.io.*;
 
-import IU.main;
+import gestorAplicación.cine.*;
 
-public class Serializador {{
-	
-	try {
+import IU.*;
+
+public class Serializador {
 		
-		ObjectOutputStream guardandoDatos = new ObjectOutputStream(new FileOutputStream("Cine/baseDatos/temp/usuario.txt"));
+	public static void serializar() {
 		
-		//guardandoDatos.writeObject(usuario);
-		
-		guardandoDatos.close();
-		
-	}catch(Exception e) {
+		try {
+            FileOutputStream f = new FileOutputStream(new File(System.getProperty("user.dir")+"\\Cine\\baseDatos\\temp\\Usuario.txt"));
+            ObjectOutputStream o = new ObjectOutputStream(f);
+            o.writeObject(null);
+            o.close();
+            f.close();
+        				
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
-}
 }
