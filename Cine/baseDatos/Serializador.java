@@ -2,20 +2,48 @@ package baseDatos;
 
 import java.io.*;
 
-import IU.main;
+import gestorAplicación.cine.*;
 
-public class Serializador {{
-	
-	try {
+import IU.*;
+
+public class Serializador {
+
+		private static File ruta = new File("Cine\\baseDatos\\temp"); //definimos la ruta de los archivos donde se serializaran los objetos
 		
-		ObjectOutputStream guardandoDatos = new ObjectOutputStream(new FileOutputStream("Cine/baseDatos/temp/usuario.txt"));
-		
-		//guardandoDatos.writeObject(usuario);
-		
-		guardandoDatos.close();
-		
-	}catch(Exception e) {
-		
-	}
-}
-}
+		public static void serializar() {
+			
+			FileOutputStream fos;
+			
+			ObjectOutputStream oos;
+			
+			File[] docs = ruta.listFiles();
+			
+			PrintWriter pw;
+			
+			for (File file: docs) //Iteramos en los archivos que hallan en la ruta para vaciarlos creando un printwiter
+			{
+				try
+				{
+					pw = new PrintWriter(file);
+				}
+				catch (FileNotFoundException e)
+				{
+					e.printStackTrace();
+				}
+			}
+			
+			for(File file: docs) {
+				if (file.getAbsolutePath().contains("Usuario")) {
+					try {
+						fos = new FileOutputStream(file);
+						oos = new ObjectOutputStream(fos);
+						oos.writeObject(null);
+						}catch (FileNotFoundException e) {
+							e.printStackTrace();
+						}catch (IOException e) {
+							e.printStackTrace();
+						}
+				}
+			}
+		}
+}			

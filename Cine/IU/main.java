@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
+import baseDatos.Serializador;
+
 import java.util.Map.Entry;
 
 // La funcionalidad de reembolso que tome la fecha del reembolso y la transforme al día de la semana correspondiente y lo
@@ -184,9 +187,9 @@ public class main implements Serializable{
             System.out.println("---- Bienvenido al cine unal----");
             System.out.println("¿Qué operación desea realizar? (Ingrese el número de la operación)");
             System.out.println("1. Comprar Boleta");
-            System.out.println("2. Comprar comida");
-            System.out.println("3. Comprar mercancia");
-            System.out.println("4. Hacerse miembro VIP");
+            System.out.println("2. Comprar Comida");
+            System.out.println("3. Comprar Mercancia");
+            System.out.println("4. Hacerse Miembro VIP");
             System.out.println("5. Reembolso");
             System.out.println("6. Terminar");
             System.out.println("Por favor escoja una opción:");
@@ -211,7 +214,7 @@ public class main implements Serializable{
                     reembolso(usuario);
                     break;
                 case 6:
-                    System.out.println("Gracias por su visita");
+                    System.out.println("¡Gracias por su visita!");
                     salirDelSistema(usuario);
                     break;
                 default:
@@ -231,9 +234,9 @@ public class main implements Serializable{
             i++;
         }
         
-        System.out.println("ingrese el nombre del producto que desea comprar: ");
+        System.out.println("Ingrese el nombre del producto que desea comprar: ");
         String producto = sc.nextLine();
-        System.out.println("ingrese la cantidad que desea comprar: ");
+        System.out.println("Ingrese la cantidad que desea comprar: ");
         int cantidad = sc.nextInt();
 
         int saldo = usuario.getSaldo();       
@@ -243,8 +246,22 @@ public class main implements Serializable{
             int total = precio * cantidad;
             if (saldo >= total) {
                 tiendaComida.venderProducto(producto, cantidad, usuario);
+                System.out.println("Compra exitosa");
+                usuario.agregarCarrito(producto, cantidad);
+                System.out.println("Factura: ");
+                System.out.println("Nombre: "+usuario.getNombre());
+                System.out.println("Cedula: "+usuario.getCedula());
+                System.out.println("Productos: ");
+                System.out.println("Producto - Cantidad - Precio");
+                for (Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
+                    System.out.println(entry.getKey() + " - " + entry.getValue() + " - " + tiendaComida.getPrecio(entry.getKey()));
+                }
+                System.out.println("Su saldo actual es: "+usuario.getSaldo());
+
+
             } else {
                 System.out.println("Saldo insuficiente");
+                
             }
         } else {
             System.out.println("Producto no disponible");
@@ -274,6 +291,19 @@ public class main implements Serializable{
             int total = precio * cantidad;
             if (saldo >= total) {
                 tienda.venderProducto(producto, cantidad, usuario);
+                System.out.println("¡Compra fue exitosa!");
+                usuario.agregarCarrito(producto, cantidad);
+                System.out.println("Factura: ");
+                System.out.println("Nombre: "+usuario.getNombre());
+                System.out.println("Cedula: "+usuario.getCedula());
+                System.out.println("Productos: ");
+                System.out.println("Producto - Cantidad - Precio");
+                for (Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
+                    System.out.println(entry.getKey() + " - " + entry.getValue() + " - " + tienda.getPrecio(entry.getKey()));
+                }
+                
+                System.out.println("Su saldo actual es: "+usuario.getSaldo());
+            
             } else {
                 System.out.println("Saldo insuficiente");
             }
@@ -282,46 +312,11 @@ public class main implements Serializable{
         }
     }
 
-    // public static void comprar (Tienda tienda, Usuario usuario) {
-    //     Scanner sc = new Scanner(System.in);
-    //     System.out.println("Ofrecemos los siguientes productos:");
-    //     int i = 1;
-    //     for (Entry<String, Integer> entry : tienda.getInventario().entrySet()) {
-    //         System.out.println(i+". "+entry.getKey() + " - $: " + entry.getValue());
-    //         i++;
-    //     }
-        
-    //     System.out.println("ingrese el nombre del producto que desea comprar: ");
-    //     String producto = sc.nextLine();
-    //     System.out.println("ingrese la cantidad que desea comprar: ");
-    //     int cantidad = sc.nextInt();
-    //     tienda.venderProducto(producto, cantidad, usuario);
-    //     usuario.agregarCarrito(producto, cantidad);
-    //     System.out.println("Desea comprar algo mas? (1. Si, 2. No)");
-    //     int opcion2 = sc.nextInt();
-    //     if (opcion2 == 1) {
-    //         comprar(tienda, usuario);
-    //     } else {
-    //         System.out.println("Factura: ");
-    //         System.out.println("Nombre: "+usuario.getNombre());
-    //         System.out.println("Cedula: "+usuario.getCedula());
-    //         System.out.println("Productos: ");
-    //         System.out.println("Producto - Cantidad - Precio");
-    //         for (Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
-    //             System.out.println(entry.getKey() + " - " + entry.getValue() + " - " + tienda.getPrecio(entry.getKey()));
-    //         }
-            
-    //         System.out.println("Su saldo actual es: "+usuario.getSaldo());
-            
-    //        
-    //     }
-    // }
-
 
     public static void comidaAsiento (Usuario usuario, TiendaComida tiendaComida){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Hola! Esta nueva opción te permite encargar comida facilmente y te será traída"+
-        " durante la función por uno de nuestros repartidores.");
+        System.out.println("¡Hola, Esta nueva opción te permite encargar comida facilmente y te será llevada a tu asiento"+
+        " durante la función por uno de nuestros repartidores!");
         System.out.println("Solo debes ingresar el nombre del producto que deseas y la cantidad");
         System.out.println("¿Qué producto deseas?");
         String producto = sc.next();
@@ -346,12 +341,12 @@ public class main implements Serializable{
         boolean vip = usuario.verificarMembresia();
         Scanner sc = new Scanner (System.in);
         int precio = 0;
-        System.out.println("Bienvenido a la compra de entradas");
+        System.out.println("Bienvenido a la compra de boletas");
         
         System.out.println("¿Cúantas entradas desea comprar?");
         int cantidad = sc.nextInt();
         
-        System.out.println("Ingrese el número del día de la semana que desea comprar la entrada?");
+        System.out.println("Ingrese el número del día de la semana que desea comprar");
         System.out.println("1. Lunes");
         System.out.println("2. Martes");
         System.out.println("3. Miercoles");
@@ -404,22 +399,22 @@ public class main implements Serializable{
             } else {
                 precio = 10000;
             }
-            System.out.println("El precio de la entrada es: "+precio);
-            System.out.println("¿Desea comprar la entrada? (1. Si, 2. No)");
+            System.out.println("El precio de la boleta es: "+precio);
+            System.out.println("¿Desea comprar la boleta? (1. Si, 2. No)");
             int opcion = sc.nextInt();
             if (opcion == 1) {
                 if (usuario.getSaldo() >= precio) {
                     usuario.setSaldo(usuario.getSaldo() - precio);
                     System.out.println("Su saldo actual es: "+usuario.getSaldo());
-                    System.out.println("Gracias por su compra");
+                    System.out.println("¡Gracias por su compra!");
                     asientosComprados[exitos] = asiento;
                     exitos++;
                 } else {
-                    System.out.println("Lo sentimos, no tiene suficiente saldo para comprar la entrada");
+                    System.out.println("Lo sentimos, no tiene suficiente saldo para comprar la entrada 〒-〒");
                     asientos[asiento-1] = false;
                 }
             } else {
-                System.out.println("Gracias por su visita");
+                System.out.println("¡Gracias por su visita!");
                 asientos[asiento-1] = false;
             }
         } else {
@@ -442,7 +437,7 @@ public class main implements Serializable{
         System.out.println("Su saldo actual es: "+usuario.getSaldo());    
         Boleta boleta = new Boleta(usuario, pelicula, diaTemp.getSala() , asientosComprados, diaTemp.getSala().getCartelera().get(pelicula), diaTemp.getSala().getNombre());
         usuario.addBoleta(boleta);
-        System.out.println("Gracias por su compra\n Volviendo al menú principal");
+        System.out.println("¡Gracias por su compra!\n Volviendo al menú principal");
         
 
     }
@@ -451,6 +446,7 @@ public class main implements Serializable{
     private static void salirDelSistema(Usuario usuario) {
     	System.out.println("Vuelva Pronto");
     	//aqui iria la funcion del serializador
+    	Serializador.serializar();
     	System.exit(0);
     }
 
@@ -510,7 +506,7 @@ public class main implements Serializable{
                 }
                 System.out.println("Ingrese el NOMBRE de la pelicula que desea reembolsar");
                 String pelicula = sc.next();
-                System.out.println("Ingrese el numero del asiento que desea reembolsar");
+                System.out.println("Ingrese el número del asiento que desea reembolsar");
                 int asiento = sc.nextInt();
 
                 for (int i = 0; i < usuario.getBoletas().size(); i++) {
@@ -520,31 +516,23 @@ public class main implements Serializable{
                                 usuario.setSaldo(usuario.getSaldo() + devolucion);
                                 System.out.println("Se ha reembolsado el asiento: "+asiento);
                                 System.out.println("Su saldo actual es: "+usuario.getSaldo());
-                                boolean[] nuevo = new boolean[28];
-                                for (int q = 0; q < nuevo.length; q++) {
-                                    for (int h = 0; h < usuario.getBoletas().get(i).getAsiento().length; h++)
-                                        if (usuario.getBoletas().get(i).getAsiento()[h] == q && usuario.getBoletas().get(i).getAsiento()[j]!=q){
-                                            nuevo[q-1] = true;
-                                            System.out.println(usuario.getBoletas().get(i).getAsiento()[j]-1);
-                                        }else{
-                                            nuevo[q] = false;
-                                        }
-                                Map<String, boolean[]>  asientoextra = new HashMap<String, boolean[]>();
-                                asientoextra.put(pelicula, nuevo);    
-                                usuario.getBoletas().get(0).getSala().setAsientos(asientoextra);
-                                System.out.println("Lamentamos tu partida, esperamos que vuelvas a elegirnos para tu proxima experiencia");
-                                }
+                                usuario.getBoletas().remove(i);
                             }
                         }
                     }
                 }
+
+
+                
+
+            }else{
+                System.out.println("Gracias por su visita");
             }
         }
-    }      
+    }
+
+
 }
-
-
-
 
     
 

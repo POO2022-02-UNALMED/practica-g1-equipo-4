@@ -14,7 +14,8 @@ public class Boleta implements Serializable{
     private String dia;
     //attribute Asiento as an array of Integers
     private int[] asiento;
-    
+    public final static int precio = 10000;
+	
     public Boleta(Usuario usuario, String pelicula, Sala sala, int [] asiento, Horario horario, String dia) {
         this.usuario = usuario;
         this.pelicula = pelicula;
