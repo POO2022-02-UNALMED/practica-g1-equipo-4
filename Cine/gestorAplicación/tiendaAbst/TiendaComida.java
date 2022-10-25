@@ -1,7 +1,7 @@
 package gestorAplicación.tiendaAbst;
 
 
-
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import gestorAplicación.cine.Usuario;
