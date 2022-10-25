@@ -241,7 +241,7 @@ public class main implements Serializable{
 
         int saldo = usuario.getSaldo();       
         
-        if (tiendaComida.getInventario().containsKey(producto)) {
+        if ((cantidad <= tiendaComida.getInventario().get(producto)) {
             int precio = tiendaComida.getInventario().get(producto);
             int total = precio * cantidad;
             if (saldo >= total) {
@@ -286,7 +286,7 @@ public class main implements Serializable{
 
         int saldo = usuario.getSaldo();       
         
-        if (tienda.getInventario().containsKey(producto)) {
+        if (cantidad <= tiendaComida.getInventario().get(producto)) {
             int precio = tienda.getInventario().get(producto);
             int total = precio * cantidad;
             if (saldo >= total) {
