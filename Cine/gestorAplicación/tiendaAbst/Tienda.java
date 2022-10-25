@@ -1,15 +1,22 @@
 package gestorAplicación.tiendaAbst;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import gestorAplicación.cine.Usuario;
 
-public abstract class Tienda {
+public abstract class Tienda implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 
     protected String nombre;
+    
     protected Map<String, Integer> inventario = new HashMap<String, Integer >();
+    
     protected Map<String, Integer> productos = new HashMap<String, Integer >();
+    
     protected int repartidores = 3; 
+    
     abstract public void saludo();
 
     abstract public void venderProducto(String nombre, Integer cantidad, Usuario usuario);

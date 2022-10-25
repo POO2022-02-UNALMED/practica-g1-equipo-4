@@ -1,11 +1,14 @@
 package gestorAplicación.tiendaAbst;
 
-
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import gestorAplicación.cine.Usuario;
 
-public class TiendaComida extends Tienda{
+public class TiendaComida extends Tienda implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 
     public TiendaComida(String nombre) {
         super(nombre);
