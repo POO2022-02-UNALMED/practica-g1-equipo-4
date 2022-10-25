@@ -11,7 +11,7 @@ public class Usuario {
 		private int Saldo;
 		private ArrayList<Boleta> Boletas = new ArrayList<Boleta>();  
 		private HashMap<String,Integer> Carrito = new HashMap<String,Integer>();
-		private static ArrayList<Usuario> PrimeraVez= new ArrayList<Usuario>();
+		//private static ArrayList<Usuario> PrimeraVez= new ArrayList<Usuario>();
 		
 		public Usuario (String Nombre, int Cedula, int Saldo) {
 			this.Nombre = Nombre;

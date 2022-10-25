@@ -189,26 +189,6 @@ public class main {
         }while(opcion != 4);
     }
 
-    public static void comidaAsiento (Usuario usuario, TiendaComida tiendaComida){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Hola! Esta nueva opción te permite encargar comida facilmente y te será traída"+
-        " durante la función por uno de nuestros repartidores.");
-        System.out.println("Solo debes ingresar el nombre del producto que deseas y la cantidad");
-        System.out.println("¿Qué producto deseas?");
-        String producto = sc.next();
-        System.out.println("¿Cuántos deseas?");
-        int cantidad = sc.nextInt();
-        if (cantidad < tiendaComida.getInventario().get(producto)) {
-            System.out.println("Su pedido ha sido registrado, en unos minutos llegará a su asiento");
-            tiendaComida.getInventario().put(producto, tiendaComida.getInventario().get(producto) - cantidad);
-            usuario.agregarCarrito(producto, cantidad);
-            tiendaComida.agregarColaPedidos(usuario);
-
-        } else {
-            System.out.println("Lo sentimos, no tenemos suficiente producto en inventario");
-        }
-    }
-
     public static void comprar (Tienda tienda, Usuario usuario) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ofrecemos los siguientes productos:");
@@ -241,6 +221,27 @@ public class main {
             System.out.println("Su saldo actual es: "+usuario.getSaldo());
             
             menuTienda((TiendaComida) tienda, (TiendaUN) tienda, usuario);
+        }
+    }
+
+
+    public static void comidaAsiento (Usuario usuario, TiendaComida tiendaComida){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Hola! Esta nueva opción te permite encargar comida facilmente y te será traída"+
+        " durante la función por uno de nuestros repartidores.");
+        System.out.println("Solo debes ingresar el nombre del producto que deseas y la cantidad");
+        System.out.println("¿Qué producto deseas?");
+        String producto = sc.next();
+        System.out.println("¿Cuántos deseas?");
+        int cantidad = sc.nextInt();
+        if (cantidad < tiendaComida.getInventario().get(producto)) {
+            System.out.println("Su pedido ha sido registrado, en unos minutos llegará a su asiento");
+            tiendaComida.getInventario().put(producto, tiendaComida.getInventario().get(producto) - cantidad);
+            usuario.agregarCarrito(producto, cantidad);
+            tiendaComida.agregarColaPedidos(usuario);
+
+        } else {
+            System.out.println("Lo sentimos, no tenemos suficiente producto en inventario");
         }
     }
 
