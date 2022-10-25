@@ -242,8 +242,22 @@ public class main implements Serializable{
             int total = precio * cantidad;
             if (saldo >= total) {
                 tiendaComida.venderProducto(producto, cantidad, usuario);
+                System.out.println("Compra exitosa");
+                usuario.agregarCarrito(producto, cantidad);
+                System.out.println("Factura: ");
+                System.out.println("Nombre: "+usuario.getNombre());
+                System.out.println("Cedula: "+usuario.getCedula());
+                System.out.println("Productos: ");
+                System.out.println("Producto - Cantidad - Precio");
+                for (Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
+                    System.out.println(entry.getKey() + " - " + entry.getValue() + " - " + tiendaComida.getPrecio(entry.getKey()));
+                }
+                System.out.println("Su saldo actual es: "+usuario.getSaldo());
+
+
             } else {
                 System.out.println("Saldo insuficiente");
+                
             }
         } else {
             System.out.println("Producto no disponible");
@@ -273,6 +287,19 @@ public class main implements Serializable{
             int total = precio * cantidad;
             if (saldo >= total) {
                 tienda.venderProducto(producto, cantidad, usuario);
+                System.out.println("Compra exitosa");
+                usuario.agregarCarrito(producto, cantidad);
+                System.out.println("Factura: ");
+                System.out.println("Nombre: "+usuario.getNombre());
+                System.out.println("Cedula: "+usuario.getCedula());
+                System.out.println("Productos: ");
+                System.out.println("Producto - Cantidad - Precio");
+                for (Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
+                    System.out.println(entry.getKey() + " - " + entry.getValue() + " - " + tienda.getPrecio(entry.getKey()));
+                }
+                
+                System.out.println("Su saldo actual es: "+usuario.getSaldo());
+            
             } else {
                 System.out.println("Saldo insuficiente");
             }
@@ -280,41 +307,6 @@ public class main implements Serializable{
             System.out.println("Producto no disponible");
         }
     }
-
-    // public static void comprar (Tienda tienda, Usuario usuario) {
-    //     Scanner sc = new Scanner(System.in);
-    //     System.out.println("Ofrecemos los siguientes productos:");
-    //     int i = 1;
-    //     for (Entry<String, Integer> entry : tienda.getInventario().entrySet()) {
-    //         System.out.println(i+". "+entry.getKey() + " - $: " + entry.getValue());
-    //         i++;
-    //     }
-        
-    //     System.out.println("ingrese el nombre del producto que desea comprar: ");
-    //     String producto = sc.nextLine();
-    //     System.out.println("ingrese la cantidad que desea comprar: ");
-    //     int cantidad = sc.nextInt();
-    //     tienda.venderProducto(producto, cantidad, usuario);
-    //     usuario.agregarCarrito(producto, cantidad);
-    //     System.out.println("Desea comprar algo mas? (1. Si, 2. No)");
-    //     int opcion2 = sc.nextInt();
-    //     if (opcion2 == 1) {
-    //         comprar(tienda, usuario);
-    //     } else {
-    //         System.out.println("Factura: ");
-    //         System.out.println("Nombre: "+usuario.getNombre());
-    //         System.out.println("Cedula: "+usuario.getCedula());
-    //         System.out.println("Productos: ");
-    //         System.out.println("Producto - Cantidad - Precio");
-    //         for (Entry<String, Integer> entry : usuario.getCarrito().entrySet()) {
-    //             System.out.println(entry.getKey() + " - " + entry.getValue() + " - " + tienda.getPrecio(entry.getKey()));
-    //         }
-            
-    //         System.out.println("Su saldo actual es: "+usuario.getSaldo());
-            
-    //        
-    //     }
-    // }
 
 
     public static void comidaAsiento (Usuario usuario, TiendaComida tiendaComida){
