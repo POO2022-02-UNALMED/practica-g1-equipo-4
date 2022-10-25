@@ -186,9 +186,9 @@ public class main implements Serializable{
             System.out.println("---- Bienvenido al cine unal----");
             System.out.println("¿Qué operación desea realizar? (Ingrese el número de la operación)");
             System.out.println("1. Comprar Boleta");
-            System.out.println("2. Comprar comida");
-            System.out.println("3. Comprar mercancia");
-            System.out.println("4. Hacerse miembro VIP");
+            System.out.println("2. Comprar Comida");
+            System.out.println("3. Comprar Mercancia");
+            System.out.println("4. Hacerse Miembro VIP");
             System.out.println("5. Reembolso");
             System.out.println("6. Terminar");
             System.out.println("Por favor escoja una opción:");
