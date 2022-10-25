@@ -78,28 +78,28 @@ public class main implements Serializable{
         cartelera.put(pelicula4, horario4);
 
         Map<Pelicula, Horario> cartelera2 = new HashMap<Pelicula, Horario>();
-        cartelera.put(pelicula5, horario);
-        cartelera.put(pelicula6, horario2);
-        cartelera.put(pelicula7, horario3);
-        cartelera.put(pelicula8, horario4);
+        cartelera2.put(pelicula5, horario);
+        cartelera2.put(pelicula6, horario2);
+        cartelera2.put(pelicula7, horario3);
+        cartelera2.put(pelicula8, horario4);
 
         Map<Pelicula, Horario> cartelera3 = new HashMap<Pelicula, Horario>();
-        cartelera.put(pelicula9, horario);
-        cartelera.put(pelicula10, horario2);
-        cartelera.put(pelicula11, horario3);
-        cartelera.put(pelicula12, horario4);
+        cartelera3.put(pelicula9, horario);
+        cartelera3.put(pelicula10, horario2);
+        cartelera3.put(pelicula11, horario3);
+        cartelera3.put(pelicula12, horario4);
 
         Map<Pelicula, Horario> cartelera4 = new HashMap<Pelicula, Horario>();
-        cartelera.put(pelicula13, horario);
-        cartelera.put(pelicula14, horario2);
-        cartelera.put(pelicula15, horario3);
-        cartelera.put(pelicula16, horario4);
+        cartelera4.put(pelicula13, horario);
+        cartelera4.put(pelicula14, horario2);
+        cartelera4.put(pelicula15, horario3);
+        cartelera4.put(pelicula16, horario4);
 
         Map<Pelicula, Horario> cartelera5 = new HashMap<Pelicula, Horario>();
-        cartelera.put(pelicula17, horario);
-        cartelera.put(pelicula18, horario2);
-        cartelera.put(pelicula19, horario3);
-        cartelera.put(pelicula20, horario4);
+        cartelera5.put(pelicula17, horario);
+        cartelera5.put(pelicula18, horario2);
+        cartelera5.put(pelicula19, horario3);
+        cartelera5.put(pelicula20, horario4);
 
 
         boolean[] arr = new boolean[28];
@@ -118,34 +118,34 @@ public class main implements Serializable{
         Map<String, boolean[]>  Asientos2 = new HashMap<String, boolean[]>();
 
         //fill Asientos with the movies names and the array of seats
-        Asientos.put("Matrix", arr.clone());
-        Asientos.put("Jhon Wick", arr.clone());
-        Asientos.put("Memento", arr.clone());
-        Asientos.put("Nemo", arr.clone());
+        Asientos2.put("Matrix", arr.clone());
+        Asientos2.put("Jhon Wick", arr.clone());
+        Asientos2.put("Memento", arr.clone());
+        Asientos2.put("Nemo", arr.clone());
 
         Map<String, boolean[]>  Asientos3 = new HashMap<String, boolean[]>();
 
         //fill Asientos with the movies names and the array of seats
-        Asientos.put("El Conjuro", arr.clone());
-        Asientos.put("El Paseo", arr.clone());
-        Asientos.put("Terminator", arr.clone());
-        Asientos.put("Troya", arr.clone());
+        Asientos3.put("El Conjuro", arr.clone());
+        Asientos3.put("El Paseo", arr.clone());
+        Asientos3.put("Terminator", arr.clone());
+        Asientos3.put("Troya", arr.clone());
        
         Map<String, boolean[]>  Asientos4 = new HashMap<String, boolean[]>();
 
         //fill Asientos with the movies names and the array of seats
-        Asientos.put("Madagascar", arr.clone());
-        Asientos.put("Los Pitufos", arr.clone());
-        Asientos.put("Baki", arr.clone());
-        Asientos.put("Your Name", arr.clone());
+        Asientos4.put("Madagascar", arr.clone());
+        Asientos4.put("Los Pitufos", arr.clone());
+        Asientos4.put("Baki", arr.clone());
+        Asientos4.put("Your Name", arr.clone());
 
         Map<String, boolean[]>  Asientos5 = new HashMap<String, boolean[]>();
 
         //fill Asientos with the movies names and the array of seats
-        Asientos.put("Taxi Driver", arr.clone());
-        Asientos.put("El Transportador", arr.clone());
-        Asientos.put("Transformers", arr.clone());
-        Asientos.put("Interestelar", arr.clone());
+        Asientos5.put("Taxi Driver", arr.clone());
+        Asientos5.put("El Transportador", arr.clone());
+        Asientos5.put("Transformers", arr.clone());
+        Asientos5.put("Interestelar", arr.clone());
 
         //Create Sala
         Sala sala = new Sala("Sala", Asientos, cartelera);
@@ -171,6 +171,7 @@ public class main implements Serializable{
         
         
     }
+    
 
     //Create a main menu for the user
     public static void menu(Sala sala, Usuario usuario, TiendaComida tiendaComida, TiendaUN tiendaUN, ArrayList<Dia> dias) {
@@ -477,6 +478,13 @@ public class main implements Serializable{
 	}
 
     private static void reembolso(Usuario usuario){
+        boolean vip = usuario.verificarMembresia();
+        int devolucion;
+        if (vip) {
+            devolucion= (int) (10000 - 10000*0.40);
+        } else {
+            devolucion= 10000;
+        }
         if (usuario.getBoletas().isEmpty()){
             System.out.println("No tiene boletas compradas");
         }else{
@@ -503,8 +511,9 @@ public class main implements Serializable{
                 for (int i = 0; i < usuario.getBoletas().size(); i++) {
                     if (usuario.getBoletas().get(i).getPelicula().equals(pelicula)){
                         for (int j = 0; j < usuario.getBoletas().get(i).getAsiento().length; j++) {
-                            if (usuario.getBoletas().get(i).getAsiento()[j] == asiento){
-                                System.out.println("Se ha reembolsado la boleta");
+                            if (usuario.getBoletas().get(i).getAsiento()[j] == asiento){          
+                                usuario.setSaldo(usuario.getSaldo() + devolucion);
+                                System.out.println("Se ha reembolsado el asiento: "+asiento);
                                 System.out.println("Su saldo actual es: "+usuario.getSaldo());
                                 usuario.getBoletas().remove(i);
                             }
@@ -521,5 +530,6 @@ public class main implements Serializable{
 
 
 }
+
     
 
