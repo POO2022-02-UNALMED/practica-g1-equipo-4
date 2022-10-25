@@ -16,6 +16,9 @@ public class Sala implements Serializable {
     private Map<Pelicula, Horario> cartelera = new HashMap<Pelicula, Horario>(); // Cartelera de la sala | Pelicula, Horario
     private Map<String, boolean[] > Asientos = new HashMap<String, boolean[]>();
 
+    public Sala () {
+        this("Sala Unal", Asientos, cartelera);
+    }
     public Sala (String nombre, Map<String, boolean[]> Asientos, Map<Pelicula, Horario> cartelera) {
         this.nombre = nombre;
         this.Asientos = Asientos;
