@@ -402,7 +402,7 @@ public class main implements Serializable{
                 if (usuario.getSaldo() >= precio) {
                     usuario.setSaldo(usuario.getSaldo() - precio);
                     System.out.println("Su saldo actual es: "+usuario.getSaldo());
-                    System.out.println("Gracias por su compra");
+                    System.out.println("¡Gracias por su compra!);
                     asientosComprados[exitos] = asiento;
                     exitos++;
                 } else {
