@@ -18,8 +18,11 @@ import java.util.Map.Entry;
 // compare con el día en el que se presenta la pélcula.
 
 public class main implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
     public static void main(String[] args) {
-
+    	
         Usuario usuario = new Usuario("Juan", 1152452 , 100000);
         //Create a new TiendaComida object and set its name
         TiendaComida tiendaComida = new TiendaComida("Tienda de comida");
