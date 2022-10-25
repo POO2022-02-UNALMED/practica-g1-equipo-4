@@ -1,7 +1,7 @@
 package gestorAplicación.tiendaAbst;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Map;
 import gestorAplicación.cine.Usuario;
@@ -22,7 +22,12 @@ public class TiendaComida extends Tienda implements Serializable{
     public void venderProducto(String nombre, Integer cantidad, Usuario usuario) {
         if (inventario.get(nombre) >= cantidad) {
             inventario.put(nombre, inventario.get(nombre) - cantidad);
-            usuario.setSaldo(usuario.getSaldo() - (cantidad * inventario.get(nombre)));
+            if (usuario.verificarMembresia()) {
+                usuario.setSaldo(usuario.getSaldo() - (int)((cantidad * inventario.get(nombre))*0.40) );
+            }
+            else {
+                usuario.setSaldo(usuario.getSaldo() - (cantidad * inventario.get(nombre)));
+            }
         }
         
     }

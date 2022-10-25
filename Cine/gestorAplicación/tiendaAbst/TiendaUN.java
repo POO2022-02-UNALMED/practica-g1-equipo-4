@@ -22,9 +22,13 @@ public class TiendaUN extends Tienda implements Serializable{
     public void venderProducto(String nombre, Integer cantidad, Usuario usuario) {
         if (inventario.get(nombre) >= cantidad) {
             inventario.put(nombre, inventario.get(nombre) - cantidad);
-            usuario.setSaldo(usuario.getSaldo() - (cantidad * inventario.get(nombre)));
-            
-        }   
+            if (usuario.verificarMembresia()) {
+                usuario.setSaldo(usuario.getSaldo() - (int)((cantidad * inventario.get(nombre))*0.40) );
+            }
+            else {
+                usuario.setSaldo(usuario.getSaldo() - (cantidad * inventario.get(nombre)));
+            }
+        }
     }
 
     public Map<String, Integer> getInventario() {

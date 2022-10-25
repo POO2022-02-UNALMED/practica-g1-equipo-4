@@ -201,7 +201,7 @@ public class main implements Serializable{
                     comprarComida(tiendaComida, usuario);
                     break;
                 case 3: 
-                    //menuTienda(tiendaComida, tiendaUN, usuario);
+                    comprarMercancia(tiendaUN, usuario);
                     break;
                 case 4:
                     VIP(tiendaComida, tiendaUN, usuario);
@@ -234,17 +234,51 @@ public class main implements Serializable{
         String producto = sc.nextLine();
         System.out.println("ingrese la cantidad que desea comprar: ");
         int cantidad = sc.nextInt();
-        tiendaComida.venderProducto(producto, cantidad, usuario);
-        usuario.agregarCarrito(producto, cantidad);
-        System.out.println("Desea comprar algo mas? (1. Si, 2. No)");
-        int opcion2 = sc.nextInt();
-        if (opcion2 == 1) {
-            comprarComida(tiendaComida, usuario);
-        } else {
-            System.out.println("Gracias por su compra");
-        }
-                 
+
+        int saldo = usuario.getSaldo();       
         
+        if (tiendaComida.getInventario().containsKey(producto)) {
+            int precio = tiendaComida.getInventario().get(producto);
+            int total = precio * cantidad;
+            if (saldo >= total) {
+                tiendaComida.venderProducto(producto, cantidad, usuario);
+            } else {
+                System.out.println("Saldo insuficiente");
+            }
+        } else {
+            System.out.println("Producto no disponible");
+        }
+        
+    }
+
+    public static void  comprarMercancia(TiendaUN tienda, Usuario usuario ){
+        tienda.saludo();        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ofrecemos los siguientes productos:");
+        int i = 1;
+        for (Entry<String, Integer> entry : tienda.getInventario().entrySet()) {
+            System.out.println(i+". "+entry.getKey() + " - $: " + entry.getValue());
+            i++;
+        }
+        
+        System.out.println("ingrese el nombre del producto que desea comprar: ");
+        String producto = sc.nextLine();
+        System.out.println("ingrese la cantidad que desea comprar: ");
+        int cantidad = sc.nextInt();
+
+        int saldo = usuario.getSaldo();       
+        
+        if (tienda.getInventario().containsKey(producto)) {
+            int precio = tienda.getInventario().get(producto);
+            int total = precio * cantidad;
+            if (saldo >= total) {
+                tienda.venderProducto(producto, cantidad, usuario);
+            } else {
+                System.out.println("Saldo insuficiente");
+            }
+        } else {
+            System.out.println("Producto no disponible");
+        }
     }
 
     // public static void comprar (Tienda tienda, Usuario usuario) {
