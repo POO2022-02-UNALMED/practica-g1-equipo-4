@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import gestorAplicación.cine.Usuario;
 
-public class TiendaComida extends Tienda implements Serializable{
+public class TiendaComida extends TiendaUN implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
