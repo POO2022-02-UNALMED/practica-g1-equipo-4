@@ -1,6 +1,5 @@
 package gestorAplicación.cine;
 
-
 public class Dia {
  
     private String nombreDelDiaDeLaSemana;
@@ -27,10 +26,5 @@ public class Dia {
     public void setSala(Sala sala){
         this.sala=sala;
     }
-
-    
-
-
-
 
 }
