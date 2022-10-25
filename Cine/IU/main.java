@@ -454,13 +454,13 @@ public class main implements Serializable{
     	System.exit(0);
     }
 
-    private static void VIP(TiendaComida tiendaComida, TiendaUN tiendaUN, Usuario usuario) {
+    private static void VIP(TiendaComida tiendaComida, TiendaUN tienda, Usuario usuario) {
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Esta es la oportunidad para que pueda vivir una experiencia mejorada siendo VIP");
 	System.out.println("Estos son los beneficios de volverse cliente VIP");
         System.out.println("Descuentos en la tienda UNAL");
         System.out.println("\t Cliente regular\t Cliente VIP");
-        for (Entry<String, Integer> entry : tiendaUN.getInventario().entrySet()) {
+        for (Entry<String, Integer> entry : tienda.getInventario().entrySet()) {
             System.out.println(entry.getKey()+"\t"+ entry.getValue()+"\t" + (entry.getValue()*0.7 ));}
         System.out.println("Descuentos en comida");
         System.out.println("\t Cliente regular\t Cliente VIP");
