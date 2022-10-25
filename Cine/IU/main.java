@@ -36,10 +36,10 @@ public class main implements Serializable{
         //Create a new TiendaUN object and set its name
         TiendaUN tiendaUN = new TiendaUN("Tienda UN");
         //Add a new product to the store
-        tiendaUN.agregarMixto("Camisetas", 10, 15);
-        tiendaUN.agregarMixto("Pantalones", 10, 15);
-        tiendaUN.agregarMixto("Termos", 10, 15);
-        tiendaUN.agregarMixto("Gorras", 10, 15);
+        tiendaUN.agregarMixto("Camisetas", 10, 1500);
+        tiendaUN.agregarMixto("Pantalones", 10, 1500);
+        tiendaUN.agregarMixto("Termos", 10, 1500);
+        tiendaUN.agregarMixto("Gorras", 10, 3000);
         
         //Create Peliculas
         Pelicula pelicula = new Pelicula("Avengers", "Accion" );
@@ -241,7 +241,7 @@ public class main implements Serializable{
 
         int saldo = usuario.getSaldo();       
         
-        if ((cantidad <= tiendaComida.getInventario().get(producto)) {
+        if (cantidad <= tiendaComida.getInventario().get(producto)) {
             int precio = tiendaComida.getInventario().get(producto);
             int total = precio * cantidad;
             if (saldo >= total) {
@@ -286,12 +286,12 @@ public class main implements Serializable{
 
         int saldo = usuario.getSaldo();       
         
-        if (cantidad <= tiendaComida.getInventario().get(producto)) {
+        if (cantidad <= tienda.getInventario().get(producto)) {
             int precio = tienda.getInventario().get(producto);
             int total = precio * cantidad;
             if (saldo >= total) {
                 tienda.venderProducto(producto, cantidad, usuario);
-                System.out.println("¡Compra fue exitosa!");
+                System.out.println("¡Compra exitosa!");
                 usuario.agregarCarrito(producto, cantidad);
                 System.out.println("Factura: ");
                 System.out.println("Nombre: "+usuario.getNombre());
@@ -446,7 +446,7 @@ public class main implements Serializable{
     private static void salirDelSistema(Usuario usuario) {
     	System.out.println("Vuelva Pronto");
     	//aqui iria la funcion del serializador
-    	Serializador.serializar();
+    	Serializador.serializar(usuario);
     	System.exit(0);
     }
 

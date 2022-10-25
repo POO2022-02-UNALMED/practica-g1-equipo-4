@@ -2,6 +2,8 @@ package gestorAplicación.cine;
 
 import java.util.ArrayList;
 
+import baseDatos.Deserializador;
+
 import java.io.*;
 
 import java.util.HashMap; 
@@ -17,13 +19,19 @@ public class Usuario implements Serializable {
 	private ArrayList<Boleta> Boletas = new ArrayList<Boleta>();
 	private HashMap<String,Integer> Carrito = new HashMap<String,Integer>();
 	private static int cantidadUsuarios;
-
+	
 	public static int getCantidadUsuarios() {
 		return cantidadUsuarios;
 		
 	}
 	
-	public Usuario() {this("Sin nombre", 0, 0);}
+	public Usuario() {
+		
+		this("Sin nombre", 0, 0);
+		
+		Deserializador.deserializar(this);	
+	
+	}
 		
 	public Usuario (String Nombre, int Cedula, int Saldo) {
 		this.Nombre = Nombre;
