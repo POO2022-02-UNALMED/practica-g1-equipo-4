@@ -61,16 +61,18 @@ public class main implements Serializable{
         for (int i = 0; i < arr.length; i++) {
             arr[i] = false;
         }
+
         Map<String, boolean[]>  Asientos = new HashMap<String, boolean[]>();
+
         //fill Asientos with the movies names and the array of seats
-        Asientos.put("Batman", arr);
-        Asientos.put("Avengers", arr);
-        Asientos.put("Spiderman", arr);
-        Asientos.put("Superman", arr);
+        Asientos.put("Batman", arr.clone());
+        Asientos.put("Avengers", arr.clone());
+        Asientos.put("Spiderman", arr.clone());
+        Asientos.put("Superman", arr.clone());
 
         //Create Sala
         Sala sala = new Sala("Sala", Asientos, cartelera);
-
+        
         //Create Dia
         Dia dia = new Dia("Lunes", sala);
         Dia dia2 = new Dia("Martes", sala);
@@ -141,9 +143,7 @@ public class main implements Serializable{
     }
 
     public static void comprarComida(TiendaComida tiendaComida, Usuario usuario) {
-        tiendaComida.saludo();
-
-        
+        tiendaComida.saludo();        
         Scanner sc = new Scanner(System.in);
         System.out.println("Ofrecemos los siguientes productos:");
         int i = 1;
@@ -200,7 +200,7 @@ public class main implements Serializable{
             
     //         System.out.println("Su saldo actual es: "+usuario.getSaldo());
             
-    //         menuTienda((TiendaComida) tienda, (TiendaUN) tienda, usuario);
+    //        
     //     }
     // }
 
@@ -254,8 +254,9 @@ public class main implements Serializable{
             System.out.println(i+" "+entry.getKey().getnombre() + " - " + entry.getValue().getHoraInicio()+" - "+entry.getValue().getHoraFinal() );
             i++;
         }
-        System.out.println("Ingrese el nombre de la pelicula que desea ver: ");
+        System.out.println("Ingrese el NOMBRE de la pelicula que desea ver: ");
         String pelicula = sc.next();
+        
         boolean[] asientos = diaTemp.getSala().getAsientos().get(pelicula);
         System.out.println("Los asientos disponibles son: ");
 
