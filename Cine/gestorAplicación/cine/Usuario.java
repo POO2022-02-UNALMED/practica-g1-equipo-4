@@ -16,8 +16,15 @@ public class Usuario implements Serializable {
 	private int Saldo;
 	private ArrayList<Boleta> Boletas = new ArrayList<Boleta>();
 	private HashMap<String,Integer> Carrito = new HashMap<String,Integer>();
-	private static ArrayList<Usuario> PrimeraVez= new ArrayList<Usuario>();
+	private static int cantidadUsuarios;
 
+	
+	
+	public static int getCantidadUsuarios() {
+		return cantidadUsuarios;
+	}
+	
+	public Usuario() {this("Sin nombre", 0, 0)}
 		
 	public Usuario (String Nombre, int Cedula, int Saldo) {
 		this.Nombre = Nombre;
