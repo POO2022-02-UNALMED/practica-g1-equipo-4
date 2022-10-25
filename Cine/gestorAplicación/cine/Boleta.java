@@ -1,7 +1,6 @@
 package gestorAplicación.cine;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Boleta implements Serializable{
 	

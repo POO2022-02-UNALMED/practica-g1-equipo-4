@@ -2,11 +2,15 @@
 
 import java.io.*;
 
-import gestorAplicación.cine.*;
 
+<<<<<<< Updated upstream
 import gestorAplicación.tiendaAbst.*;
 
 import IU.*;
+=======
+
+
+>>>>>>> Stashed changes
 
 public class Serializador {
 
