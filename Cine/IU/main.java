@@ -20,7 +20,7 @@ import java.util.Map.Entry;
 public class main implements Serializable{
     public static void main(String[] args) {
 
-        Usuario usuario = new Usuario("Juan", 1152452 , 50000);
+        Usuario usuario = new Usuario("Juan", 1152452 , 100000);
         //Create a new TiendaComida object and set its name
         TiendaComida tiendaComida = new TiendaComida("Tienda de comida");
         tiendaComida.setNombre("Comida Unal");
@@ -470,6 +470,7 @@ public class main implements Serializable{
 	if (opcion1 == 1) {
 	    if(usuario.getSaldo()>=30000) {
             usuario.comprarMembresia();
+            usuario.setSaldo(usuario.getSaldo()-30000);
 	       	System.out.println("Se ha convertido en miembor VIP del cine unal"); 
             System.out.println("Su saldo actual es: "+usuario.getSaldo()); 
         }else {System.out.println("Saldo insuficente para volverse VIP");}
