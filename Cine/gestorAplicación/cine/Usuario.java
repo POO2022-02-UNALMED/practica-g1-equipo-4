@@ -50,6 +50,7 @@ public class Usuario implements Serializable {
 		
 		public void comprarMembresia() {
 			
+			
 			this.Membresia = true;
 			
 		}
