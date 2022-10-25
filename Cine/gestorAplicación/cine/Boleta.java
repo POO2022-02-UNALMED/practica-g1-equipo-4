@@ -8,13 +8,13 @@ public class Boleta implements Serializable{
 	
     private Usuario usuario;    
     private String pelicula;
-    private String sala;
+    private Sala sala;
     private Horario horario;
     private String dia;
     //attribute Asiento as an array of Integers
     private int[] asiento;
-  
-    public Boleta(Usuario usuario, String pelicula, String sala, int [] asiento, Horario horario, String dia) {
+    
+    public Boleta(Usuario usuario, String pelicula, Sala sala, int [] asiento, Horario horario, String dia) {
         this.usuario = usuario;
         this.pelicula = pelicula;
         this.sala = sala;
@@ -40,11 +40,11 @@ public class Boleta implements Serializable{
         this.pelicula = pelicula;
     }
 
-    public String getSala() {
+    public Sala getSala() {
         return sala;
     }
 
-    public void setSala(String sala) {
+    public void setSala(Sala sala) {
         this.sala = sala;
     }
 

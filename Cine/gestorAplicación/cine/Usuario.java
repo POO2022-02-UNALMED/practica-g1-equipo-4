@@ -14,32 +14,24 @@ public class Usuario implements Serializable {
 	private int Cedula;
 	private boolean Membresia;
 	private int Saldo;
-	private ArrayList<Boleta> Boletas = new ArrayList<Boleta>();  
+	private ArrayList<Boleta> Boletas = new ArrayList<Boleta>();
 	private HashMap<String,Integer> Carrito = new HashMap<String,Integer>();
 	private static ArrayList<Usuario> PrimeraVez= new ArrayList<Usuario>();
+
 		
 	public Usuario (String Nombre, int Cedula, int Saldo) {
-			
 		this.Nombre = Nombre;
-			
 		this.Cedula = Cedula;
-			
 		this.Membresia = false;
-			
 		this.Saldo = Saldo;
 			
 	}
 		
 	public Usuario (String Nombre, int Cedula, int Saldo, ArrayList<Boleta> Boletas) {
-			
 		this.Nombre = Nombre;
-			
 		this.Cedula = Cedula;
-			
 		this.Membresia = false;
-			
 		this.Saldo = Saldo;
-			
 		this.Boletas =Boletas;
 			
 	}
