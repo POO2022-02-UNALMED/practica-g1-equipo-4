@@ -464,7 +464,7 @@ public class main implements Serializable{
         }
 	System.out.println("Adicionalmente a esto, se tendra un descuento del  40% en la compra de tus boletas");
 	System.out.println("Volverse VIP tiene un costo de $30000");
-	System.out.println("Desea volverse cliente VIP? (1. Si, 2. No)");
+	System.out.println("¿Desea volverse cliente VIP? (1. Si, 2. No)");
 	int opcion1 = sc.nextInt();
 	if (opcion1 == 1) {
 	    if(usuario.getSaldo()>=30000) {
