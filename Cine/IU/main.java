@@ -17,6 +17,11 @@ import java.util.Map.Entry;
 
 public class main {
     public static void main(String[] args) {
+        Horario horario1 = new Horario("12:00", "14:00");
+        Usuario usuario1 = new Usuario("Juan", 123456789, 1000000);
+        int [] boletas = {1,2,3};
+        Boleta boleta1 = new Boleta(usuario1,"Pitufos","salax",boletas,horario1,"lunes");
+        usuario1.addBoleta(boleta1);
 
         Usuario usuario = new Usuario("Juan", 1152452 , 50000);
         //Create a new TiendaComida object and set its name
@@ -101,9 +106,9 @@ public class main {
         System.out.println("1. Comprar Boleta");
         System.out.println("2. Comprar comida");
         System.out.println("3. Comprar mercancia");
-        System.out.println("3. Reembolso");
-        System.out.println("4. Hacerse miembro VIP");
-        System.out.println("5. Terminar");
+        System.out.println("4. Reembolso");
+        System.out.println("5. Hacerse miembro VIP");
+        System.out.println("6. Terminar");
         System.out.println("Por favor escoja una opción:");
         
         Scanner sc = new Scanner(System.in);
@@ -121,7 +126,7 @@ public class main {
                 menuTienda(tiendaComida, tiendaUN, usuario);
                 break;
             case 4:
-                //reembolso(usuario);
+                reembolso(usuario);
                 break;
             case 5:
                 VIP(tiendaComida, tiendaUN, usuario);
@@ -383,9 +388,18 @@ public class main {
 	       }
 	    else {System.out.println("Esperamos que siga disfrutando de nuestros servicios ");}
 	    }
-
+    private static void reembolso(Usuario usuario){
+            //necesito que se le muestre al usuario las boletas que tiene compradas
+            //y que elija la que quiere reembolsar
+            //y que se le devuelva el dinero
+    
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Estas son las boletas que tiene compradas: ");
+        for (int i = 0; i < usuario.getBoletas().size(); i++) {
+             System.out.println((i+1)+". "+usuario.getBoletas().get(i).getPelicula());
+            }
         
 }
-
+}
     
 
