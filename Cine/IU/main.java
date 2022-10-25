@@ -433,7 +433,7 @@ public class main implements Serializable{
         System.out.println("Su saldo actual es: "+usuario.getSaldo());    
         Boleta boleta = new Boleta(usuario, pelicula, diaTemp.getSala() , asientosComprados, diaTemp.getSala().getCartelera().get(pelicula), diaTemp.getSala().getNombre());
         usuario.addBoleta(boleta);
-        System.out.println("Gracias por su compra\n Volviendo al menú principal");
+        System.out.println("¡Gracias por su compra!\n Volviendo al menú principal");
         
 
     }
