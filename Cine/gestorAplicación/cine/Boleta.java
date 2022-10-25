@@ -1,6 +1,7 @@
 package gestorAplicación.cine;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Boleta implements Serializable{
 	
@@ -24,7 +25,7 @@ public class Boleta implements Serializable{
         this.dia = dia;
 
     }
-    
+
     public Usuario getUsuario() {
         return usuario;
     }
