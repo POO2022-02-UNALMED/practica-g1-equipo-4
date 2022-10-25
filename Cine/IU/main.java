@@ -98,7 +98,13 @@ public class main implements Serializable{
 
     //Create a main menu for the user
     public static void menu(Sala sala, Usuario usuario, TiendaComida tiendaComida, TiendaUN tiendaUN, ArrayList<Dia> dias) {
-        System.out.println("Bienvenido a Cine UN");
+        System.out.println("\r\n"
+        		+ "░█████╗░██╗███╗░░██╗███████╗  ██╗░░░██╗███╗░░██╗\r\n"
+        		+ "██╔══██╗██║████╗░██║██╔════╝  ██║░░░██║████╗░██║\r\n"
+        		+ "██║░░╚═╝██║██╔██╗██║█████╗░░  ██║░░░██║██╔██╗██║\r\n"
+        		+ "██║░░██╗██║██║╚████║██╔══╝░░  ██║░░░██║██║╚████║\r\n"
+        		+ "╚█████╔╝██║██║░╚███║███████╗  ╚██████╔╝██║░╚███║\r\n"
+        		+ "░╚════╝░╚═╝╚═╝░░╚══╝╚══════╝  ░╚═════╝░╚═╝░░╚══╝");
         System.out.println("---- Bienvenido al cine unal----");
         System.out.println("¿Qué operación desea realizar? (Ingrese el número de la operación)");
         System.out.println("1. Comprar Boleta");
