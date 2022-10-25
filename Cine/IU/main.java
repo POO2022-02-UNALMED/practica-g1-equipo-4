@@ -506,7 +506,7 @@ public class main implements Serializable{
                 }
                 System.out.println("Ingrese el NOMBRE de la pelicula que desea reembolsar");
                 String pelicula = sc.next();
-                System.out.println("Ingrese el número del asiento que desea reembolsar");
+                System.out.println("Ingrese el numero del asiento que desea reembolsar");
                 int asiento = sc.nextInt();
 
                 for (int i = 0; i < usuario.getBoletas().size(); i++) {
@@ -516,23 +516,32 @@ public class main implements Serializable{
                                 usuario.setSaldo(usuario.getSaldo() + devolucion);
                                 System.out.println("Se ha reembolsado el asiento: "+asiento);
                                 System.out.println("Su saldo actual es: "+usuario.getSaldo());
-                                usuario.getBoletas().remove(i);
+                                boolean[] nuevo = new boolean[28];
+                                for (int q = 0; q < nuevo.length; q++) {
+                                    for (int h = 0; h < usuario.getBoletas().get(i).getAsiento().length; h++)
+                                        if (usuario.getBoletas().get(i).getAsiento()[h] == q && usuario.getBoletas().get(i).getAsiento()[j]!=q){
+                                            nuevo[q-1] = true;
+                                            System.out.println(usuario.getBoletas().get(i).getAsiento()[j]-1);
+                                        }else{
+                                            nuevo[q] = false;
+                                        }
+                                Map<String, boolean[]>  asientoextra = new HashMap<String, boolean[]>();
+                                asientoextra.put(pelicula, nuevo);    
+                                usuario.getBoletas().get(0).getSala().setAsientos(asientoextra);
+                                
+                                }
                             }
                         }
                     }
                 }
-
-
-                
-
-            }else{
-                System.out.println("Gracias por su visita");
+                System.out.println("Lamentamos tu partida, esperamos que vuelvas a elegirnos para tu proxima experiencia");
             }
         }
-    }
+    }      
+}       
 
 
-}
+
 
     
 
