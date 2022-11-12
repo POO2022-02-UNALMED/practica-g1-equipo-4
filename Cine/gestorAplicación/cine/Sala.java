@@ -44,19 +44,16 @@ public class Sala implements Serializable {
     }
 
     public Map<Pelicula, Horario> getCartelera() {
-    	
         return cartelera;
         
     }
 
     public void setCartelera(Map<Pelicula, Horario> cartelera) {
-    	
         this.cartelera = cartelera;
         
     }
 
     public Map<String, boolean[] > getAsientos() {
-    	
         return Asientos;
         
     }

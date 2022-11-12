@@ -11,27 +11,22 @@ public class Horario implements Serializable{
 	private String HoraFinal;
 	//constructor
 	public Horario(String HoraInicio, String HoraFinal) {
-		
 		this.HoraInicio = HoraInicio;
-		
 		this.HoraFinal = HoraFinal;
 		
 	}
 	//metodos get y set
 	public String getHoraInicio() {
-		
 		return 	this.HoraInicio;
 		
 	}
 	
 	public String getHoraFinal() {
-		
 		return 	this.HoraFinal;
 		
 	}
 	
 	public void setHoraInicio(String HoraInicio) {
-		
 		this.HoraInicio = HoraInicio;
 		
 	}
@@ -40,5 +35,4 @@ public class Horario implements Serializable{
 		this.HoraFinal = HoraFinal;
 		
 	}    
-	
 }
