@@ -1,0 +1,3 @@
+# cre
+class boleta:
+    pass
