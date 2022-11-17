@@ -31,9 +31,4 @@ public class Dia implements Serializable{
         this.sala=sala;
     }
 
-    
-
-
-
-
 }
