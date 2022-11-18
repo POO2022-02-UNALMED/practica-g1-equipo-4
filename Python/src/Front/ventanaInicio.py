@@ -62,7 +62,7 @@ class ventanaInicio(tk.Tk):
         self.menuInicio = tk.Menu(self.menubar)
         self.menubar.add_cascade(label="Inicio", menu=self.menuInicio)
         self.menuInicio.add_command(label="Salir",command=self.salir)
-        self.menuInicio.add_command(label="Descripcion",command=self.desno)
+        self.menuInicio.add_command(label="Descripción",command=self.desno)
         self["menu"] = self.menubar
         
 
@@ -128,8 +128,8 @@ class ventanaInicio(tk.Tk):
         
     #Descripción
     def desno(self):
-        descripcion = MessageBox.showinfo(title = "Mensaje", message = "Aministrador de Cine",
-        detail = "Con esta app podras hacer todo lo que se puede realizar en un portal de cine virtual \nCon todas la funcionalidades principales que podías desear" )
+        descripcion = MessageBox.showinfo(title = "Mensaje", message = "Información de la App",
+        detail = "Con esta app podras hacer todo lo que se puede realizar en un portal de cine virtual \nCon todas la funcionalidades principales que podrías desear" )
         
     
     def cambioDescripcion(self,cont):
