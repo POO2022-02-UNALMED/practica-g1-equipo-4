@@ -1,5 +1,7 @@
 # cre
-class boleta:
+class Boleta:
+
+    boleta = []
 
     @staticmethod
     def getPrecio():
@@ -49,5 +51,15 @@ class boleta:
 
     def setDia(self, dia):
         self._dia = dia
+
+    @staticmethod
+    def getBoleta():
+        return Boleta.boleta
+    
+    @staticmethod
+    def setBoleta(bole):
+        Boleta.boleta.append(bole)
+    
+    
 
     

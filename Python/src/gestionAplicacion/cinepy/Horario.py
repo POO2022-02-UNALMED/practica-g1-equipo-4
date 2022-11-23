@@ -1,8 +1,13 @@
 class Horario:
+
+    horario = []
+
     def __init__(self, horarioInicio, horarioFin):
         self._horarioInicio = horarioInicio
         self._horarioFin = horarioFin
-    
+        Horario.horario.append(self)
+        
+
     def getHorarioInicio(self):
         return self._horarioInicio
 
@@ -15,3 +20,14 @@ class Horario:
     def setHorarioFin(self, horarioFin):
         self._horarioFin = horarioFin
 
+    @staticmethod
+    def getHorario():
+        return Horario.horarios
+    
+    @staticmethod
+    def setHorario(horario):
+        Horario.horarios.append(horario)
+    
+    
+
+    

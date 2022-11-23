@@ -1,4 +1,7 @@
 class Sala:
+
+    sala = []
+
     def __init__(self, nombre, asientos, cartelera):
         self.nombre = nombre
         self.asientos = asientos
@@ -25,5 +28,13 @@ class Sala:
 
     def __str__(self):
         return self.nombre 
+
+    @staticmethod
+    def getSala():
+        return Sala.sala
+    
+    @staticmethod
+    def setSala(sala):
+        Sala.sala.append(sala)
 
     

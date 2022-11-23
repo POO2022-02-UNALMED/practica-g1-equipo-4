@@ -1,6 +1,9 @@
-from Python.gestionAplicacion.tiendapy.tienda import tienda
+from gestionAplicacion.tiendapy.Tienda import Tienda
 
-class tinedaUN(tienda):
+
+class TiendaUN(Tienda):
+
+    tiendaUN = []
     # inventario is a dictionary of String:Integer
     # productos is a dictionary of String:Integer
     def __init__(self, nombre, inventario, productos):
@@ -42,3 +45,10 @@ def agregarMixto(self, producto, cantidadUnidades, precio):
     
 def __str__(self):
     return "Bienvenido a la tienda de la UN"
+
+def getTiendaUN():
+    return Tienda.tienda
+
+def setTiendaUN(tiendaUN):
+    Tienda.tienda.append(tiendaUN)
+

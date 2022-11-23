@@ -1,4 +1,5 @@
 class Dia:
+    dias = []
     def __init__ (self, nombre, sala):
         self.nombre = nombre
         self.sala = sala
@@ -14,5 +15,14 @@ class Dia:
 
     def setSala(self, sala):
         self.sala = sala
+
+    @staticmethod
+    def getDia():
+        return Dia.dias
+    
+    @staticmethod
+    def setDia(dia):
+        Dia.dias.append(dia)
+        
 
         

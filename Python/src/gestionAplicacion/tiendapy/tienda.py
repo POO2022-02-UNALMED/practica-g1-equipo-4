@@ -1,4 +1,7 @@
-class tienda:
+class Tienda:
+
+    tienda = []
+
     def __init__(self, nombre, inventario, productos):
         self.nombre = nombre
         self.inventario = inventario
@@ -24,3 +27,13 @@ class tienda:
 
     def __str__(self):
         return self.nombre
+    
+    @staticmethod
+    def getTienda():
+        return Tienda.tienda
+    
+    @staticmethod
+    def setTienda(tienda):
+        Tienda.tienda.append(tienda)
+
+    
