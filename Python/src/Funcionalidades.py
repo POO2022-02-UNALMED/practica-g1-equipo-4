@@ -24,7 +24,26 @@ class Funcionalidades(object):
     TiendaUN.tiendaUN = pickle.load(pickle_tiendas)
     Boleta.boletas = pickle.load(pickle_boletas)
 
-    
+
+
+    def salirDelSistema():
+        pickle_salas = open('/baseDatos/salas', 'wb')
+        pickle_usuario = open('/baseDatos/usuario', 'wb')
+        pickle_tiendas = open('/baseDatos/tiendas', 'wb')
+        pickle_boletas = open('/baseDatos/boletas', 'wb')
+        
+        pickle.dump(Sala.sala, pickle_salas)
+        pickle.dump(Usuario.usuario, pickle_usuario)
+        pickle.dump(Tienda.tiendas, pickle_tiendas)
+        pickle.dump(TiendaUN.tiendaUN, pickle_tiendas)
+        pickle.dump(Boleta.boletas, pickle_boletas)
+        
+        pickle_salas.close()
+        pickle_usuario.close()
+        pickle_tiendas.close()
+        pickle_boletas.close()
+        
+        exit()
 
 
 
