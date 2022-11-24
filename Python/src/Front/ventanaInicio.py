@@ -6,7 +6,7 @@ import tkinter as tk
 class ventanaInicio(tk.Tk):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
-                
+        
         # Editamos nuestra ventana 
         self.geometry("875x565")
         self.title("Inicio")
