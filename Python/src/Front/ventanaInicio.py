@@ -1,5 +1,6 @@
 from tkinter import messagebox as MessageBox, ttk 
 from tkinter import *
+
 import tkinter as tk
 
 class ventanaInicio(tk.Tk):
@@ -12,13 +13,11 @@ class ventanaInicio(tk.Tk):
         self.option_add("*tearOff", False)
         self.iconbitmap('./imagenes/icono.ico')
         
-       
 
         #Variables donde va la descripción desarolladores
         self.var1 = tk.StringVar()
         self.var1.set("Los Integrantes del grupo 4")
         self.var2 =tk.StringVar()
-        
         
 
         #crearemos nuestros frames.
@@ -57,7 +56,7 @@ class ventanaInicio(tk.Tk):
         
     
 
-         #El menu superior
+        #El menu superior
         self.menubar = tk.Menu(self)
         self.menuInicio = tk.Menu(self.menubar)
         self.menubar.add_cascade(label="Inicio", menu=self.menuInicio)
@@ -152,7 +151,7 @@ class ventanaInicio(tk.Tk):
             self.numClicks = 0
 
     #Selecciona la imagen a pryectar dependiendo del contador que entra al evento
-    def evento(self,cont):
+    def evento(self, cont):
         foto1 = 0
         foto2 = 0
         foto3 = 0

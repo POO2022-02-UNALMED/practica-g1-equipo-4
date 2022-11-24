@@ -8,7 +8,6 @@ from gestionAplicacion.cinepy.Usuario import Usuario
 from gestionAplicacion.tiendapy.Tienda import Tienda
 from gestionAplicacion.tiendapy.TiendaUN import TiendaUN
 
-
 import pickle
 
 class Funcionalidades(object):
@@ -23,9 +22,10 @@ class Funcionalidades(object):
     Tienda.tiendas = pickle.load(pickle_tiendas)
     TiendaUN.tiendaUN = pickle.load(pickle_tiendas)
     Boleta.boletas = pickle.load(pickle_boletas)
+    
+    #Funcion para cuando le demos salir empiece a serializar el programa y guarde la informacion
 
-
-
+    @staticmethod
     def salirDelSistema():
         pickle_salas = open('/baseDatos/salas', 'wb')
         pickle_usuario = open('/baseDatos/usuario', 'wb')
@@ -44,6 +44,8 @@ class Funcionalidades(object):
         pickle_boletas.close()
         
         exit()
+
+
 
 
 
