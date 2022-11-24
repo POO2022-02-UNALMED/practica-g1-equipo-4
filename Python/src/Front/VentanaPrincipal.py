@@ -35,20 +35,13 @@ class VentanaSecundaria(Toplevel):
         self.menuProceso = Menu(self.menubar)
         self.menuProceso.add_command(label = "Comprar boleteria",command=self.prueba)        
         self.menuProceso.add_command(label = "Buscar una reserva",command=self.buscarReserva)        
-        self.menuProceso.add_command(label = "Verificar integridad de las salas",command=self.integridadSala)     
         self.menuProceso.add_command(label = "Hacer devolucion", command=self.devolucion )
-        self.menuProceso.add_command(label = " Ver lista de trabajadores",command=self.verTrabajadores)
-        self.menuProceso.add_command(label = "limpiar", command=self.limpiarSala)
-        self.menuProceso.add_command(label = "Nivel basura",command=self.verNivelBasura)        
+        #self.menuProceso.add_command(label = "Nivel basura",command=self.verNivelBasura)        
         self.editarCar = Menu(self.menuProceso)
         self.menuProceso.add_cascade(menu = self.editarCar,label = "Editar la cartelera")
         self.editarCar.add_command(label= "ver cartelera",command=self.verCartelera)
         self.editarCar.add_command(label= "cambiar cartelera",command=self.editar)
 
-        self.editarVer = Menu(self.menuProceso)
-        self.menuProceso.add_cascade(menu = self.editarVer,label = "Cambiar el estado de la silla")
-        self.editarVer.add_command(label= "reportar sila danada",command=self.reportarSilla)
-        self.editarVer.add_command(label= "arreglar silla danada",command=self.arreglarrSilla)
         
         #Para varias pestañas en cascada
         self.menuAyuda = Menu(self.menubar)
@@ -84,28 +77,21 @@ class VentanaSecundaria(Toplevel):
       
     
 
-        
-            
-     
-
-        
-    
-
 
     #Esta funcione es para poder comprar boleteria 
     def prueba(self):
-        
+
         self.frame2.pack_forget()
         self.frame4.pack_forget()
         self.frame3.pack_forget() 
-        self.frame2 = tk.Frame(self.frame, borderwidth=10, bg='#F98866' )
+        self.frame2 = tk.Frame(self.frame, borderwidth=10, bg='##7FB3D5' )
         
         self.frame2.pack(expand=True,fill="x",ipadx = 2, ipady =0, padx = 2, pady= 2)
         
-        self.frame3 = Frame(self.frame,borderwidth=70, bg='#F98866')
+        self.frame3 = Frame(self.frame,borderwidth=70, bg='##7FB3D5')
         self.frame3.pack(expand=True,fill="x",ipadx = 2, ipady =0, padx = 2, pady= 2)
 
-        self.frame4 = Frame(self.frame, borderwidth=10, bg='#F98866')
+        self.frame4 = Frame(self.frame, borderwidth=10, bg='##7FB3D5')
         self.frame4.pack(expand=True,fill="x",ipadx = 2, ipady =0, padx = 2, pady= 2)
 
 
@@ -121,20 +107,26 @@ class VentanaSecundaria(Toplevel):
     
     
         self.cedula=StringVar()
-        
+
         self.entrycedula = tk.Entry(self.frame2, textvariable=self.cedula)
         self.entrycedula.grid(column=4, row=3, sticky='ew', padx=10, pady=10)
         self.labelCedula = tk.Label(self.frame2, text="Cedula", font=("Arial",14))
         self.labelCedula.grid(column=3, row=3, sticky='ew', padx=30, pady=10)
         self.labelinfo2 = tk.Label(self.frame2, text="Ingrese la cedula sin puntos y con enteros", font=("Arial",12),bg='#F98866')
         self.labelinfo2.grid(column=6, columnspan=1,row=3, sticky='ew', padx=30, pady=10)
-    
+
         self.celular=StringVar()
         
         self.entryNombre = tk.Entry(self.frame2, textvariable=self.celular)
         self.entryNombre.grid(column=4, row=4, sticky='ew', padx=10, pady=10)
         self.labelNombre = tk.Label(self.frame2, text="Celular", font=("Arial",14))
         self.labelNombre.grid(column=3, columnspan=1,row=4, sticky='ew', padx=30, pady=10)
+
+        self.saldo = IntVar()
+        self.entrySaldo = tk.Entry(self.frame2, textvariable=self.saldo)
+        self.entrySaldo.grid(column=4, row=5, sticky='ew', padx=10, pady=10)
+        
+
         self.labelinfo3 = tk.Label(self.frame2, text="Ingrese la celular sin puntos y con enteros", font=("Arial",12),bg='#F98866')
         self.labelinfo3.grid(column=6, columnspan=1,row=4, sticky='ew', padx=30, pady=10)
     

@@ -1,8 +1,10 @@
 class Usuario:
-    def __init__(self,nombre,cedula,membresia,saldo,boletas,carrito,cantidadUsuarios):
+    _cantidadUsuarios = 0
+    def __init__(self,nombre,cedula, saldo,cantidadUsuarios, sexo, boletas = None, membresia = False, carrito = None ):
         self._nombre = nombre
         self._cedula = cedula
-        self._membresia = membresia
+        self._membresia = membresia 
+        self._sexo = sexo
         self._saldo = saldo
         self._boletas = boletas
         self._carrito = carrito

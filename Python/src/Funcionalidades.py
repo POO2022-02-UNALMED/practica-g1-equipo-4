@@ -45,6 +45,13 @@ class Funcionalidades(object):
         
         exit()
 
+    #Funcion para crear una sala
+    @staticmethod
+    def crearUsuario(nombre, cedula, saldo, sexo):
+        Usuario.usuario.append(Usuario(nombre, cedula, saldo))
+        return True
+        
+
 
 
 
