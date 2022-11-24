@@ -122,10 +122,6 @@ class VentanaSecundaria(Toplevel):
         self.labelNombre = tk.Label(self.frame2, text="Celular", font=("Arial",14))
         self.labelNombre.grid(column=3, columnspan=1,row=4, sticky='ew', padx=30, pady=10)
 
-        self.saldo = IntVar()
-        self.entrySaldo = tk.Entry(self.frame2, textvariable=self.saldo)
-        self.entrySaldo.grid(column=4, row=5, sticky='ew', padx=10, pady=10)
-        
 
         self.labelinfo3 = tk.Label(self.frame2, text="Ingrese la celular sin puntos y con enteros", font=("Arial",12),bg='#F98866')
         self.labelinfo3.grid(column=6, columnspan=1,row=4, sticky='ew', padx=30, pady=10)
@@ -146,6 +142,16 @@ class VentanaSecundaria(Toplevel):
         self.labelEdad.grid(column=3,columnspan=1,  row=6, sticky='w', padx=30, pady=10)
         self.labelinfo4 = tk.Label(self.frame2, text="Ingrese la edad sin puntos y con enteros", font=("Arial",12),bg='#F98866')
         self.labelinfo4.grid(column=6, columnspan=1,row=6, sticky='ew', padx=30, pady=10)
+
+        self.saldo=StringVar()
+        self.entrySaldo = tk.Entry(self.frame2, textvariable=self.saldo)
+        self.entrySaldo.grid(column=4, row=7, sticky='w', padx=10, pady=10)
+        self.labelSaldo = tk.Label(self.frame2, text="Saldo", font=("Arial",14))
+        self.labelSaldo.grid(column=3, row=7, sticky='w', padx=30, pady=10)
+        self.labelinfo5 = tk.Label(self.frame2, text="Ingrese el saldo sin puntos y con enteros", font=("Arial",12),bg='#F98866')
+        self.labelinfo5.grid(column=6, columnspan=1,row=7, sticky='ew', padx=30, pady=10)
+
+
 
         #En esta parte vamos a pregunatrle a usuario si quiere ver una pelicula, y con base en eso se 
         # le saldra unas peliculas determinadas
@@ -189,9 +195,6 @@ class VentanaSecundaria(Toplevel):
                     MessageBox.showerror(title="Error",message=e)
                     return
                 
-               
-
-                        
             if entero3==False or entero4==False or entero2==False:
                 a=[]
                 a.append(self.edad.get())
@@ -217,7 +220,7 @@ class VentanaSecundaria(Toplevel):
                         raise ExcepcionStringNumero(entero3)
                     except ExcepcionStringNumero as e:
                         MessageBox.showerror(title="Error",message=e)
-                        return
+                    return
 
 
             #si los tipos de datos son ingresados correctamente crearemos una instacia de cliente
