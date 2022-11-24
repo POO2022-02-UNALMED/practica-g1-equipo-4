@@ -120,7 +120,7 @@ class ventanaInicio(tk.Tk):
             self.listaFotosApp.append(imagen)
 
         #Boton para dirgirse a la ventana de usuario
-        self.botonCambioa = Button(self.frame3, image=self.listaFotosApp[0])
+        self.botonCambioa = Button(self.frame3, image=self.listaFotosApp[0], command=self.abrirVentanaSecundaria)
         self.botonCambioa.pack()
         self.botonCambioa.bind('<Enter>', self.cambio)
         
