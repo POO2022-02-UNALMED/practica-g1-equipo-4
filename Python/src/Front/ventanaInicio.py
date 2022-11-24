@@ -1,3 +1,4 @@
+from VentanaPrincipal import VentanaSecundaria
 from tkinter import messagebox as MessageBox, ttk 
 from tkinter import *
 import tkinter as tk
@@ -197,7 +198,13 @@ class ventanaInicio(tk.Tk):
             self.acumulador = 0
         self.botonCambioa.config(image=self.listaFotosApp[self.acumulador])
     
-
+    #con este metodo abrimos la ventana de usario, la cual se abre por medio de un evento
+    def abrirVentanaSecundaria(self):
+         if not VentanaSecundaria.en_uso:
+            self.ventanaUsuario = VentanaSecundaria()
+            self.ventanaUsuario.ventanaInicio = self
+            self.iconify()
+    
     #con esto nos salimos y guardamos lo que tenemos
     def salir(self):
         return super().destroy()
