@@ -1138,49 +1138,7 @@ class VentanaSecundaria(Toplevel):
     
         botonsalir=Button(self.frame, text="Salir", command=salir2)
         botonsalir.pack(ipadx = 0, ipady =0, padx = 0, pady= 0)
-    
-    def verNivelBasura(self):
-        self.frame2.pack_forget()
-        self.frame4.pack_forget()
-        self.frame3.pack_forget() 
-
-        self.frame2 = tk.Frame(self.frame, borderwidth=10, bg='#F98866' )
-        
-        self.frame2.pack(expand=True,fill="x",ipadx = 2, ipady =0, padx = 2, pady= 2)
-        
-        self.frame3 = Frame(self.frame,borderwidth=70, bg='#F98866')
-        self.frame3.pack(expand=True,fill="x",ipadx = 2, ipady =0, padx = 2, pady= 2)
-
-        self.frame4 = Frame(self.frame, borderwidth=10, bg='#F98866' )
-        self.frame4.pack(expand=True,fill="x",ipadx = 2, ipady =0, padx = 2, pady= 2)
-        self.labelPelicula= Label(self.frame2, font=("Arial",14))
-        self.labelPelicula.grid(column=0, row=0, ipadx=0, ipady=0, padx=15, pady=55)
-        l=Funcionalidades.verBasura( self.labelPelicula)
-        #restauramos la ventana de usuario
-        def salir2():
-            self.frame2.pack_forget()
-            self.frame4.pack_forget()
-            self.frame3.pack_forget()
-            self.frame2 = Frame(self.frame,width=970, height=600, bg="#F98866")
-            self.frame2.pack(ipadx=6, padx=2,ipady=2,pady=2,fill=X)
-            
-            self.label =Label(self.frame2,text= "¡¡Bievenido!!\n Al administrador del cine", font = ("Segoe UI", 32),fg = "black", bg = "#F98866")
-            self.label.pack(ipadx = 0, ipady =0, padx = 5, pady= 5)
-            
-            self.frame3 = Frame(self.frame,width=102, height=102, bg='#F98866')
-            self.frame3.pack(ipadx=2, padx=2,ipady=2,pady=2,fill=X)
-
-            self.frame4 = Frame(self.frame, width=1870, height=1750, borderwidth=10, bg='#F98866' )
-            self.frame4.pack(expand=True,fill="x",ipadx = 2, ipady =0, padx = 2, pady= 2)
-            botonsalir.destroy()
-
-    
-        botonsalir=Button(self.frame, text="Salir", command=salir2)
-        botonsalir.pack(ipadx = 0, ipady =0, padx = 0, pady= 0)
-
-        
-
-        
+         
 
 
 #--------------------------------------------------------------------------------------------------------------

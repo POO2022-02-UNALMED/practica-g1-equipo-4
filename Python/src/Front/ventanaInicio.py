@@ -13,6 +13,7 @@ class ventanaInicio(tk.Tk):
         self.geometry("875x565")
         self.title("Inicio")
         self.option_add("*tearOff", False)
+        self.resizable(False,False)
         self.iconbitmap('./imagenes/icono.ico')
         
 
@@ -200,12 +201,12 @@ class ventanaInicio(tk.Tk):
     
     #con este metodo abrimos la ventana de usario, la cual se abre por medio de un evento
     def abrirVentanaSecundaria(self):
-         if not VentanaSecundaria.en_uso:
+         #if not VentanaSecundaria.en_uso:
             self.ventanaUsuario = VentanaSecundaria()
             self.ventanaUsuario.ventanaInicio = self
             self.iconify()
     
-    #con esto nos salimos y guardamos lo que tenemos
+    #con esto nos salimos 
     def salir(self):
         return super().destroy()
 
