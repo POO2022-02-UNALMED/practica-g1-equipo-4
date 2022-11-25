@@ -11,8 +11,7 @@ class VentanaSecundaria(tk.Tk):
         self.title('Cine UNAL')
         self.option_add("*tearOff",  False)
         self.geometry("875x565")
-        self.resizable(False,False)
-        # self.iconbitmap('./imagenes/icono.ico')
+        self.iconbitmap('./Python/src/Front/imagenes/icono.ico')
         
         #Barras de menus 
         self.menubar = Menu(self)
@@ -44,21 +43,21 @@ class VentanaSecundaria(tk.Tk):
         self.frame1.config(relief="sunken")
 
         self.frame2 = tk.Frame(self, width=430, height=250,borderwidth=15, bg="yellow")
-        self.frame2.pack(side="left", anchor="sw", expand=True, fill=BOTH)
+        self.frame2.pack(anchor="sw", expand=True, fill=BOTH)
         self.frame2.config(relief="sunken")
 
         self.frame3 = tk.Frame(self, width=430, height=250,borderwidth=15, bg="red")
-        self.frame3.pack(side="right", anchor="se", expand=True, fill=BOTH)
+        self.frame3.pack(anchor="se", expand=True, fill=BOTH)
         self.frame3.config(relief="sunken")
 
         #Letrero asignatura
         self.asignatura= Label(self.frame2, text="Programación Orientada\n a Objetos", font=("Segoe UI", 17))
-        self.asignatura.place(x=200, y=75, anchor="center")
+        self.asignatura.pack(anchor="center")
         
-        self.asignatura= Label(self.frame3, text="El mejor cine\n del MUNDO", font=("Segoe UI", 17))
-        self.asignatura.place(x=200, y=75, anchor="center")
+        self.enunciado= Label(self.frame3, text="El mejor cine\n del MUNDO", font=("Segoe UI", 17))
+        self.enunciado.pack( anchor="center")
 
-        self.fotosfun = ['./imagenes/cartel.png']
+        self.fotosfun = ['./Python/src/Front/imagenes/cartel.png']
         
         self.listaFotos = []
         for i in self.fotosfun:

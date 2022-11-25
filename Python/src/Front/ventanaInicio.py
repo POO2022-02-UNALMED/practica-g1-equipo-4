@@ -10,7 +10,7 @@ class ventanaInicio(tk.Tk):
         self.title("Inicio")
         self.option_add("*tearOff", False)
         self.resizable(False,False)
-        # self.iconbitmap('./Python/src/Front/imagenes/icono.ico')
+        self.iconbitmap('./Python/src/Front/imagenes/icono.ico')
         
 
         #Variables donde va la descripción desarolladores
@@ -28,7 +28,7 @@ class ventanaInicio(tk.Tk):
         self.frame2 = tk.Frame(self.frame1, width=400, borderwidth=5,height=150, bg="purple")
         self.frame2.grid(row=0, column=0) 
         self.frame2.config(relief="ridge")       
-        self.etiquetaBienvenida = Label(self.frame2, text="¡¡HOLA!!\n Bienvenido al cine \n UNAL", font=("Segoe UI", 20))
+        self.etiquetaBienvenida = Label(self.frame2, text="¡¡HOLA!!\n Bienvenido al cine \n UNAL", font=("", 20))
         self.etiquetaBienvenida.place(x=200, y=75, anchor="center")
         self.etiquetaBienvenida.config(fg="black", bg="light goldenrod")
 
