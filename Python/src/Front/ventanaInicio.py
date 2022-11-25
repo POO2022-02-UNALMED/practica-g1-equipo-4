@@ -2,13 +2,9 @@ from VentanaPrincipal import VentanaSecundaria
 from tkinter import messagebox as MessageBox, ttk 
 from tkinter import *
 import tkinter as tk
-
-
-
 class ventanaInicio(tk.Tk):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
-        
         # Editamos nuestra ventana 
         self.geometry("875x565")
         self.title("Inicio")
