@@ -18,14 +18,14 @@ class VentanaSecundaria(tk.Tk):
         self.menubar = Menu(self)
 
         self.menuArchivo = Menu(self.menubar)
-        self.menuArchivo.add_command(label = "Aplicacion", command = self.descripcionApp)
+        self.menuArchivo.add_command(label = "Aplicación", command = self.descripcionApp)
         self.menuArchivo.add_command(label = "Salir", command = self.salirVentana)
 
         #Ponemos nuestras funcionalidades en el menu de procesos
         self.menuProceso = Menu(self.menubar)
-        self.menuProceso.add_command(label = "Comprar boleteria")        
+        self.menuProceso.add_command(label = "Comprar boletería")        
         self.menuProceso.add_command(label = "Buscar una reserva")        
-        self.menuProceso.add_command(label = "Hacer devolucion")
+        self.menuProceso.add_command(label = "Hacer devolución")
         self.menuProceso.add_command(label= "Ver cartelera")
         self.menuProceso.add_command(label= "Comprar producto")
         

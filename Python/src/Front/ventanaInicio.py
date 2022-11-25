@@ -133,19 +133,19 @@ class ventanaInicio(tk.Tk):
     def cambioDescripcion(self,cont):
         self.numClicks += 1
         if (self.numClicks == 1):
-            self.var1.set("Nombre: Sebastián Olaya Pérez \n"" Me gusta el fútbol \n""Estudiante de Ingeniería de sistemas e informatica\n""Vive en Medellin")
+            self.var1.set("Nombre: Sebastián Olaya Pérez \n"" Me gusta el fútbol \n""Estudiante de Ingeniería de Sistemas e Informática\n""Vive en Medellín")
             self.evento(1)
         elif (self.numClicks == 2):
-            self.var1.set("Nombre: Tomás Gutiérrez Orrego \n"" Me gustan los caballos \n""Estudiante de Ingeniería de sistemas e informatica\n""Vive en Bello")
+            self.var1.set("Nombre: Tomás Gutiérrez Orrego \n"" Me gustan los caballos \n""Estudiante de Ingeniería de Sistemas e Informática\n""Vive en Medellín")
             self.evento(2)
         elif (self.numClicks == 3):
-            self.var1.set("Nombre: Camilo Echeverri Castrillón \n"" Me gusta el valorant \n""Estudiante de Ingeniería de sistemas e informatica\n""Vive en Medellin")
+            self.var1.set("Nombre: Camilo Echeverri Castrillón \n"" Me gusta el valorant \n""Estudiante de Ingeniería de Sistemas e Informática\n""Vive en Medellín")
             self.evento(3)
         elif (self.numClicks == 4):
-            self.var1.set("Nombre: Juan Jose Marín Álvarez \n"" Me gusta jugar Lol \n""Estudiante de Ingeniería de sistemas e informatica\n""Vive en Medellin")
+            self.var1.set("Nombre: Juan Jose Marín Álvarez \n"" Me gusta jugar Lol \n""Estudiante de Ingeniería de Sistemas e Informática\n""Vive en Medellín")
             self.evento(4)
         elif (self.numClicks == 5):
-            self.var1.set("Nombre: Julián Orrego Martínez \n"" Me gusta ser rubio \n""Estudiante de Ingeniería de sistemas e informatica\n""Vive en Medellin")
+            self.var1.set("Nombre: Julián Orrego Martínez \n"" Me gusta ser rubio \n""Estudiante de Ingeniería de Sistemas e Informática\n""Vive en Medellín")
             self.evento(5)
             self.numClicks = 0
 
