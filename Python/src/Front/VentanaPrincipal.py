@@ -12,7 +12,7 @@ class VentanaSecundaria(tk.Tk):
         self.option_add("*tearOff",  False)
         self.geometry("875x565")
         self.resizable(False,False)
-        self.iconbitmap('./imagenes/icono.ico')
+        # self.iconbitmap('./imagenes/icono.ico')
         
         #Barras de menus 
         self.menubar = Menu(self)
@@ -21,7 +21,6 @@ class VentanaSecundaria(tk.Tk):
         self.menuArchivo.add_command(label = "Aplicacion", command = self.descripcionApp)
         self.menuArchivo.add_command(label = "Salir", command = self.salirVentana)
 
-<<<<<<< Updated upstream
         #Ponemos nuestras funcionalidades en el menu de procesos
         self.menuProceso = Menu(self.menubar)
         self.menuProceso.add_command(label = "Comprar boleteria")        
@@ -84,9 +83,6 @@ class VentanaSecundaria(tk.Tk):
 #--------------------------------------------------------------------------------------------------------------
     # Retorna a la Ventana de Inicio del programa.
 
-=======
-  
->>>>>>> Stashed changes
     def salirVentana(self):
         return super().destroy()
 

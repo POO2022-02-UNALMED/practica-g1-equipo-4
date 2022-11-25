@@ -10,7 +10,7 @@ class ventanaInicio(tk.Tk):
         self.title("Inicio")
         self.option_add("*tearOff", False)
         self.resizable(False,False)
-        self.iconbitmap('./imagenes/icono.ico')
+        # self.iconbitmap('./Python/src/Front/imagenes/icono.ico')
         
 
         #Variables donde va la descripción desarolladores
@@ -79,9 +79,9 @@ class ventanaInicio(tk.Tk):
         
         
         #Lista para cargar las fotos
-        self.fotosDesarolla = ['./imagenes/S.png', './imagenes/S.png', './imagenes/S.png', './imagenes/S.png','./imagenes/T.png', './imagenes/T.png', './imagenes/T.png', './imagenes/T.png',
-         './imagenes/C.png', './imagenes/C.png', './imagenes/C.png', './imagenes/C.png','./imagenes/JJ.png', './imagenes/JJ.png', './imagenes/JJ.png', './imagenes/JJ.png',
-         './imagenes/J.png', './imagenes/J.png', './imagenes/J.png', './imagenes/J.png','./imagenes/U1.png', './imagenes/U2.png', './imagenes/U3.png', './imagenes/U4.png']
+        self.fotosDesarolla = ['./Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S.png','./Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png',
+         './Python/src/Front/imagenes/C.png', './Python/src/Front/imagenes/C.png', './Python/src/Front/imagenes/C.png', './Python/src/Front/imagenes/C.png','./Python/src/Front/imagenes/JJ.png', './Python/src/Front/imagenes/JJ.png', './Python/src/Front/imagenes/JJ.png', './Python/src/Front/imagenes/JJ.png',
+         './Python/src/Front/imagenes/J.png', './Python/src/Front/imagenes/J.png', './Python/src/Front/imagenes/J.png', './Python/src/Front/imagenes/J.png','./Python/src/Front/imagenes/U1.png', './Python/src/Front/imagenes/U2.png', './Python/src/Front/imagenes/U3.png', './Python/src/Front/imagenes/U4.png']
         self.listaFotos = []
         
 
@@ -110,7 +110,7 @@ class ventanaInicio(tk.Tk):
         self.contador = 0
 
         #Imagenes del cine para ir cambiando
-        self.fotosApp = ['./imagenes/p1.png', './imagenes/p2.png', './imagenes/p3.png','./imagenes/p4.png']
+        self.fotosApp = ['./Python/src/Front/imagenes/p1.png', './Python/src/Front/imagenes/p2.png', './Python/src/Front/imagenes/p3.png','./Python/src/Front/imagenes/p4.png']
         self.listaFotosApp = []
         for i in self.fotosApp:
             imagen = PhotoImage(file=i)
