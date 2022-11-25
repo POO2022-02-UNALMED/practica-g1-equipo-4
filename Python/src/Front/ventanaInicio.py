@@ -205,5 +205,3 @@ class ventanaInicio(tk.Tk):
     #con esto nos salimos 
     def salir(self):
         return super().destroy()
-
-
