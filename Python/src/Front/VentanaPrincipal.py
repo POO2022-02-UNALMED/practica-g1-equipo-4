@@ -73,16 +73,18 @@ class VentanaSecundaria(tk.Tk):
         self.p1 = Label(self.frameFoto1, image=self.listaFotos[0])
         self.p1.pack()
 
+
+#--------------------------------------------------------------------------------------------------------------
+    def comprarBoleta(self):
+        pass
 #--------------------------------------------------------------------------------------------------------------
      # Este metodo muestra una breve descripcion de la app
-
     def descripcionApp(self):
         descripcion = messagebox.showinfo(title = "Mensaje", message = "Administrador de Cine",
         detail = "El sistema permite brindar las funcionalidades que mas se desarían en un portal virtual de cine.")
 
 #--------------------------------------------------------------------------------------------------------------
     # Retorna a la Ventana de Inicio del programa.
-
     def salirVentana(self):
         return super().destroy()
 
