@@ -3,6 +3,7 @@ from tkinter import messagebox as MessageBox, ttk
 from tkinter import *
 import tkinter as tk
 class ventanaInicio(tk.Tk):
+
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         # Editamos nuestra ventana 
@@ -12,15 +13,12 @@ class ventanaInicio(tk.Tk):
         self.resizable(False,False)
         self.iconbitmap('./Python/src/Front/imagenes/icono.ico')
         
-
         #Variables donde va la descripción desarolladores
         self.var1 = tk.StringVar()
         self.var1.set("Los Integrantes del grupo 4")
         self.var2 =tk.StringVar()
         
-
         #crearemos nuestros frames.
-        
         #frame del texto de bievenidatextoHDV
         self.frame1 = tk.Frame(self, width=400, height=500,borderwidth=15, bg="Black")
         self.frame1.pack(side="left", expand=True)
@@ -52,8 +50,6 @@ class ventanaInicio(tk.Tk):
         self.frame6.grid(row = 1, column = 0)
         self.frame6.config(relief="ridge")           
         
-        
-    
 
         #El menu superior
         self.menubar = tk.Menu(self)

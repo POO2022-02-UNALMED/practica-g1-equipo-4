@@ -162,3 +162,7 @@ class VentanaSecundaria(tk.Tk):
     # Muestra un Message Box con los nombres de los autores de la aplicación.
     def ayuda(self):
         mensaje = messagebox.showinfo(title = "Mensaje", message = "Autores: \n\n\n Sebastián Olaya Pérez: \n solayap@unal.edu.co\n\n Camilo Echeverrí Castrillón\n cecheverric@unal.edu.co\n\n Tomás Gutierrez Orrego\n tguttierrez@unal.edu.co\n\n Juan Jose Marín\n jumarina@unal.edu.co\n\n Julian Orrego Martinez\n jorrego@unal.edu.co")
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+    def eventofuncionalidad(self):
+        pass
