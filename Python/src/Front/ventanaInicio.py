@@ -142,7 +142,7 @@ class ventanaInicio(tk.Tk):
             self.var1.set("Nombre: Tomás Gutiérrez Orrego \n"" Me gustan los caballos \n""Estudiante de Ingeniería de sistemas e informatica\n""Vive en Bello")
             self.evento(2)
         elif (self.numClicks == 3):
-            self.var1.set("Nombre: Camilo Echeverri Castrillón \n"" Me gusta trabajar \n""Estudiante de Ingeniería de sistemas e informatica\n""Vive en Medellin")
+            self.var1.set("Nombre: Camilo Echeverri Castrillón \n"" Me gusta el valorant \n""Estudiante de Ingeniería de sistemas e informatica\n""Vive en Medellin")
             self.evento(3)
         elif (self.numClicks == 4):
             self.var1.set("Nombre: Juan Jose Marín Álvarez \n"" Me gusta jugar Lol \n""Estudiante de Ingeniería de sistemas e informatica\n""Vive en Medellin")
