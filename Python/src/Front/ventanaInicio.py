@@ -3,7 +3,6 @@ from tkinter import messagebox as MessageBox, ttk
 from tkinter import *
 import tkinter as tk
 class ventanaInicio(tk.Tk):
-
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         # Editamos nuestra ventana 
@@ -11,14 +10,17 @@ class ventanaInicio(tk.Tk):
         self.title("Inicio")
         self.option_add("*tearOff", False)
         self.resizable(False,False)
-        self.iconbitmap('./Python/src/Front/imagenes/icono.ico')
+        # self.iconbitmap('./Python/src/Front/imagenes/icono.ico')
         
+
         #Variables donde va la descripción desarolladores
         self.var1 = tk.StringVar()
         self.var1.set("Los Integrantes del grupo 4")
         self.var2 =tk.StringVar()
         
+
         #crearemos nuestros frames.
+        
         #frame del texto de bievenidatextoHDV
         self.frame1 = tk.Frame(self, width=400, height=500,borderwidth=15, bg="Black")
         self.frame1.pack(side="left", expand=True)
@@ -26,7 +28,7 @@ class ventanaInicio(tk.Tk):
         self.frame2 = tk.Frame(self.frame1, width=400, borderwidth=5,height=150, bg="purple")
         self.frame2.grid(row=0, column=0) 
         self.frame2.config(relief="ridge")       
-        self.etiquetaBienvenida = Label(self.frame2, text="¡¡HOLA!!\n Bienvenido al cine \n UNAL", font=("", 20))
+        self.etiquetaBienvenida = Label(self.frame2, text="¡¡HOLA!!\n Bienvenido al cine \n UNAL", font=("Segoe UI", 20))
         self.etiquetaBienvenida.place(x=200, y=75, anchor="center")
         self.etiquetaBienvenida.config(fg="black", bg="light goldenrod")
 
@@ -50,6 +52,8 @@ class ventanaInicio(tk.Tk):
         self.frame6.grid(row = 1, column = 0)
         self.frame6.config(relief="ridge")           
         
+        
+    
 
         #El menu superior
         self.menubar = tk.Menu(self)
@@ -75,9 +79,9 @@ class ventanaInicio(tk.Tk):
         
         
         #Lista para cargar las fotos
-        self.fotosDesarolla = ['./Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S.png','./Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png',
-         './Python/src/Front/imagenes/C.png', './Python/src/Front/imagenes/C.png', './Python/src/Front/imagenes/C.png', './Python/src/Front/imagenes/C.png','./Python/src/Front/imagenes/JJ.png', './Python/src/Front/imagenes/JJ.png', './Python/src/Front/imagenes/JJ.png', './Python/src/Front/imagenes/JJ.png',
-         './Python/src/Front/imagenes/J.png', './Python/src/Front/imagenes/J.png', './Python/src/Front/imagenes/J.png', './Python/src/Front/imagenes/J.png','./Python/src/Front/imagenes/U1.png', './Python/src/Front/imagenes/U2.png', './Python/src/Front/imagenes/U3.png', './Python/src/Front/imagenes/U4.png']
+        self.fotosDesarolla = ['./imagenes/S.png', './imagenes/S.png', './imagenes/S.png', './imagenes/S.png','./imagenes/T1.png', './imagenes/T2.png', './imagenes/T3.png', './imagenes/T4.png',
+         './imagenes/C.png', './imagenes/C.png', './imagenes/C.png', './imagenes/C.png','./imagenes/JJ.png', './imagenes/JJ.png', './imagenes/JJ.png', './imagenes/JJ.png',
+         './imagenes/J.png', './imagenes/J.png', './imagenes/J.png', './imagenes/J.png','./imagenes/U1.png', './imagenes/U2.png', './imagenes/U3.png', './imagenes/U4.png']
         self.listaFotos = []
         
 
@@ -123,7 +127,7 @@ class ventanaInicio(tk.Tk):
     #Descripción
     def desno(self):
         descripcion = MessageBox.showinfo(title = "Mensaje", message = "Información de la App",
-        detail = "Con esta app podras hacer todo lo que se puede realizar en un portal de cine virtual \nCon todas la funcionalidades principales que podrías desear" )
+        detail = "Con esta app podrás hacer todo lo que realizas en un portal de cine virtual \nCon todas la funcionalidades principales que podrías desear" )
         
     
     def cambioDescripcion(self,cont):
@@ -201,3 +205,5 @@ class ventanaInicio(tk.Tk):
     #con esto nos salimos 
     def salir(self):
         return super().destroy()
+
+
