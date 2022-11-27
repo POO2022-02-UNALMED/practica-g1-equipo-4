@@ -4,7 +4,7 @@ from tkinter import *
 import tkinter as tk
 from tkinter import messagebox as MessageBox, ttk 
 from fieldframe import FieldFrame
-
+from excepciones.excepcionesUsuario import excepcionesUsuario
 class VentanaSecundaria(tk.Tk):
     framesEnPantalla = []
     
@@ -72,13 +72,31 @@ class VentanaSecundaria(tk.Tk):
         
         #Frame Comprar boletas
         
+        def comprobarBoleta():
+            try:
+                nombre = FFCompraBoleta.get("Nombre")
+                cedula = FFCompraBoleta.get("Cedula")
+                cantidadBoletas = FFCompraBoleta.get("Cantidad de boletas")
+                diaFuncion = FFCompraBoleta.get("Dia de la funcion")
+                nombrePelicula = FFCompraBoleta.get("Nombre de la pelicula")
+
+                if nombre == "" or cedula == "" or cantidadBoletas == "" or diaFuncion == "" or nombrePelicula == "":
+                    MessageBox.showerror("Error", "Por favor llene todos los campos")
+                # ---- Aqui va la funcionalidad de comprar boleta ----
+
+            except excepcionesUsuario as e:
+                MessageBox.showerror("Error", e)
+                
+
+
+
         frameCompra = Frame(self,bg='purple')
         nombreCompra = Label(frameCompra, text="Compra tus boletas", font=("Segoe UI", 16), bg= 'yellow')
         descCompra = Label(frameCompra, text="Digite los campos para comprar las boletas", font=("Segoe UI", 12), background= 'White')
         
         frameformulario = Frame(frameCompra, height=200,bg='BLACK')
 
-        FFCompra = FieldFrame(frameformulario, "", ["Nombre", "Cédula", "Cantidad de boletas","Dia"], "Información Personal", None, [True, True, True,True])
+        FFCompraBoleta = FieldFrame(frameformulario, "", ["Nombre", "Cédula", "Cantidad de boletas","Dia de la funcion", "Nombre de la pélicula"], "Información Personal", None, [True, True, True,True, True])
 
         framebotones = Frame(frameCompra, bg='purple')
         
@@ -93,8 +111,10 @@ class VentanaSecundaria(tk.Tk):
         BotonComprar.grid(column=0, row=0, padx = 10,pady=15)
         Botonlimpiar.grid(column=1, row=0, padx = 15,pady=15)
         Botonsalir.grid(column=3, row=0, padx = 15,pady=15)
-        FFCompra.pack(pady=15)
+        FFCompraBoleta.pack(pady=15)
+
         self.framesEnPantalla.append(frameCompra)
+
 
 
         #frame reserva
@@ -102,7 +122,7 @@ class VentanaSecundaria(tk.Tk):
         nombreReserva = Label(frameReserva, text="Consulta si tiene reserva", font=("Segoe UI", 16), bg= 'yellow')
         descReserva = Label(frameReserva, text="Ingrese su documento para saber su asiento", font=("Segoe UI", 12), background= 'purple')
         frameformulario2 = Frame(frameReserva,height=200,bg='green')
-        FFReserva= FieldFrame(frameformulario2, None, ["Cédula"], None, None, [True])
+        FFReserva= FieldFrame(frameformulario2, None, ["Cambiar"], None, None, [True])
         framebotones2 = Frame(frameReserva, bg='purple')
         
         BotonComprar2 = Button(framebotones2, text="Devolución")
