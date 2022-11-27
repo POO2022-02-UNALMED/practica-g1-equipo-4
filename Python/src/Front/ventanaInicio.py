@@ -23,7 +23,7 @@ class ventanaInicio(tk.Tk):
         self.frame1 = tk.Frame(self, width=400, height=500,borderwidth=15, bg="Black")
         self.frame1.pack(side="left", expand=True)
         self.frame1.config(relief="sunken")
-        self.frame2 = tk.Frame(self.frame1, width=400, borderwidth=5,height=150, bg="purple")
+        self.frame2 = tk.Frame(self.frame1, width=400, borderwidth=5,height=150, bg="steel blue")
         self.frame2.grid(row=0, column=0) 
         self.frame2.config(relief="ridge")       
         self.etiquetaBienvenida = Label(self.frame2, text="¡¡HOLA!!\n Bienvenido al cine \n UNAL", font=("", 20))
@@ -39,7 +39,7 @@ class ventanaInicio(tk.Tk):
         self.frame4.config(relief="sunken")
         
         
-        self.frame5 = tk.Frame(self.frame4, width=400, height=160,borderwidth=5, bg="purple")
+        self.frame5 = tk.Frame(self.frame4, width=400, height=160,borderwidth=5, bg="steel blue")
         self.frame5.grid(row=0, column=0)
         self.frame5.config(relief="ridge")
         self.textoDescripcion = Label(self.frame5, textvariable=self.var1, font = ("Segoe UI", 10))
@@ -196,7 +196,7 @@ class ventanaInicio(tk.Tk):
             self.ventanaUsuario = VentanaSecundaria()
             self.ventanaUsuario.ventanaInicio = self
             self.iconify()
-
+            super.destroy()
     
     #con esto nos salimos 
     def salir(self):
