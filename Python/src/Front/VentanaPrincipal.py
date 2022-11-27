@@ -24,11 +24,12 @@ class VentanaSecundaria(tk.Tk):
 
         #Ponemos nuestras funcionalidades en el menu de procesos
         self.menuProceso = Menu(self.menubar)
-        self.menuProceso.add_command(label = "Comprar boletería")        
-        self.menuProceso.add_command(label = "Buscar una reserva", command=lambda: cambiarVista(frameReserva))        
-        self.menuProceso.add_command(label = "Hacer devolución")
-        self.menuProceso.add_command(label= "Ver cartelera",)
-        self.menuProceso.add_command(label= "Comprar producto")
+        self.menuProceso.add_command(label = "Comprar boletería", command = lambda: cambiarVista(frameCompra))        
+        self.menuProceso.add_command(label = "Buscar una reserva", command = lambda: cambiarVista(frameReserva))        
+        self.menuProceso.add_command(label = "Hacer devolución",command=lambda: cambiarVista(frameDevolucion))
+        self.menuProceso.add_command(label= "Hacerse VIP",command=lambda: cambiarVista(frameVIP))
+        self.menuProceso.add_command(label= "Ver cartelera",command=lambda: cambiarVista(frameCartelera))
+        self.menuProceso.add_command(label= "Comprar producto", command = lambda: cambiarVista(frameTienda))
         
         self.menuAyuda = Menu(self.menubar)
         self.menuAyuda.add_command(label = "Contactos", command = self.ayuda)
@@ -40,79 +41,165 @@ class VentanaSecundaria(tk.Tk):
         self["menu"] = self.menubar
 
         def cambiarVista(frameUtilizado):
-            for frame in VentanaSecundaria.framesEnPantalla:
+            for frame in self.framesEnPantalla:
                 frame.pack_forget()
             frameUtilizado.pack(fill=BOTH,expand=True, pady = (10,10))
         
+       
+    #------------------------------------------------------------------------------------------------------------------------
+        self.fotosfun = ['./Python/src/Front/imagenes/cartelera.png']
+        self.listaFotos = []
         
-        
-        
+
+        for i in self.fotosfun:
+            imagen = PhotoImage(file=i)
+            self.listaFotos.append(imagen)
+
         
     #---------------------------------------------------------------------------------------------------------------------- 
-        #Se organizan los frames
-        self.framePantallaInicio = Frame(self)
-        nombrePantallaInicio = Label(self.framePantallaInicio, text="Cine Unal", font=("Segoe UI", 16))
-        outputPantallaInicio = Text(self.framePantallaInicio, height=100, font=("Verdana", 10))
-
-        nombrePantallaInicio.pack()
-        outputPantallaInicio.pack(fill=X, expand=True, padx=(10,10))
-
-        VentanaSecundaria.framesEnPantalla.append(self.framePantallaInicio)
-        cambiarVista(self.framePantallaInicio)
-
-
-        frameReserva = Frame(self)
-        nombreReserva = Label(frameReserva, text="Consulat si tiene reserva", font=("Verdana", 16), fg = "#245efd")
-        descReserva = Label(frameReserva, text="Ingrese su documento para saber su asiento", font=("Verdana", 12))
-        FFReserva = FieldFrame(frameReserva, None, ["Cedula"], None, None, [True])
+    #Se organizan los frames
         
-        outputGestionarPedido = Text(frameReserva, height=100, font=("Verdana", 10))
-        VentanaSecundaria.framesEnPantalla.append(outputGestionarPedido)
+        #Frame Inicio
+        framePantallaInicio = Frame(self, bg='purple')
+        nombrePantallaInicio = Label(framePantallaInicio, text="Cine UNAL", font=("Segoe UI", 16), bg='yellow')
+        insPantallaInicio = Label(framePantallaInicio, text="La aplicación funciona así:", font=("Segoe UI", 10), bg='green')
+        nombrePantallaInicio.pack()
+        insPantallaInicio.pack(fill=X, expand=True, padx=(10,10))
+        self.framesEnPantalla.append(framePantallaInicio)
+        cambiarVista(framePantallaInicio)
+        
+        
+        #Frame Comprar boletas
+        frameCompra = Frame(self,bg='purple')
+        nombreCompra = Label(frameCompra, text="Compra tus boletas", font=("Segoe UI", 16), bg= 'yellow')
+        descCompra = Label(frameCompra, text="Digite los campos para comprar las boletas", font=("Segoe UI", 12), background= 'purple')
+        frameformulario = Frame(frameCompra,height=200,bg='green')
+        FFCompra = FieldFrame(frameformulario, None, ["Nombre"], None, None, [True])
+        framebotones = Frame(frameCompra, bg='purple')
+        frameoutput = Frame(frameCompra,height=300,bg='green')
+        BotonComprar = Button(framebotones, text="Comprar")
+        Botonlimpiar = Button(framebotones, text="Limpiar")
+        Botonsalir = Button(framebotones, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
+        nombreCompra.pack()
+        descCompra.pack()
+        frameformulario.pack(anchor='center')
+        frameoutput.pack(fill=X)
+        framebotones.pack(anchor='s')
+        BotonComprar.grid(column=0, row=0, padx = (10,10))
+        Botonlimpiar.grid(column=1, row=0, padx = (10,10))
+        Botonsalir.grid(column=3, row=0, padx = (10,10))
+        FFCompra.pack()
+        self.framesEnPantalla.append(frameCompra)
 
+
+        #frame reserva
+        frameReserva = Frame(self,bg='purple')
+        nombreReserva = Label(frameReserva, text="Consulta si tiene reserva", font=("Segoe UI", 16), bg= 'yellow')
+        descReserva = Label(frameReserva, text="Ingrese su documento para saber su asiento", font=("Segoe UI", 12), background= 'purple')
+        frameformulario2 = Frame(frameReserva,height=200,bg='green')
+        FFReserva= FieldFrame(frameformulario2, None, ["Cédula"], None, None, [True])
+        framebotones2 = Frame(frameReserva, bg='purple')
+        frameoutput2 = Frame(frameReserva,height=300,bg='green')
+        BotonComprar2 = Button(framebotones2, text="Devolución")
+        Botonlimpiar2 = Button(framebotones2, text="Limpiar")
+        Botonsalir2 = Button(framebotones2, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreReserva.pack()
         descReserva.pack()
+        frameformulario2.pack(anchor='center')
+        frameoutput2.pack(fill=X)
+        framebotones2.pack(anchor='s')
+        BotonComprar2.grid(column=0, row=0, padx = (10,10))
+        Botonlimpiar2.grid(column=1, row=0, padx = (10,10))
+        Botonsalir2.grid(column=3, row=0, padx = (10,10))
         FFReserva.pack()
+        self.framesEnPantalla.append(frameReserva)
 
-        VentanaSecundaria.framesEnPantalla.append(frameReserva)
-
-        # self.frame2 = tk.Frame(self, width=430, height=250,borderwidth=15, bg="yellow")
-        # self.frame2.pack(anchor="sw", expand=True, fill=BOTH)
-        # self.frame2.config(relief="sunken")
-
-        # self.frame3 = tk.Frame(self, width=430, height=250,borderwidth=15, bg="red")
-        # self.frame3.pack(anchor="se", expand=True, fill=BOTH)
-        # self.frame3.config(relief="sunken")
-
-        # #Letrero asignatura
-        # self.asignatura= Label(self.frame2, text="Programación Orientada\n a Objetos", font=("Segoe UI", 17))
-        # self.asignatura.pack(anchor="center")
         
-        # self.enunciado= Label(self.frame3, text="El mejor cine\n del MUNDO", font=("Segoe UI", 17))
-        # self.enunciado.pack( anchor="center")
+        #frame devolución
+        frameDevolucion= Frame(self,bg='purple')
+        nombreDevolucion = Label(frameDevolucion, text="Solicita la devolución", font=("Segoe UI", 16), bg= 'yellow')
+        descDevolucion = Label(frameDevolucion, text="Ingrese su documento para saber si se puede realizar la devolución de su dinero", font=("Segoe UI", 12), background= 'purple')
+        frameformulario3 = Frame(frameDevolucion,height=200,bg='green')
+        FFDevolucion= FieldFrame(frameformulario3, None, ["Cédula"], None, None, [True])
+        framebotones3 = Frame(frameDevolucion, bg='purple')
+        frameoutput3 = Frame(frameDevolucion,height=300,bg='green')
+        BotonComprar3 = Button(framebotones3, text="Devolución")
+        Botonlimpiar3 = Button(framebotones3, text="Limpiar")
+        Botonsalir3 = Button(framebotones3, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
+        nombreDevolucion.pack()
+        descDevolucion.pack()
+        frameformulario3.pack(anchor='center')
+        frameoutput3.pack(fill=X)
+        framebotones3.pack(anchor='s')
+        BotonComprar3.grid(column=0, row=0, padx = (10,10))
+        Botonlimpiar3.grid(column=1, row=0, padx = (10,10))
+        Botonsalir3.grid(column=3, row=0, padx = (10,10))
+        FFDevolucion.pack()
+        self.framesEnPantalla.append(frameDevolucion)
 
-        # self.fotosfun = ['./Python/src/Front/imagenes/cartel.png']
+        #frame VIP
+        frameVIP= Frame(self,bg='purple')
+        nombreVIP= Label(frameVIP, text="Hazte miembor VIP", font=("Segoe UI", 16), bg= 'yellow')
+        descVIP = Label(frameVIP, text="Ingrese su documento para volverse VIP", font=("Segoe UI", 12), background= 'purple')
+        frameformulario5 = Frame(frameVIP,height=200,bg='green')
+        FFVIP= FieldFrame(frameformulario5, None, ["Cédula"], None, None, [True])
+        framebotones5 = Frame(frameVIP, bg='purple')
+        frameoutput5 = Frame(frameVIP,height=300,bg='green')
+        BotonComprar5 = Button(framebotones5, text="Devolución")
+        Botonlimpiar5 = Button(framebotones5, text="Limpiar")
+        Botonsalir5 = Button(framebotones5, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
+        nombreVIP.pack()
+        descVIP.pack()
+        frameformulario5.pack(anchor='center')
+        frameoutput5.pack(fill=X)
+        framebotones5.pack(anchor='s')
+        BotonComprar5.grid(column=0, row=0, padx = (10,10))
+        Botonlimpiar5.grid(column=1, row=0, padx = (10,10))
+        Botonsalir5.grid(column=3, row=0, padx = (10,10))
+        FFVIP.pack()
+        self.framesEnPantalla.append(frameVIP)
         
-        # self.listaFotos = []
-        # for i in self.fotosfun:
-        #     imagen = PhotoImage(file=i)
-        #     self.listaFotos.append(imagen)
+        
+        
+        
+        
+        
+        
+        #frame cartelera
+        frameCartelera = Frame(self,bg='purple')
+        nombreCartelera = Label(frameCartelera, text="Cartelera", font=("Segoe UI", 16), bg= 'yellow')
+        descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'purple')
+        frameimagen = Frame(frameCartelera,width=150, height=300,bg="black")
+        framebotones6 = Frame(frameCartelera, bg='purple')
+        Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
+        nombreCartelera.pack()
+        descCartelera.pack()
+        frameimagen.pack()
+        Botonsalir6.pack()
+        framebotones6.pack(anchor='s')
+        self.framesEnPantalla.append(frameCartelera)
 
-        # #frame cartel
-        # self.frameFoto1 = tk.Frame(self.frame1, width=400, height=200,bg="black")
-        # self.frameFoto1.place(x=225, y=30)
-
-        # #Cartel
-        # self.p1 = Label(self.frameFoto1, image=self.listaFotos[0])
-        # self.p1.pack()
-
-
-
-
-
-
-
-
-
+        #frame tienda
+        frameTienda =  Frame(self,bg='purple')
+        nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'yellow')
+        descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'purple')
+        frameformulario4 = Frame(frameTienda,height=200,bg='green')
+        FFTienda= FieldFrame(frameformulario4, None, ["Saldo"], None, None, [True])
+        framebotones4 = Frame(frameTienda, bg='purple')
+        frameoutput4 = Frame(frameTienda,height=300,bg='green')
+        BotonComprar4 = Button(framebotones4, text="Comprar")
+        Botonlimpiar4 = Button(framebotones4, text="Limpiar")
+        Botonsalir4 = Button(framebotones4, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
+        nombreTienda.pack()
+        descTienda.pack()
+        frameformulario4.pack(anchor='center')
+        frameoutput4.pack(fill=X)
+        framebotones4.pack(anchor='s')
+        BotonComprar4.grid(column=0, row=0, padx = (10,10))
+        Botonlimpiar4.grid(column=1, row=0, padx = (10,10))
+        Botonsalir4.grid(column=3, row=0, padx = (10,10))
+        FFTienda.pack()
+        self.framesEnPantalla.append(frameTienda)
 
 
 
@@ -127,24 +214,30 @@ class VentanaSecundaria(tk.Tk):
 
 
 #--------------------------------------------------------------------------------------------------------------
-    #Este metodo e para la compra de la boleta
+    #Este metodo es para la compra de la boleta
+    def mostraroutput(self,lugar,texto):
+        output = Label(lugar,text=texto,font=("Segoe UI", 12), bg= 'green')
+        output.pack(anchor="center")
+#--------------------------------------------------------------------------------------------------------------
+    #Este metodo es para la compra de la boleta
     def comprarBoleta(self):
         pass
 
 #--------------------------------------------------------------------------------------------------------------
-    #Este metodo e para la compra de la boleta
+    #Este metodo es para buscar reserva
     def buscarReserva(self):
         pass
 #--------------------------------------------------------------------------------------------------------------
-    #Este metodo e para la compra de la boleta
+    #Este metodo es para hacer de la devolucion
     def hacerDevolucion(self):
         pass
 #--------------------------------------------------------------------------------------------------------------
-    #Este metodo e para la compra de la boleta
+    #Este metodo es para ver cartelera
     def verCartelera(self):
         pass
+
 #--------------------------------------------------------------------------------------------------------------
-    #Este metodo e para la compra de la boleta
+    #Este metodo es para comprar producto
     def comprarProducto(self):
         pass
 #--------------------------------------------------------------------------------------------------------------

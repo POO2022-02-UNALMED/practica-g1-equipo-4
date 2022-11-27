@@ -75,7 +75,7 @@ class ventanaInicio(tk.Tk):
         
         
         #Lista para cargar las fotos
-        self.fotosDesarolla = ['./Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S.png','./Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png',
+        self.fotosDesarolla = ['./Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S1.png', './Python/src/Front/imagenes/S2.png', './Python/src/Front/imagenes/S3.png','./Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/T.png',
          './Python/src/Front/imagenes/C.png', './Python/src/Front/imagenes/C.png', './Python/src/Front/imagenes/C.png', './Python/src/Front/imagenes/C.png','./Python/src/Front/imagenes/JJ.png', './Python/src/Front/imagenes/JJ.png', './Python/src/Front/imagenes/JJ.png', './Python/src/Front/imagenes/JJ.png',
          './Python/src/Front/imagenes/J.png', './Python/src/Front/imagenes/J.png', './Python/src/Front/imagenes/J.png', './Python/src/Front/imagenes/J.png','./Python/src/Front/imagenes/U1.png', './Python/src/Front/imagenes/U2.png', './Python/src/Front/imagenes/U3.png', './Python/src/Front/imagenes/U4.png']
         self.listaFotos = []
@@ -83,7 +83,6 @@ class ventanaInicio(tk.Tk):
 
         for i in self.fotosDesarolla:
             imagen = PhotoImage(file=i)
-            
             self.listaFotos.append(imagen)
 
         self.p1 = Label(self.frameFoto1)
