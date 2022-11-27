@@ -8,8 +8,6 @@ from tkinter import *
     # habilitado: Array con los campos no-editables por el usuario. Si None, todos son editables 
 
 
-
-
 class FieldFrame(Frame):
      def __init__(self, ventana, tituloCriterios = "", criterios = None, tituloValores = "", valores = None, habilitado = None):
         super().__init__(ventana)
