@@ -112,6 +112,7 @@ class VentanaSecundaria(tk.Tk):
         descReserva.pack()
         frameformulario2.pack(anchor='center')
         
+        
         framebotones2.pack(anchor='s')
         BotonComprar2.grid(column=0, row=0, padx = 10)
         Botonlimpiar2.grid(column=1, row=0, padx = 10)
