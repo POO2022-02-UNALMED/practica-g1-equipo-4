@@ -9,8 +9,8 @@ from tkinter import *
 
 
 class FieldFrame(Frame):
-     def __init__(self, ventana, tituloCriterios = "", criterios = None, tituloValores = "", valores = None, habilitado = None):
-        super().__init__(ventana)
+     def __init__(self, ventana, tituloCriterios = "", criterios = None, tituloValores = "", valores = None,   habilitado = None):
+        super().__init__(ventana)                     #Lista de nombres de criterios        #Valores de criterios
         self._tituloCriterios = tituloCriterios
         self._criterios = criterios
         self._tituloValores = tituloValores

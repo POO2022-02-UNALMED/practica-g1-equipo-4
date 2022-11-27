@@ -61,7 +61,7 @@ class VentanaSecundaria(tk.Tk):
         
         #Frame Inicio
         
-        framePantallaInicio = Frame(self, bg='purple')
+        framePantallaInicio = Frame(self, bg='ghost white')
         nombrePantallaInicio = Label(framePantallaInicio, text="Cine UNAL", font=("Segoe UI", 16), bg='yellow')
         insPantallaInicio = Label(framePantallaInicio, text="La aplicación funciona así:", font=("Segoe UI", 10), bg='green')
         nombrePantallaInicio.pack()
@@ -72,7 +72,7 @@ class VentanaSecundaria(tk.Tk):
         
         #Frame Comprar boletas
         
-        frameCompra = Frame(self,bg='purple')
+        frameCompra = Frame(self,bg='ghost white')
         nombreCompra = Label(frameCompra, text="Compra tus boletas", font=("Segoe UI", 16), bg= 'yellow')
         descCompra = Label(frameCompra, text="Digite los campos para comprar las boletas", font=("Segoe UI", 12), background= 'White')
         
@@ -80,7 +80,7 @@ class VentanaSecundaria(tk.Tk):
 
         FFCompra = FieldFrame(frameformulario, "", ["Nombre", "Cédula", "Cantidad de boletas","Dia"], "Información Personal", None, [True, True, True,True])
 
-        framebotones = Frame(frameCompra, bg='purple')
+        framebotones = Frame(frameCompra, bg='ghost white')
         
         BotonComprar = Button(framebotones, text="Comprar")
         Botonlimpiar = Button(framebotones, text="Limpiar")
@@ -97,12 +97,12 @@ class VentanaSecundaria(tk.Tk):
 
 
         #frame reserva
-        frameReserva = Frame(self,bg='purple')
+        frameReserva = Frame(self,bg='ghost white')
         nombreReserva = Label(frameReserva, text="Consulta si tiene reserva", font=("Segoe UI", 16), bg= 'yellow')
-        descReserva = Label(frameReserva, text="Ingrese su documento para saber su asiento", font=("Segoe UI", 12), background= 'purple')
+        descReserva = Label(frameReserva, text="Ingrese su documento para saber su asiento", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario2 = Frame(frameReserva,height=200,bg='green')
         FFReserva= FieldFrame(frameformulario2, None, ["Cédula"],"Información", None, [True])
-        framebotones2 = Frame(frameReserva, bg='purple')
+        framebotones2 = Frame(frameReserva, bg='ghost white')
         
         BotonComprar2 = Button(framebotones2, text="Devolución")
         Botonlimpiar2 = Button(framebotones2, text="Limpiar")
@@ -110,6 +110,7 @@ class VentanaSecundaria(tk.Tk):
         nombreReserva.pack(pady=(10,80))
         descReserva.pack(pady=10)
         frameformulario2.pack(anchor='center')
+        
         
         framebotones2.pack(anchor='s')
         BotonComprar2.grid(column=0, row=0, padx = 10,pady=15)
@@ -120,12 +121,12 @@ class VentanaSecundaria(tk.Tk):
 
         
         #frame devolución
-        frameDevolucion= Frame(self,bg='purple')
+        frameDevolucion= Frame(self,bg='ghost white')
         nombreDevolucion = Label(frameDevolucion, text="Solicita la devolución", font=("Segoe UI", 16), bg= 'yellow')
-        descDevolucion = Label(frameDevolucion, text="Ingrese su documento para saber si se puede realizar la devolución de su dinero", font=("Segoe UI", 12), background= 'purple')
+        descDevolucion = Label(frameDevolucion, text="Ingrese su documento para saber si se puede realizar la devolución de su dinero", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario3 = Frame(frameDevolucion,height=200,bg='green')
         FFDevolucion= FieldFrame(frameformulario3, None, ["Cédula"], None, None, [True])
-        framebotones3 = Frame(frameDevolucion, bg='purple')
+        framebotones3 = Frame(frameDevolucion, bg='ghost white')
         
         BotonComprar3 = Button(framebotones3, text="Devolución")
         Botonlimpiar3 = Button(framebotones3, text="Limpiar")
@@ -142,12 +143,12 @@ class VentanaSecundaria(tk.Tk):
         self.framesEnPantalla.append(frameDevolucion)
 
         #frame VIP
-        frameVIP= Frame(self,bg='purple')
+        frameVIP= Frame(self,bg='ghost white')
         nombreVIP= Label(frameVIP, text="Hazte miembor VIP", font=("Segoe UI", 16), bg= 'yellow')
-        descVIP = Label(frameVIP, text="Ingrese su documento para volverse VIP", font=("Segoe UI", 12), background= 'purple')
+        descVIP = Label(frameVIP, text="Ingrese su documento para volverse VIP", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario5 = Frame(frameVIP,height=200,bg='green')
         FFVIP= FieldFrame(frameformulario5, None, ["Cédula"], None, None, [True])
-        framebotones5 = Frame(frameVIP, bg='purple')
+        framebotones5 = Frame(frameVIP, bg='ghost white')
         
         BotonComprar5 = Button(framebotones5, text="Devolución")
         Botonlimpiar5 = Button(framebotones5, text="Limpiar")
@@ -165,11 +166,11 @@ class VentanaSecundaria(tk.Tk):
          
         
         #frame cartelera
-        frameCartelera = Frame(self,bg='purple')
+        frameCartelera = Frame(self,bg='ghost white')
         nombreCartelera = Label(frameCartelera, text="Cartelera", font=("Segoe UI", 16), bg= 'yellow')
-        descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'purple')
+        descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'ghost white')
         frameimagen = Frame(frameCartelera,width=150, height=300,bg="black")
-        framebotones6 = Frame(frameCartelera, bg='purple')
+        framebotones6 = Frame(frameCartelera, bg='ghost white')
         Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreCartelera.pack()
         descCartelera.pack()
@@ -179,12 +180,12 @@ class VentanaSecundaria(tk.Tk):
         self.framesEnPantalla.append(frameCartelera)
 
         #frame tienda
-        frameTienda =  Frame(self,bg='purple')
+        frameTienda =  Frame(self,bg='ghost white')
         nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'yellow')
-        descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'purple')
+        descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario4 = Frame(frameTienda,height=200,bg='green')
         FFTienda= FieldFrame(frameformulario4, None, ["Saldo"], None, None, [True])
-        framebotones4 = Frame(frameTienda, bg='purple')
+        framebotones4 = Frame(frameTienda, bg='ghost white')
       
         BotonComprar4 = Button(framebotones4, text="Comprar")
         Botonlimpiar4 = Button(framebotones4, text="Limpiar")
