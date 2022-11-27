@@ -60,6 +60,7 @@ class VentanaSecundaria(tk.Tk):
     #Se organizan los frames
         
         #Frame Inicio
+        
         framePantallaInicio = Frame(self, bg='purple')
         nombrePantallaInicio = Label(framePantallaInicio, text="Cine UNAL", font=("Segoe UI", 16), bg='yellow')
         insPantallaInicio = Label(framePantallaInicio, text="La aplicación funciona así:", font=("Segoe UI", 10), bg='green')
@@ -70,20 +71,25 @@ class VentanaSecundaria(tk.Tk):
         
         
         #Frame Comprar boletas
+        
         frameCompra = Frame(self,bg='purple')
         nombreCompra = Label(frameCompra, text="Compra tus boletas", font=("Segoe UI", 16), bg= 'yellow')
-        descCompra = Label(frameCompra, text="Digite los campos para comprar las boletas", font=("Segoe UI", 12), background= 'purple')
-        frameformulario = Frame(frameCompra,height=200,bg='green')
-        FFCompra = FieldFrame(frameformulario, None, ["Nombre"], None, None, [True])
+        descCompra = Label(frameCompra, text="Digite los campos para comprar las boletas", font=("Segoe UI", 12), background= 'White')
+        
+        frameformulario = Frame(frameCompra, height=200,bg='green')
+
+        FFCompra = FieldFrame(frameformulario, "", ["Nombre", "Cédula", "Cantidad de boletas"], "Información Personal", None, [True, True, True])
+
         framebotones = Frame(frameCompra, bg='purple')
-        frameoutput = Frame(frameCompra,height=300,bg='green')
+        #frameoutput = Frame(frameCompra,height=300,bg='green')
         BotonComprar = Button(framebotones, text="Comprar")
         Botonlimpiar = Button(framebotones, text="Limpiar")
         Botonsalir = Button(framebotones, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreCompra.pack()
         descCompra.pack()
         frameformulario.pack(anchor='center')
-        frameoutput.pack(fill=X)
+        frameformulario
+        #frameoutput.pack(fill=BOTH,expand=True)
         framebotones.pack(anchor='s')
         BotonComprar.grid(column=0, row=0, padx = (10,10))
         Botonlimpiar.grid(column=1, row=0, padx = (10,10))
@@ -158,12 +164,7 @@ class VentanaSecundaria(tk.Tk):
         Botonsalir5.grid(column=3, row=0, padx = (10,10))
         FFVIP.pack()
         self.framesEnPantalla.append(frameVIP)
-        
-        
-        
-        
-        
-        
+         
         
         #frame cartelera
         frameCartelera = Frame(self,bg='purple')
@@ -200,15 +201,6 @@ class VentanaSecundaria(tk.Tk):
         Botonsalir4.grid(column=3, row=0, padx = (10,10))
         FFTienda.pack()
         self.framesEnPantalla.append(frameTienda)
-
-
-
-
-
-
-
-
-
 
 
 
