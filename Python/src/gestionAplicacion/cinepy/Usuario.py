@@ -1,5 +1,6 @@
 class Usuario:
     _cantidadUsuarios = 0
+    usuarios=[]
     def __init__(self,nombre,cedula, saldo,cantidadUsuarios, sexo, boletas = None, membresia = False, carrito = None ):
         self._nombre = nombre
         self._cedula = cedula
@@ -79,5 +80,12 @@ class Usuario:
     def getBoletas(self):
         return self._boletas
 
+    @staticmethod
+    def getUsuarios():
+        return Usuario.usuarios
+    
+    @staticmethod
+    def setUsuarios(usuario):
+        Usuario.usuarios.append(usuario)
     
     
