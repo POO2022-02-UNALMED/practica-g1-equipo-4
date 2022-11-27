@@ -81,15 +81,14 @@ class VentanaSecundaria(tk.Tk):
         FFCompra = FieldFrame(frameformulario, "", ["Nombre", "Cédula", "Cantidad de boletas"], "Información Personal", None, [True, True, True])
 
         framebotones = Frame(frameCompra, bg='purple')
-        #frameoutput = Frame(frameCompra,height=300,bg='green')
+        
         BotonComprar = Button(framebotones, text="Comprar")
         Botonlimpiar = Button(framebotones, text="Limpiar")
         Botonsalir = Button(framebotones, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreCompra.pack()
         descCompra.pack()
         frameformulario.pack(anchor='center')
-        frameformulario
-        #frameoutput.pack(fill=BOTH,expand=True)
+        
         framebotones.pack(anchor='s')
         BotonComprar.grid(column=0, row=0, padx = (10,10))
         Botonlimpiar.grid(column=1, row=0, padx = (10,10))
@@ -105,14 +104,14 @@ class VentanaSecundaria(tk.Tk):
         frameformulario2 = Frame(frameReserva,height=200,bg='green')
         FFReserva= FieldFrame(frameformulario2, None, ["Cédula"], None, None, [True])
         framebotones2 = Frame(frameReserva, bg='purple')
-        frameoutput2 = Frame(frameReserva,height=300,bg='green')
+        
         BotonComprar2 = Button(framebotones2, text="Devolución")
         Botonlimpiar2 = Button(framebotones2, text="Limpiar")
         Botonsalir2 = Button(framebotones2, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreReserva.pack()
         descReserva.pack()
         frameformulario2.pack(anchor='center')
-        frameoutput2.pack(fill=X)
+        
         framebotones2.pack(anchor='s')
         BotonComprar2.grid(column=0, row=0, padx = (10,10))
         Botonlimpiar2.grid(column=1, row=0, padx = (10,10))
@@ -128,14 +127,14 @@ class VentanaSecundaria(tk.Tk):
         frameformulario3 = Frame(frameDevolucion,height=200,bg='green')
         FFDevolucion= FieldFrame(frameformulario3, None, ["Cédula"], None, None, [True])
         framebotones3 = Frame(frameDevolucion, bg='purple')
-        frameoutput3 = Frame(frameDevolucion,height=300,bg='green')
+        
         BotonComprar3 = Button(framebotones3, text="Devolución")
         Botonlimpiar3 = Button(framebotones3, text="Limpiar")
         Botonsalir3 = Button(framebotones3, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreDevolucion.pack()
         descDevolucion.pack()
         frameformulario3.pack(anchor='center')
-        frameoutput3.pack(fill=X)
+       
         framebotones3.pack(anchor='s')
         BotonComprar3.grid(column=0, row=0, padx = (10,10))
         Botonlimpiar3.grid(column=1, row=0, padx = (10,10))
@@ -150,14 +149,14 @@ class VentanaSecundaria(tk.Tk):
         frameformulario5 = Frame(frameVIP,height=200,bg='green')
         FFVIP= FieldFrame(frameformulario5, None, ["Cédula"], None, None, [True])
         framebotones5 = Frame(frameVIP, bg='purple')
-        frameoutput5 = Frame(frameVIP,height=300,bg='green')
+        
         BotonComprar5 = Button(framebotones5, text="Devolución")
         Botonlimpiar5 = Button(framebotones5, text="Limpiar")
         Botonsalir5 = Button(framebotones5, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreVIP.pack()
         descVIP.pack()
         frameformulario5.pack(anchor='center')
-        frameoutput5.pack(fill=X)
+        
         framebotones5.pack(anchor='s')
         BotonComprar5.grid(column=0, row=0, padx = (10,10))
         Botonlimpiar5.grid(column=1, row=0, padx = (10,10))
@@ -187,14 +186,14 @@ class VentanaSecundaria(tk.Tk):
         frameformulario4 = Frame(frameTienda,height=200,bg='green')
         FFTienda= FieldFrame(frameformulario4, None, ["Saldo"], None, None, [True])
         framebotones4 = Frame(frameTienda, bg='purple')
-        frameoutput4 = Frame(frameTienda,height=300,bg='green')
+      
         BotonComprar4 = Button(framebotones4, text="Comprar")
         Botonlimpiar4 = Button(framebotones4, text="Limpiar")
         Botonsalir4 = Button(framebotones4, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreTienda.pack()
         descTienda.pack()
         frameformulario4.pack(anchor='center')
-        frameoutput4.pack(fill=X)
+
         framebotones4.pack(anchor='s')
         BotonComprar4.grid(column=0, row=0, padx = (10,10))
         Botonlimpiar4.grid(column=1, row=0, padx = (10,10))
