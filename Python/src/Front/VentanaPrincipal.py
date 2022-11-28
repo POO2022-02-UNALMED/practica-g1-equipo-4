@@ -83,6 +83,7 @@ class VentanaSecundaria(tk.Tk):
 
                 if nombre == "" or cedula == "" or cantidadBoletas == "" or diaFuncion == "" or nombrePelicula == "":
                     MessageBox.showerror("Error", "Por favor llene todos los campos")
+                    
                 # ---- Aqui va la funcionalidad de comprar boleta ----
 
             except excepcionesUsuario as e:
@@ -187,13 +188,16 @@ class VentanaSecundaria(tk.Tk):
          
         
         #frame cartelera
+        dias=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
         frameCartelera = Frame(self,bg='ghost white')
         nombreCartelera = Label(frameCartelera, text="Cartelera", font=("Segoe UI", 16), bg= 'yellow')
         descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'ghost white')
         frameimagen = Frame(frameCartelera,width=150, height=300,bg="black")
         framebotones6 = Frame(frameCartelera, bg='ghost white')
         Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
+        diasbox=Combobox(frameCartelera,values=dias,state="readonly",width=10)
         nombreCartelera.pack()
+        diasbox.place(x=100,y=100)
         descCartelera.pack()
         frameimagen.pack()
         Botonsalir6.pack()

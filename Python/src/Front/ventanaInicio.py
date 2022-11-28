@@ -196,7 +196,6 @@ class ventanaInicio(tk.Tk):
             self.ventanaUsuario = VentanaSecundaria()
             self.ventanaUsuario.ventanaInicio = self
             self.iconify()
-            super.destroy()
     
     #con esto nos salimos 
     def salir(self):
