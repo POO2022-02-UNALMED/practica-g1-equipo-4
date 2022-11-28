@@ -57,3 +57,4 @@ class FieldFrame(Frame):
     def crearBoton(self, texto, comando, columna, fila):
         boton = Button(self, text=texto, command=comando)
         boton. grid(column=columna, row=fila, padx = (10,10), pady = (10,10))
+        
