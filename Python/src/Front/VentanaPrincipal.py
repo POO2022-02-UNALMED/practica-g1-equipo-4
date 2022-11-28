@@ -188,21 +188,37 @@ class VentanaSecundaria(tk.Tk):
          
         
         #frame cartelera
-        dias=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
+        #funcion que cambie el nombre cartelera por el dia seleccionado
+
+        opcion=StringVar()
+        diasSemana=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
         frameCartelera = Frame(self,bg='ghost white')
-        nombreCartelera = Label(frameCartelera, text="Cartelera", font=("Segoe UI", 16), bg= 'yellow')
+        frameCartelera.columnconfigure(0, weight=1)
+        frameCartelera.columnconfigure(1, weight=1)
+        frameCartelera.columnconfigure(2, weight=1)
+        frameCartelera.rowconfigure(0, weight=1)
+        frameCartelera.rowconfigure(1, weight=1)
+        frameCartelera.rowconfigure(2, weight=1)
+        frameCartelera.rowconfigure(3, weight=1)
+        frameCartelera.rowconfigure(4, weight=1)
+        nombreCartelera = Label(frameCartelera, text="Dia de cartelera", font=("Segoe UI", 16), bg= 'yellow')
+        seleccion= Label(frameCartelera, text="Por favor selesccione el dia", font=("Segoe UI", 16), bg= "RED")
         descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'ghost white')
-        frameimagen = Frame(frameCartelera,width=150, height=300,bg="black")
+        descCartelera.current(0)
+        frameimagen = Frame(frameCartelera,width=45, height=100,bg="black")
         framebotones6 = Frame(frameCartelera, bg='ghost white')
         Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
-        diasbox=Combobox(frameCartelera,values=dias,state="readonly",width=10)
-        nombreCartelera.pack()
-        diasbox.place(x=100,y=100)
-        descCartelera.pack()
-        frameimagen.pack()
+        diasbox=Combobox(frameCartelera,values=diasSemana,textvariable=opcion,state="readonly",width=10,)
+        nombreCartelera.grid(row=0, column=1,rowspan=2,columnspan=2,sticky="nsew")
+        seleccion.grid(row=0, column=0,sticky="nsew")        
+        diasbox.grid(row=1, column=0,sticky="nsew")
+        descCartelera.grid(row=2, column=0,sticky="nsew")
+        frameimagen.grid(row=2, column=1,columnspan=2,rowspan=3,sticky="nsew")
         Botonsalir6.pack()
-        framebotones6.pack(anchor='s')
+        framebotones6.grid(row=4, column=0,sticky="nsew")
+        diasbox.bind("<<ComboboxSelected>>",nombreCartelera.configure(text=diasbox.get()))
         self.framesEnPantalla.append(frameCartelera)
+
 
         #frame tienda
         frameTienda =  Frame(self,bg='ghost white')
