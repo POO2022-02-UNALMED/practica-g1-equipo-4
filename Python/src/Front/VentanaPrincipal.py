@@ -230,7 +230,6 @@ class VentanaSecundaria(tk.Tk):
         #frame cartelera
         #funcion que cambie el nombre cartelera por el dia seleccionado
 
-        opcion=StringVar()
         diasSemana=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
         frameCartelera = Frame(self,bg='ghost white')
         frameCartelera.columnconfigure(0, weight=1)
@@ -244,20 +243,39 @@ class VentanaSecundaria(tk.Tk):
         nombreCartelera = Label(frameCartelera, text="Dia de cartelera", font=("Segoe UI", 16), bg= 'yellow')
         seleccion= Label(frameCartelera, text="Por favor selesccione el dia", font=("Segoe UI", 16), bg= "RED")
         descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'ghost white')
-        descCartelera.current(0)
-        frameimagen = Frame(frameCartelera,width=45, height=100,bg="black")
+        framePeliculas = Label(frameCartelera,text="Aqui aparceran la cartelera del dia seleccionado",bg="blue")
         framebotones6 = Frame(frameCartelera, bg='ghost white')
         Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
-        diasbox=Combobox(frameCartelera,values=diasSemana,textvariable=opcion,state="readonly",width=10,)
+        diasbox=Combobox(frameCartelera,values=diasSemana,state="readonly",width=10,)
         nombreCartelera.grid(row=0, column=1,rowspan=2,columnspan=2,sticky="nsew")
         seleccion.grid(row=0, column=0,sticky="nsew")        
         diasbox.grid(row=1, column=0,sticky="nsew")
         descCartelera.grid(row=2, column=0,sticky="nsew")
-        frameimagen.grid(row=2, column=1,columnspan=2,rowspan=3,sticky="nsew")
+        framePeliculas.grid(row=2, column=1,columnspan=2,rowspan=3,sticky="nsew")
         Botonsalir6.pack()
         framebotones6.grid(row=4, column=0,sticky="nsew")
-        diasbox.bind("<<ComboboxSelected>>",nombreCartelera.configure(text=diasbox.get()))
         self.framesEnPantalla.append(frameCartelera)
+        #hacer que el combobox cambie el nombre de cartelera por el dia seleccionado y que tenga la cartelera del dia seleccionado
+        diasbox.bind("<<ComboboxSelected>>",lambda event: cambiarNombreCartelera(event,diasbox,nombreCartelera))
+        
+        def cambiarNombreCartelera(event,diasbox,nombreCartelera):
+            nombreCartelera.config(text=diasbox.get())
+            if diasbox.get()=="Lunes":
+                framePeliculas.config(text="Pelicula 1")
+            elif diasbox.get()=="Martes":
+                framePeliculas.config(text="Pelicula 2")
+            elif diasbox.get()=="Miercoles":
+                framePeliculas.config(text="Pelicula 3")
+            elif diasbox.get()=="Jueves":
+                framePeliculas.config(text="Pelicula 4")
+            elif diasbox.get()=="Viernes":
+                framePeliculas.config(text="Pelicula 5")   
+            elif diasbox.get()=="Sabado":
+                framePeliculas.config(text="Pelicula 6")
+            elif diasbox.get()=="Domingo":
+                framePeliculas.config(text="Pelicula 7")
+
+
 
 
         #frame tienda
