@@ -4,10 +4,11 @@ from tkinter import *
 import tkinter as tk
 from tkinter import messagebox as MessageBox, ttk 
 from fieldframe import FieldFrame
+import sys
 from excepciones.excepcionesUsuario import excepcionesUsuario
 class VentanaSecundaria(tk.Tk):
+
     framesEnPantalla = []
-    
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         self.title('Cine UNAL')
