@@ -86,6 +86,7 @@ class VentanaSecundaria(tk.Tk):
                     if esUnNumero(cedula) == False or esUnNumero(cantidadBoletas) == False or esString(nombre) == False or esString(nombrePelicula) == False:
                         MessageBox.showinfo("Error", "Por favor ingrese los datos en el fromato correcto")
                     MessageBox.showerror("Error", "Por favor llene todos los campos")
+                    
                 # ---- Aqui va la funcionalidad de comprar boleta ----
 
             except excepcionesUsuario as e:
@@ -227,6 +228,7 @@ class VentanaSecundaria(tk.Tk):
          
         
         #frame cartelera
+        dias=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
         frameCartelera = Frame(self,bg='ghost white')
         nombreCartelera = Label(frameCartelera, text="Cartelera", font=("Segoe UI", 16), bg= 'yellow')
         descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'ghost white')
@@ -234,7 +236,9 @@ class VentanaSecundaria(tk.Tk):
 
         framebotones6 = Frame(frameCartelera, bg='ghost white')
         Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
+        diasbox=Combobox(frameCartelera,values=dias,state="readonly",width=10)
         nombreCartelera.pack()
+        diasbox.place(x=100,y=100)
         descCartelera.pack()
         frameimagen.pack()
         Botonsalir6.pack()
@@ -319,7 +323,7 @@ class VentanaSecundaria(tk.Tk):
 #-------------------------------------------------------------------------------------------------------------------------------------
     # Muestra un Message Box con los nombres de los autores de la aplicación.
     def ayuda(self):
-        mensaje = messagebox.showinfo(title = "Mensaje", message = "Autores: \n\n\n Sebastián Olaya Pérez: \n solayap@unal.edu.co\n\n Camilo Echeverrí Castrillón\n cecheverric@unal.edu.co\n\n Tomás Gutierrez Orrego\n tguttierrez@unal.edu.co\n\n Juan Jose Marín\n jumarina@unal.edu.co\n\n Julian Orrego Martinez\n jorrego@unal.edu.co")
+        mensaje = messagebox.showinfo(title = "Mensaje", message = "Autores: \n\n\n Sebastián Olaya Pérez: \n solayap@unal.edu.co\n\n Camilo Echeverrí Castrillón\n cecheverric@unal.edu.co\n\n Tomás Gutierrez Orrego\n tgutierrez@unal.edu.co\n\n Juan Jose Marín\n jumarina@unal.edu.co\n\n Julian Orrego Martinez\n jorrego@unal.edu.co")
 
 #-------------------------------------------------------------------------------------------------------------------------------------
     def eventofuncionalidad(self):
