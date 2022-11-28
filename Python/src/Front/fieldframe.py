@@ -9,7 +9,7 @@ from tkinter import *
 
 
 class FieldFrame(Frame):
-     def __init__(self, ventana, tituloCriterios = "", criterios = None, tituloValores = "", valores = None,   habilitado = None):
+    def __init__(self, ventana, tituloCriterios = "", criterios = None, tituloValores = "", valores = None,   habilitado = None):
         super().__init__(ventana)                     #Lista de nombres de criterios        #Valores de criterios
         self._tituloCriterios = tituloCriterios
         self._criterios = criterios
@@ -17,6 +17,7 @@ class FieldFrame(Frame):
         self._valores = valores
         self._habilitado = habilitado
 
+        #  Nombre
         # Lista de elementos
         self._elementos = []
 
@@ -49,10 +50,11 @@ class FieldFrame(Frame):
             # Anadir a la lista de elementos
             self._elementos.append(entryValor)
 
-        def getValue(self, criterio):
-            indice = self._criterios.index(criterio)
-            return self._elementos[indice].get()
+    def getValue(self, criterio):
+        indice = self._criterios.index(criterio)
+        return self._elementos[indice].get()
 
-        def crearBoton(self, texto, comando, columna, fila):
-                boton = Button(self, text=texto, command=comando)
-                boton. grid(column=columna, row=fila, padx = (10,10), pady = (10,10))
+    def crearBoton(self, texto, comando, columna, fila):
+        boton = Button(self, text=texto, command=comando)
+        boton. grid(column=columna, row=fila, padx = (10,10), pady = (10,10))
+        
