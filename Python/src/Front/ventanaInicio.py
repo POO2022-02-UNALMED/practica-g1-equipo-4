@@ -6,7 +6,7 @@ class ventanaInicio(tk.Tk):
 
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
-        # Editamos nuestra ventana 
+        # Editamos nuestra ventana
         self.geometry("875x565")
         self.title("Inicio")
         self.option_add("*tearOff", False)
@@ -71,8 +71,6 @@ class ventanaInicio(tk.Tk):
         self.frameFoto4 = tk.Frame(self.frame6, width=200, height=170,bg="black")
         self.frameFoto4.place(x=208, y=168)
         
-
-        
         
         #Lista para cargar las fotos
         self.fotosDesarolla = ['./Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S1.png', './Python/src/Front/imagenes/S2.png', './Python/src/Front/imagenes/S3.png','./Python/src/Front/imagenes/T.png', './Python/src/Front/imagenes/TOMAS1.png', './Python/src/Front/imagenes/TOMAS2.png', './Python/src/Front/imagenes/TOMAS3.png',
@@ -134,7 +132,7 @@ class ventanaInicio(tk.Tk):
             self.var1.set("Nombre: Tomás Gutiérrez Orrego \n"" Me gustan los caballos \n""Estudiante de Ingeniería de Sistemas e Informática\n""Vive en Medellín")
             self.evento(2)
         elif (self.numClicks == 3):
-            self.var1.set("Nombre: Camilo Echeverri Castrillón \n"" Me gusta el valorant \n""Estudiante de Ingeniería de Sistemas e Informática\n""Vive en Medellín")
+            self.var1.set("Nombre: Camilo Echeverri Castrillón \n"" Me gusta el Valorant \n""Estudiante de Ingeniería de Sistemas e Informática\n""Vive en Medellín")
             self.evento(3)
         elif (self.numClicks == 4):
             self.var1.set("Nombre: Juan Jose Marín Álvarez \n"" Me gusta jugar Lol \n""Estudiante de Ingeniería de Sistemas e Informática\n""Vive en Medellín")
