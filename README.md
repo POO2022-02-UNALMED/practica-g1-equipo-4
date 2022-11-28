@@ -1,5 +1,5 @@
 # Proyecto cine
-Prácitca 1: Asignatura POO Universidad Nacional de Colombia
+Prácitca 1 y 2: Asignatura POO Universidad Nacional de Colombia
 
 
 ## Integrantes del Equipo
