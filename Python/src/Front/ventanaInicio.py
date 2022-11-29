@@ -11,7 +11,7 @@ class ventanaInicio(tk.Tk):
         self.title("Inicio")
         self.option_add("*tearOff", False)
         self.resizable(False,False)
-        self.iconbitmap('./Python/src/Front/imagenes/icono.ico')
+        self.iconbitmap(path+'\imagenes\icono.ico')
         
         #Variables donde va la descripción desarolladores
         self.var1 = tk.StringVar()
@@ -73,9 +73,9 @@ class ventanaInicio(tk.Tk):
         
         
         #Lista para cargar las fotos
-        self.fotosDesarolla = ['./Python/src/Front/imagenes/S.png', './Python/src/Front/imagenes/S1.png', './Python/src/Front/imagenes/S2.png', './Python/src/Front/imagenes/S3.png','./Python/src/Front/imagenes/TOMAS.png', './Python/src/Front/imagenes/TOMAS1.png', './Python/src/Front/imagenes/TOMAS2.png', './Python/src/Front/imagenes/TOMAS3.png',
-         './Python/src/Front/imagenes/CAMILO.png', './Python/src/Front/imagenes/CAMILO1.png', './Python/src/Front/imagenes/CAMILO2.png', './Python/src/Front/imagenes/CAMILO3.png','./Python/src/Front/imagenes/JUANJO1.png', './Python/src/Front/imagenes/JUANJO.png', './Python/src/Front/imagenes/JUANJO2.png', './Python/src/Front/imagenes/JUANJO3.png',
-         './Python/src/Front/imagenes/JULIAN.png', './Python/src/Front/imagenes/JULIAN1.png', './Python/src/Front/imagenes/JULIAN2.png', './Python/src/Front/imagenes/JULIAN3.png','./Python/src/Front/imagenes/U1.png', './Python/src/Front/imagenes/U2.png', './Python/src/Front/imagenes/U3.png', './Python/src/Front/imagenes/U4.png']
+        self.fotosDesarolla = [path+'\imagenes\S.png', path+'\imagenes\S1.png', path+'\imagenes\S2.png', path+'\imagenes\S3.png',path+'\imagenes\TOMAS.png', path+'\imagenes\TOMAS1.png', path+'\imagenes\TOMAS2.png', path+'\imagenes\TOMAS3.png',
+        path+'\imagenes\CAMILO.png', path+'\imagenes\CAMILO1.png', path+'\imagenes\CAMILO2.png', path+'\imagenes\CAMILO3.png',path+'\imagenes\JUANJO1.png', path+'\imagenes\JUANJO.png', path+'\imagenes\JUANJO2.png', path+'\imagenes\JUANJO3.png',
+        path+'\imagenes\JULIAN.png', path+'\imagenes\JULIAN1.png', path+'\imagenes\JULIAN2.png', path+'\imagenes\JULIAN3.png',path+'\imagenes\S1.png', path+'\imagenes\TOMAS.png', path+'\imagenes\CAMILO.png', path+'\imagenes\JUANJO.png']
         self.listaFotos = []
         
 
