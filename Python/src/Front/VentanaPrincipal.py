@@ -94,7 +94,7 @@ class VentanaSecundaria(tk.Tk):
         def comprobarBoleta():
             try:
                 nombre = FFCompraBoleta.getValue("Nombre")
-                cedula = FFCompraBoleta.getValue("Cédula")
+                cedula = FFCompraBoleta.getValue("Cedula")
                 cantidadBoletas = FFCompraBoleta.getValue("Cantidad de boletas")
                 diaFuncion = FFCompraBoleta.getValue("Dia de la funcion")
                 nombrePelicula = FFCompraBoleta.getValue("Nombre de la pelicula")
@@ -127,7 +127,7 @@ class VentanaSecundaria(tk.Tk):
         
         frameformulario = Frame(frameCompra, height=200,bg='BLACK')
 
-        FFCompraBoleta = FieldFrame(frameformulario, "", ["Nombre", "Cédula", "Cantidad de boletas","Día de la función", "Nombre de la película"], "Información Personal", None, [True, True, True,True, True])
+        FFCompraBoleta = FieldFrame(frameformulario, "", ["Nombre", "Cedula", "Cantidad de boletas","Dia de la funcion", "Nombre de la pelicula"], "Información Personal", None, [True, True, True,True, True])
 
         framebotones = Frame(frameCompra, bg='ghost white')
         
@@ -170,7 +170,7 @@ class VentanaSecundaria(tk.Tk):
         nombreReserva = Label(frameReserva, text="Consultar si tiene reserva", font=("Segoe UI", 16), bg= 'bisque')
         descReserva = Label(frameReserva, text="Ingrese la siguinete información para consultar su asiento", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario2 = Frame(frameReserva,height=200,bg='firebrick')
-        FFReserva= FieldFrame(frameformulario2, None, ["Nombre", "Cédula", "ID Boleta"],"Información", None, [True, True, True])
+        FFReserva= FieldFrame(frameformulario2, None, ["Nombre", "Cedula", "ID Boleta"],"Información", None, [True, True, True])
         framebotones2 = Frame(frameReserva, bg='ghost white')
         BotonComprar2 = Button(framebotones2, text="Consultar", command=comprobarReserva)
         Botonlimpiar2 = Button(framebotones2, text="Limpiar")
@@ -256,7 +256,6 @@ class VentanaSecundaria(tk.Tk):
         FFVIP.pack()
         self.framesEnPantalla.append(frameVIP)
          
-        
         #frame cartelera
         #funcion que cambie el nombre cartelera por el dia seleccionado
 
