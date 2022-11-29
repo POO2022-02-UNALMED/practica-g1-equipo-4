@@ -32,7 +32,7 @@ class ventanaInicio(tk.Tk):
         self.frame2.config(relief="ridge")       
         self.etiquetaBienvenida = Label(self.frame2, text="¡Hola!\n Bienvenido al cine \n UNAL", font=("Segoe UI", 20))
         self.etiquetaBienvenida.place(x=200, y=75, anchor="center")
-        self.etiquetaBienvenida.config(fg="black", bg="bisque")
+        self.etiquetaBienvenida.config(fg="black", bg="seashell2")
 
 
         self.frame3 = tk.Frame(self.frame1, width=400, height=380, bg="bisque")

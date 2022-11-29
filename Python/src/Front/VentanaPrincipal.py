@@ -68,7 +68,7 @@ class VentanaSecundaria(tk.Tk):
         #Frame Inicio
         
         framePantallaInicio = Frame(self, bg='brown')
-        nombrePantallaInicio = Label(framePantallaInicio, text="CINE UNAL", font=("Segoe UI", 50), bg='indian red')
+        nombrePantallaInicio = Label(framePantallaInicio, text="CINE UNAL", font=("Segoe UI", 50), bg='seashell2')
         insPantallaInicio = Label(framePantallaInicio, text="Presiona el menú Procesos y Consultas", font=("Segoe UI", 30), bg='bisque')
         nombrePantallaInicio.pack()
         insPantallaInicio.pack(fill=X, expand=True, padx=10)
@@ -331,7 +331,7 @@ class VentanaSecundaria(tk.Tk):
         frameTienda.rowconfigure(5, weight=1)
         frameTienda.columnconfigure(0, weight=1)
         nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'bisque')
-        descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'white')
+        descTienda = Label(frameTienda, text="¡Aqui puedes comprar tus productos favoritos!", font=("Segoe UI", 12), background= 'brown')
         comboboxTienda= Combobox(frameTienda,values=tuple(opciones.keys()),state="readonly")
         comboboxProducto= Combobox(frameTienda,state="readonly")
         precio=Label(frameTienda,text="Aqui dira el precio del producto")
