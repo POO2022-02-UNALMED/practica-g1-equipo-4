@@ -16,7 +16,7 @@ class ventanaInicio(tk.Tk):
         self.title("Inicio")
         self.option_add("*tearOff", False)
         self.resizable(False,False)
-        self.iconbitmap(path+'imagenes/icono.ico')
+        self.iconbitmap(path+'\imagenes\icono.ico')
         
         #Variables donde va la descripción desarolladores
         self.var1 = tk.StringVar()
@@ -79,8 +79,8 @@ class ventanaInicio(tk.Tk):
         
         #Lista para cargar las fotos
         self.fotosDesarolla = [path+'\imagenes\S.png', path+'\imagenes\S1.png', path+'\imagenes\S2.png', path+'\imagenes\S3.png',path+'\imagenes\TOMAS.png', path+'\imagenes\TOMAS1.png', path+'\imagenes\TOMAS2.png', path+'\imagenes\TOMAS3.png',
-         path+'\imagenes\CAMILO.png', path+'\imagenes\CAMILO1.png', path+'\imagenes\CAMILO2.png', path+'\imagenes\CAMILO3.png',path+'\imagenes\JUANJO1.png', path+'\imagenes\JUANJO.png', path+'\imagenes\JUANJO2.png', path+'\imagenes\JUANJO3.png',
-         path+'\imagenes\JULIAN.png', path+'\imagenes\JULIAN1.png', path+'\imagenes\JULIAN2.png', path+'\imagenes\JULIAN3.png',path+'\imagenes\U1.png', path+'\imagenes\U2.png', path+'\imagenes\U3.png', path+'\imagenes\U4.png']
+        path+'\imagenes\CAMILO.png', path+'\imagenes\CAMILO1.png', path+'\imagenes\CAMILO2.png', path+'\imagenes\CAMILO3.png',path+'\imagenes\JUANJO1.png', path+'\imagenes\JUANJO.png', path+'\imagenes\JUANJO2.png', path+'\imagenes\JUANJO3.png',
+        path+'\imagenes\JULIAN.png', path+'\imagenes\JULIAN1.png', path+'\imagenes\JULIAN2.png', path+'\imagenes\JULIAN3.png',path+'\imagenes\S1.png', path+'\imagenes\TOMAS.png', path+'\imagenes\CAMILO.png', path+'\imagenes\JUANJO.png']
         self.listaFotos = []
         
 
