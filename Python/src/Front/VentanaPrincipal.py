@@ -5,7 +5,17 @@ import tkinter as tk
 from tkinter import messagebox as MessageBox, ttk 
 from fieldframe import FieldFrame
 import sys
-from excepciones.excepcionesUsuario import excepcionesUsuario
+
+from excepcionesPy.errorAplicacion import errorAplicacion
+from excepcionesPy.errorEntero import errorEntero
+from excepcionesPy.errorString import errorString
+from excepcionesPy.errorUnexpected import errorUnexpected
+from excepcionesPy.excepcionesFuncionalidad import excepcionesFuncionalidad
+from excepcionesPy.excepcionesFormato import excepcionesFormato
+from excepcionesPy.errorDevolucion import errorDevolucion
+
+
+
 class VentanaSecundaria(tk.Tk):
 
     framesEnPantalla = []
@@ -73,7 +83,14 @@ class VentanaSecundaria(tk.Tk):
         
         
         #Frame Comprar boletas
-    
+        def esUnNumero(numero):
+            if numero.isnumeric():
+               return True 
+                
+        def esString(string):
+            if string.isalpha():
+                return True
+            
         def comprobarBoleta():
             try:
                 nombre = FFCompraBoleta.getValue("Nombre")
@@ -82,14 +99,26 @@ class VentanaSecundaria(tk.Tk):
                 diaFuncion = FFCompraBoleta.getValue("Dia de la funcion")
                 nombrePelicula = FFCompraBoleta.getValue("Nombre de la pelicula")
 
-                if nombre == "" or cedula == "" or cantidadBoletas == "" or diaFuncion == "" or nombrePelicula == "":
-                    if esUnNumero(cedula) == False or esUnNumero(cantidadBoletas) == False or esString(nombre) == False or esString(nombrePelicula) == False:
-                        MessageBox.showinfo("Error", "Por favor ingrese los datos en el fromato correcto")
-                    MessageBox.showerror("Error", "Por favor llene todos los campos")
-                    
-                # ---- Aqui va la funcionalidad de comprar boleta ----
+                if not esString(nombre):
+                    raise errorString(nombre)
+                
+                if not esUnNumero(cedula):
+                    raise errorEntero(cedula)
+                
+                if not esUnNumero(cantidadBoletas):
+                    raise errorEntero(cantidadBoletas)
+                
+                if not esString(nombrePelicula):
+                    raise errorString(nombrePelicula)
+                
+                if not esString(diaFuncion):
+                    raise errorString(diaFuncion)
 
-            except excepcionesUsuario as e:
+                # ---- Aqui va la funcionalidad de comprar boleta ---- 
+                MessageBox.showinfo("Compra de boletas", "Compra exitosa")
+                
+
+            except errorAplicacion as e:
                 MessageBox.showerror("Error", e)
                 
         frameCompra = Frame(self,bg='ghost white')
@@ -121,16 +150,20 @@ class VentanaSecundaria(tk.Tk):
             try:
                 nombre = FFReserva.getValue("Nombre")
                 cedula = FFReserva.getValue("Cedula")
-                diaFuncion = FFReserva.getValue("Dia de la funcion")
+                IDBoleta = FFReserva.getValue("ID Boleta")
                 
-                if nombre == "" or cedula == "" or diaFuncion == "" :
-                    MessageBox.showerror("Error", "Por favor llene todos los campos")
-                if esUnNumero(cedula) == False or esString(nombre) == False :
-                    MessageBox.showinfo("Error", "Por favor ingrese los datos en el fromato correcto")
-
+                if not esString(nombre):
+                    raise errorString(nombre)
+                
+                if not esUnNumero(cedula):
+                    raise errorEntero(cedula)
+                
+                if not esUnNumero(IDBoleta):
+                    raise errorEntero(IDBoleta)
+                
                 # ---- Aqui va la funcionalidad de consultar reserva ----
                          
-            except excepcionesUsuario as e:
+            except excepcionesFormato as e:
                 MessageBox.showerror("Error", e)
 
         frameReserva = Frame(self,bg='ghost white')
@@ -160,20 +193,21 @@ class VentanaSecundaria(tk.Tk):
                 cedula = FFDevolucion.getValue("Cedula")
                 IDBoleta = FFDevolucion.getValue("ID Boleta")
          
-                if IDBoleta == "" or cedula == "" :
-                    MessageBox.showerror("Error", "Por favor llene todos los campos")
-                if esUnNumero(cedula) == False or esString(IDBoleta) == False:
-                    MessageBox.showinfo("Error", "Por favor ingrese los datos en el fromato correcto")
-
+                if not esUnNumero(cedula):
+                    raise errorEntero(cedula)
+                
+                if not esUnNumero(IDBoleta):
+                    raise errorEntero(IDBoleta)
+                
                 # ---- Aqui va la funcionalidad de devolución ----
-            except excepcionesUsuario as e:
+            except errorAplicacion as e:
                 MessageBox.showerror("Error", e)
 
         frameDevolucion= Frame(self,bg='ghost white')
         nombreDevolucion = Label(frameDevolucion, text="Solicita la devolución", font=("Segoe UI", 16), bg= 'yellow')
         descDevolucion = Label(frameDevolucion, text="Ingrese su documento para saber si se puede realizar la devolución de su dinero", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario3 = Frame(frameDevolucion,height=200,bg='green')
-        FFDevolucion= FieldFrame(frameformulario3, None, ["Cédula", "ID Boleta"], None, None, [True, True])
+        FFDevolucion= FieldFrame(frameformulario3, None, ["Cedula", "ID Boleta"], None, None, [True, True])
         framebotones3 = Frame(frameDevolucion, bg='ghost white')
         BotonComprar3 = Button(framebotones3, text="Devolución", command=comprobarDevolucion)
         Botonlimpiar3 = Button(framebotones3, text="Limpiar")
@@ -191,17 +225,13 @@ class VentanaSecundaria(tk.Tk):
 
         #frame VIP
         def comprobarVIP():
+            cedula = FFVIP.getValue("Cedula")
             try:
-                nombre = FFVIP.getValue("Nombre")
-                cedula = FFVIP.getValue("Cedula")
-                diaFuncion = FFVIP.getValue("Dia de la funcion")
-                if nombre == "" or cedula == "" or diaFuncion == "" :
-                    MessageBox.showerror("Error", "Por favor llene todos los campos")
-                if esUnNumero(cedula) == False or esString(nombre) == False :
-                    MessageBox.showinfo("Error", "Por favor ingrese los datos en el fromato correcto")
-
+                if not esUnNumero(cedula):
+                    raise errorEntero(cedula)
+                
                 # ---- Aqui va la funcionalidad de VIP ----
-            except excepcionesUsuario as e:
+            except errorAplicacion as e:
                 MessageBox.showerror("Error", e)
 
 
@@ -209,7 +239,7 @@ class VentanaSecundaria(tk.Tk):
         nombreVIP= Label(frameVIP, text="Hazte miembor VIP", font=("Segoe UI", 16), bg= 'yellow')
         descVIP = Label(frameVIP, text="Ingrese su documento para volverse VIP", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario5 = Frame(frameVIP,height=200,bg='green')
-        FFVIP= FieldFrame(frameformulario5, None, ["Cédula", "ID Boleta"], None, None, [True, True])
+        FFVIP= FieldFrame(frameformulario5, None, ["Cedula"], None, None, [True])
         framebotones5 = Frame(frameVIP, bg='ghost white')
         
         BotonComprar5 = Button(framebotones5, text="VIP", command=comprobarVIP)
@@ -275,11 +305,7 @@ class VentanaSecundaria(tk.Tk):
             elif diasbox.get()=="Domingo":
                 framePeliculas.config(text="Pelicula 7")
 
-
-
-
         #frame tienda
-
         frameTienda =  Frame(self,bg='ghost white')
         nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'yellow')
         descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'ghost white')
@@ -300,21 +326,7 @@ class VentanaSecundaria(tk.Tk):
         FFTienda.pack()
         self.framesEnPantalla.append(frameTienda)
 
-        def esUnNumero(numero):
-            try:
-                int(numero)
-                return True
-            except:
-                return False
         
-        def esString(string):
-            try:
-                str(string)
-                return True
-            except:
-                return False
-
-
 #--------------------------------------------------------------------------------------------------------------
     #Este metodo es para la compra de la boleta
     def mostraroutput(self,lugar,texto):
