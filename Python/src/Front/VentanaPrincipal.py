@@ -63,9 +63,9 @@ class VentanaSecundaria(tk.Tk):
         
         #Frame Inicio
         
-        framePantallaInicio = Frame(self, bg='ghost white')
-        nombrePantallaInicio = Label(framePantallaInicio, text="Cine UNAL", font=("Segoe UI", 16), bg='yellow')
-        insPantallaInicio = Label(framePantallaInicio, text="La aplicación funciona así:", font=("Segoe UI", 10), bg='green')
+        framePantallaInicio = Frame(self, bg='brown')
+        nombrePantallaInicio = Label(framePantallaInicio, text="CINE UNAL", font=("Segoe UI", 50), bg='indian red')
+        insPantallaInicio = Label(framePantallaInicio, text="Presiona el menú Procesos y Consultas", font=("Segoe UI", 30), bg='bisque')
         nombrePantallaInicio.pack()
         insPantallaInicio.pack(fill=X, expand=True, padx=10)
         self.framesEnPantalla.append(framePantallaInicio)
@@ -92,8 +92,8 @@ class VentanaSecundaria(tk.Tk):
             except excepcionesUsuario as e:
                 MessageBox.showerror("Error", e)
                 
-        frameCompra = Frame(self,bg='ghost white')
-        nombreCompra = Label(frameCompra, text="Compra tus boletas", font=("Segoe UI", 16), bg= 'yellow')
+        frameCompra = Frame(self,bg='brown')
+        nombreCompra = Label(frameCompra, text="Compra tus boletas", font=("Segoe UI", 16), bg= 'bisque')
         descCompra = Label(frameCompra, text="Digite los campos para comprar las boletas", font=("Segoe UI", 12), background= 'White')
         
         frameformulario = Frame(frameCompra, height=200,bg='BLACK')
@@ -133,10 +133,10 @@ class VentanaSecundaria(tk.Tk):
             except excepcionesUsuario as e:
                 MessageBox.showerror("Error", e)
 
-        frameReserva = Frame(self,bg='ghost white')
-        nombreReserva = Label(frameReserva, text="Consultar si tiene reserva", font=("Segoe UI", 16), bg= 'yellow')
+        frameReserva = Frame(self,bg='brown')
+        nombreReserva = Label(frameReserva, text="Consultar si tiene reserva", font=("Segoe UI", 16), bg= 'bisque')
         descReserva = Label(frameReserva, text="Ingrese la siguinete información para consultar su asiento", font=("Segoe UI", 12), background= 'ghost white')
-        frameformulario2 = Frame(frameReserva,height=200,bg='green')
+        frameformulario2 = Frame(frameReserva,height=200,bg='firebrick')
         FFReserva= FieldFrame(frameformulario2, None, ["Nombre", "Cédula", "ID Boleta"],"Información", None, [True, True, True])
         framebotones2 = Frame(frameReserva, bg='ghost white')
         BotonComprar2 = Button(framebotones2, text="Consultar", command=comprobarReserva)
@@ -169,10 +169,10 @@ class VentanaSecundaria(tk.Tk):
             except excepcionesUsuario as e:
                 MessageBox.showerror("Error", e)
 
-        frameDevolucion= Frame(self,bg='ghost white')
-        nombreDevolucion = Label(frameDevolucion, text="Solicita la devolución", font=("Segoe UI", 16), bg= 'yellow')
+        frameDevolucion= Frame(self,bg='brown')
+        nombreDevolucion = Label(frameDevolucion, text="Solicita la devolución", font=("Segoe UI", 16), bg= 'bisque')
         descDevolucion = Label(frameDevolucion, text="Ingrese su documento para saber si se puede realizar la devolución de su dinero", font=("Segoe UI", 12), background= 'ghost white')
-        frameformulario3 = Frame(frameDevolucion,height=200,bg='green')
+        frameformulario3 = Frame(frameDevolucion,height=200,bg='black')
         FFDevolucion= FieldFrame(frameformulario3, None, ["Cédula", "ID Boleta"], None, None, [True, True])
         framebotones3 = Frame(frameDevolucion, bg='ghost white')
         BotonComprar3 = Button(framebotones3, text="Devolución", command=comprobarDevolucion)
@@ -205,8 +205,8 @@ class VentanaSecundaria(tk.Tk):
                 MessageBox.showerror("Error", e)
 
 
-        frameVIP= Frame(self,bg='ghost white')
-        nombreVIP= Label(frameVIP, text="Házte miembor VIP", font=("Segoe UI", 16), bg= 'yellow')
+        frameVIP= Frame(self,bg='brown')
+        nombreVIP= Label(frameVIP, text="Hazte miembor VIP", font=("Segoe UI", 16), bg= 'bisque')
         descVIP = Label(frameVIP, text="Ingrese su documento para volverse VIP", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario5 = Frame(frameVIP,height=200,bg='green')
         FFVIP= FieldFrame(frameformulario5, None, ["Cédula", "ID Boleta"], None, None, [True, True])
@@ -240,10 +240,10 @@ class VentanaSecundaria(tk.Tk):
         frameCartelera.rowconfigure(2, weight=1)
         frameCartelera.rowconfigure(3, weight=1)
         frameCartelera.rowconfigure(4, weight=1)
-        nombreCartelera = Label(frameCartelera, text="Día de cartelera", font=("Segoe UI", 16), bg= 'yellow')
-        seleccion= Label(frameCartelera, text="Por favor seleccione el día", font=("Segoe UI", 16), bg= "RED")
+        nombreCartelera = Label(frameCartelera, text="Día de cartelera", font=("Segoe UI", 16), bg= 'brown')
+        seleccion= Label(frameCartelera, text="Por favor seleccione el día", font=("Segoe UI", 16), bg= "bisque")
         descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'ghost white')
-        framePeliculas = Label(frameCartelera,text="Aquí aparcerá la cartelera del día seleccionado",bg="blue")
+        framePeliculas = Label(frameCartelera,text="Aquí aparcerá la cartelera del día seleccionado",bg="indian red")
         framebotones6 = Frame(frameCartelera, bg='ghost white')
         Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         diasbox=Combobox(frameCartelera,values=diasSemana,state="readonly",width=10,)
@@ -301,9 +301,9 @@ class VentanaSecundaria(tk.Tk):
             "Comida": ("Papas", "hambuerguesa", "Palomitas"), 
             "Unal": ("Buso", "Gorra", "termo")
         }
-        frameTienda =  Frame(self,bg='ghost white')
-        nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'yellow')
-        descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'ghost white')
+        frameTienda =  Frame(self,bg='brown')
+        nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'bisque')
+        descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'white')
         comboboxTienda= Combobox(frameTienda,values=tuple(opciones.keys()),state="readonly")
         comboboxProducto= Combobox(frameTienda,state="readonly")
         precio=Label(frameTienda,text="Aqui dira el precio del producto")
