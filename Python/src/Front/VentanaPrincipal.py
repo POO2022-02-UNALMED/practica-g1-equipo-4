@@ -200,7 +200,7 @@ class VentanaSecundaria(tk.Tk):
         frameDevolucion= Frame(self,bg='brown')
         nombreDevolucion = Label(frameDevolucion, text="Solicita la devolución", font=("Segoe UI", 16), bg= 'bisque')
         descDevolucion = Label(frameDevolucion, text="Ingrese su documento para saber si se puede realizar la devolución de su dinero", font=("Segoe UI", 12), background= 'ghost white')
-        frameformulario3 = Frame(frameDevolucion,height=200,bg='green')
+        frameformulario3 = Frame(frameDevolucion,height=200,bg='black')
         FFDevolucion= FieldFrame(frameformulario3, None, ["Cedula", "ID Boleta"], None, None, [True, True])
         framebotones3 = Frame(frameDevolucion, bg='ghost white')
         BotonComprar3 = Button(framebotones3, text="Devolución", command=comprobarDevolucion)
@@ -230,7 +230,7 @@ class VentanaSecundaria(tk.Tk):
 
 
         frameVIP= Frame(self,bg='brown')
-        nombreVIP= Label(frameVIP, text="Hazte miembor VIP", font=("Segoe UI", 16), bg= 'bisque')
+        nombreVIP= Label(frameVIP, text="Hazte miembro VIP", font=("Segoe UI", 16), bg= 'bisque')
         descVIP = Label(frameVIP, text="Ingrese su documento para volverse VIP", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario5 = Frame(frameVIP,height=200,bg='green')
         FFVIP= FieldFrame(frameformulario5, None, ["Cedula"], None, None, [True])
