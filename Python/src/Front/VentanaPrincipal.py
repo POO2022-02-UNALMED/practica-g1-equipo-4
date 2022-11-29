@@ -260,20 +260,19 @@ class VentanaSecundaria(tk.Tk):
         
         def cambiarNombreCartelera(event,diasbox,nombreCartelera):
             nombreCartelera.config(text=diasbox.get())
-            if   diasbox.get()=="Lunes           ":
+            if   diasbox.get()=="Lunes":
                 framePeliculas.config(text="Pelicula 1")
-            elif diasbox.get()=="Martes          ":
-                #nombre de las pelicula y ubicarlo arriba a la izquierda letra arial tamaño 12
+            elif diasbox.get()=="Martes":
                 framePeliculas.config(text="Pelicula 2:14:00-16:00\n Pelicula 3: 20:00-22:00\n Pelicula 4: 00:00-00:00\n Pelicula 5: 02:00-00:00",anchor="nw",  font=("Arial", 20))      
-            elif diasbox.get()=="Miercoles       ":
+            elif diasbox.get()=="Miercoles":
                 framePeliculas.config(text="Pelicula 3")
-            elif diasbox.get()=="Jueves          ":
+            elif diasbox.get()=="Jueves":
                 framePeliculas.config(text="Pelicula 4")
-            elif diasbox.get()=="Viernes         ":
+            elif diasbox.get()=="Viernes":
                 framePeliculas.config(text="Pelicula 5")   
-            elif diasbox.get()=="Sabado          ":
+            elif diasbox.get()=="Sabado":
                 framePeliculas.config(text="Pelicula 6")
-            elif diasbox.get()=="Domingo         ":
+            elif diasbox.get()=="Domingo":
                 framePeliculas.config(text="Pelicula 7")
 
 
