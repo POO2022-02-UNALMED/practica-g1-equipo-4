@@ -107,6 +107,7 @@ class VentanaSecundaria(tk.Tk):
                 
                 if not esString(diaFuncion):
                     raise errorString(diaFuncion)
+            
 
                 # ---- Aqui va la funcionalidad de comprar boleta ---- 
                 MessageBox.showinfo("Compra de boletas", "Compra exitosa")
@@ -263,10 +264,10 @@ class VentanaSecundaria(tk.Tk):
         frameCartelera.rowconfigure(2, weight=1)
         frameCartelera.rowconfigure(3, weight=1)
         frameCartelera.rowconfigure(4, weight=1)
-        nombreCartelera = Label(frameCartelera, text="Día de cartelera", font=("Segoe UI", 16), bg= 'brown')
-        seleccion= Label(frameCartelera, text="Por favor seleccione el día", font=("Segoe UI", 16), bg= "bisque")
-        descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'ghost white')
-        framePeliculas = Label(frameCartelera,text="Aquí aparcerá la cartelera del día seleccionado",bg="indian red")
+        nombreCartelera = Label(frameCartelera, text="Día",font=("Arabic Transparent", 30),anchor="sw", bg= 'brown')
+        seleccion= Label(frameCartelera, text="Por favor seleccione el día", font=("Constantia", 25), bg= "bisque")
+        descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Constantia", 18), background= 'salmon')
+        framePeliculas = Label(frameCartelera,text="Aquí aparcerá la cartelera del día seleccionado",bg="indian red", font=("Comic Sans MS", 25))
         framebotones6 = Frame(frameCartelera, bg='ghost white')
         Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         diasbox=Combobox(frameCartelera,values=diasSemana,state="readonly",width=10,)
@@ -282,21 +283,21 @@ class VentanaSecundaria(tk.Tk):
         diasbox.bind("<<ComboboxSelected>>",lambda event: cambiarNombreCartelera(event,diasbox,nombreCartelera))
         
         def cambiarNombreCartelera(event,diasbox,nombreCartelera):
-            nombreCartelera.config(text=diasbox.get())
+            nombreCartelera.config(text=diasbox.get(),font=("Arabic Transparent", 30),anchor="sw")
             if   diasbox.get()=="Lunes":
-                framePeliculas.config(text="Pelicula 1")
+                framePeliculas.config(text="THE BOYS:14:00-16:00\n\nONE PIECE:16:00-20:00\n\nBARBIE:20:00-22:00\n\nIT:22:00-24:00  ",  font=("Comic Sans MS", 25))
             elif diasbox.get()=="Martes":
-                framePeliculas.config(text="Pelicula 2:14:00-16:00\n Pelicula 3: 20:00-22:00\n Pelicula 4: 00:00-00:00\n Pelicula 5: 02:00-00:00",anchor="nw",  font=("Arial", 20))      
+                framePeliculas.config(text="AVENGERS:14:00-16:00\n\nROGUE:16:00-20:00\n\nRATATUILLE:20:00-22:00\n\nSHAFT:22:00-24:00  ",  font=("Comic Sans MS", 25))      
             elif diasbox.get()=="Miercoles":
-                framePeliculas.config(text="Pelicula 3")
+                framePeliculas.config(text="IT 2:14:00-16:00\n\nUP:16:00-20:00\n\nRATATUILLE:20:00-22:00\n\nLA SIRENITA:22:00-24:00  ",  font=("Comic Sans MS", 25))
             elif diasbox.get()=="Jueves":
-                framePeliculas.config(text="Pelicula 4")
+                framePeliculas.config(text="RANGO:14:00-16:00\n\nEL PASEO:16:00-20:00\n\nHALLOWEEN:20:00-22:00\n\nREVENANT:22:00-24:00  ",  font=("Comic Sans MS", 25))
             elif diasbox.get()=="Viernes":
-                framePeliculas.config(text="Pelicula 5")   
+                framePeliculas.config(text="SCREAM 5:14:00-16:00\n\nMAD MAX:16:00-20:00\n\nAPOLO 13:20:00-22:00\n\nMATRIX:22:00-24:00  ",  font=("Comic Sans MS", 25))   
             elif diasbox.get()=="Sabado":
-                framePeliculas.config(text="Pelicula 6")
+                framePeliculas.config(text="STAR WARS:14:00-16:00\n\nEL EXORCISTA:16:00-20:00\n\nDUNA:20:00-22:00\n\n1917:22:00-24:00  ",  font=("Comic Sans MS", 25))
             elif diasbox.get()=="Domingo":
-                framePeliculas.config(text="Pelicula 7")
+                framePeliculas.config(text="EL ORIGEN:14:00-16:00\n\nSILENCE:16:00-20:00\n\nSINIESTRO:20:00-22:00\n\nEL RITUAL:22:00-24:00  ",  font=("Comic Sans MS", 25))
 
         #frame tienda
         def comboboSeleccion(event):
@@ -322,6 +323,13 @@ class VentanaSecundaria(tk.Tk):
             "Unal": ("Buso", "Gorra", "termo")
         }
         frameTienda =  Frame(self,bg='brown')
+        frameTienda.rowconfigure(0, weight=1)
+        frameTienda.rowconfigure(1, weight=1)
+        frameTienda.rowconfigure(2, weight=1)
+        frameTienda.rowconfigure(3, weight=1)
+        frameTienda.rowconfigure(4, weight=1)
+        frameTienda.rowconfigure(5, weight=1)
+        frameTienda.columnconfigure(0, weight=1)
         nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'bisque')
         descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'white')
         comboboxTienda= Combobox(frameTienda,values=tuple(opciones.keys()),state="readonly")
@@ -336,10 +344,10 @@ class VentanaSecundaria(tk.Tk):
         comboboxTienda.bind("<<ComboboxSelected>>",comboboSeleccion)
         comboboxProducto.grid(row=3, column=0,sticky="nsew")
         comboboxProducto.bind("<<ComboboxSelected>>",comboboSeleccion2)
-        framebotones4.grid(row=4, column=0,sticky="nsew")
-        BotonComprar4.grid(column=0, row=0, padx = 10,pady=10)
-        Botonsalir4.grid(column=1, row=0, padx = 10,pady=10)
-        precio.grid(row=5, column=0,sticky="nsew")
+        precio.grid(row=4, column=0,sticky="nsew")
+        framebotones4.grid(row=5, column=0,sticky="nsew")
+        BotonComprar4.pack(padx = 10,pady=10)
+        Botonsalir4.pack(padx = 10,pady=10)
         self.framesEnPantalla.append(frameTienda)
 
         
