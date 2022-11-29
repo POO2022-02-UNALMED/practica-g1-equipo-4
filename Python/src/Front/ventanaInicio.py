@@ -120,7 +120,7 @@ class ventanaInicio(tk.Tk):
         
         self.acumulador = 0
         self.numClicks = 0
-        
+                        
     #Descripción
     def desno(self):
         descripcion = MessageBox.showinfo(title = "Mensaje", message = "Información de la App",
