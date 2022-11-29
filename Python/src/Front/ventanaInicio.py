@@ -107,7 +107,7 @@ class ventanaInicio(tk.Tk):
         self.contador = 0
 
         #Imagenes del cine para ir cambiando
-        self.fotosApp = ['./Python/src/Front/imagenes/p1.png', './Python/src/Front/imagenes/p2.png', './Python/src/Front/imagenes/p3.png','./Python/src/Front/imagenes/p4.png']
+        self.fotosApp = [path+'\imagenes\p1.png', path+'.\imagenes\p2.png', path+'\imagenes\p3.png', path+'\imagenes\p4.png']
         self.listaFotosApp = []
         for i in self.fotosApp:
             imagen = PhotoImage(file=i)
