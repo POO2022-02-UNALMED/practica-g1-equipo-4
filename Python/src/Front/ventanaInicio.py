@@ -23,15 +23,15 @@ class ventanaInicio(tk.Tk):
         self.frame1 = tk.Frame(self, width=400, height=500,borderwidth=15, bg="Black")
         self.frame1.pack(side="left", expand=True)
         self.frame1.config(relief="sunken")
-        self.frame2 = tk.Frame(self.frame1, width=400, borderwidth=5,height=150, bg="steel blue")
+        self.frame2 = tk.Frame(self.frame1, width=400, borderwidth=5,height=150, bg="Firebrick")
         self.frame2.grid(row=0, column=0) 
         self.frame2.config(relief="ridge")       
-        self.etiquetaBienvenida = Label(self.frame2, text="¡¡HOLA!!\n Bienvenido al cine \n UNAL", font=("", 20))
+        self.etiquetaBienvenida = Label(self.frame2, text="¡Hola!\n Bienvenido al cine \n UNAL", font=("Segoe UI", 20))
         self.etiquetaBienvenida.place(x=200, y=75, anchor="center")
-        self.etiquetaBienvenida.config(fg="black", bg="light goldenrod")
+        self.etiquetaBienvenida.config(fg="black", bg="bisque")
 
 
-        self.frame3 = tk.Frame(self.frame1, width=400, height=380, bg="light goldenrod")
+        self.frame3 = tk.Frame(self.frame1, width=400, height=380, bg="bisque")
         self.frame3.grid(row=1, column=0)
         
         self.frame4 = tk.Frame(self, width=400, height=500,borderwidth=15, bg="black")
@@ -39,7 +39,7 @@ class ventanaInicio(tk.Tk):
         self.frame4.config(relief="sunken")
         
         
-        self.frame5 = tk.Frame(self.frame4, width=400, height=160,borderwidth=5, bg="steel blue")
+        self.frame5 = tk.Frame(self.frame4, width=400, height=160,borderwidth=5, bg="firebrick")
         self.frame5.grid(row=0, column=0)
         self.frame5.config(relief="ridge")
         self.textoDescripcion = Label(self.frame5, textvariable=self.var1, font = ("Segoe UI", 10))
@@ -120,7 +120,7 @@ class ventanaInicio(tk.Tk):
     #Descripción
     def desno(self):
         descripcion = MessageBox.showinfo(title = "Mensaje", message = "Información de la App",
-        detail = "Con esta app podras hacer todo lo que se puede realizar en un portal de cine virtual \nCon todas la funcionalidades principales que podrías desear" )
+        detail = "Con esta app podrás hacer todo lo que se puede realizar en un portal de cine virtual, con todas la funcionalidades principales que podrías desear" )
         
     
     def cambioDescripcion(self,cont):

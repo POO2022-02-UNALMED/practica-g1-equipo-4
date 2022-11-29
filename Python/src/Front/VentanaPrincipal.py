@@ -73,9 +73,9 @@ class VentanaSecundaria(tk.Tk):
         
         #Frame Inicio
         
-        framePantallaInicio = Frame(self, bg='ghost white')
-        nombrePantallaInicio = Label(framePantallaInicio, text="Cine UNAL", font=("Segoe UI", 16), bg='yellow')
-        insPantallaInicio = Label(framePantallaInicio, text="La aplicación funciona así:", font=("Segoe UI", 10), bg='green')
+        framePantallaInicio = Frame(self, bg='brown')
+        nombrePantallaInicio = Label(framePantallaInicio, text="CINE UNAL", font=("Segoe UI", 50), bg='indian red')
+        insPantallaInicio = Label(framePantallaInicio, text="Presiona el menú Procesos y Consultas", font=("Segoe UI", 30), bg='bisque')
         nombrePantallaInicio.pack()
         insPantallaInicio.pack(fill=X, expand=True, padx=10)
         self.framesEnPantalla.append(framePantallaInicio)
@@ -94,7 +94,7 @@ class VentanaSecundaria(tk.Tk):
         def comprobarBoleta():
             try:
                 nombre = FFCompraBoleta.getValue("Nombre")
-                cedula = FFCompraBoleta.getValue("Cedula")
+                cedula = FFCompraBoleta.getValue("Cédula")
                 cantidadBoletas = FFCompraBoleta.getValue("Cantidad de boletas")
                 diaFuncion = FFCompraBoleta.getValue("Dia de la funcion")
                 nombrePelicula = FFCompraBoleta.getValue("Nombre de la pelicula")
@@ -121,13 +121,13 @@ class VentanaSecundaria(tk.Tk):
             except errorAplicacion as e:
                 MessageBox.showerror("Error", e)
                 
-        frameCompra = Frame(self,bg='ghost white')
-        nombreCompra = Label(frameCompra, text="Compra tus boletas", font=("Segoe UI", 16), bg= 'yellow')
+        frameCompra = Frame(self,bg='brown')
+        nombreCompra = Label(frameCompra, text="Compra tus boletas", font=("Segoe UI", 16), bg= 'bisque')
         descCompra = Label(frameCompra, text="Digite los campos para comprar las boletas", font=("Segoe UI", 12), background= 'White')
         
         frameformulario = Frame(frameCompra, height=200,bg='BLACK')
 
-        FFCompraBoleta = FieldFrame(frameformulario, "", ["Nombre", "Cedula", "Cantidad de boletas","Dia de la funcion", "Nombre de la pelicula"], "Informacion Personal", None, [True, True, True,True, True])
+        FFCompraBoleta = FieldFrame(frameformulario, "", ["Nombre", "Cédula", "Cantidad de boletas","Día de la función", "Nombre de la película"], "Información Personal", None, [True, True, True,True, True])
 
         framebotones = Frame(frameCompra, bg='ghost white')
         
@@ -166,11 +166,11 @@ class VentanaSecundaria(tk.Tk):
             except excepcionesFormato as e:
                 MessageBox.showerror("Error", e)
 
-        frameReserva = Frame(self,bg='ghost white')
-        nombreReserva = Label(frameReserva, text="Consulta si tiene reserva", font=("Segoe UI", 16), bg= 'yellow')
-        descReserva = Label(frameReserva, text="Ingrese la siguinete informacion para consultar su asiento", font=("Segoe UI", 12), background= 'ghost white')
-        frameformulario2 = Frame(frameReserva,height=200,bg='green')
-        FFReserva= FieldFrame(frameformulario2, None, ["Nombre", "Cedula", "ID Boleta"],"Información", None, [True, True, True])
+        frameReserva = Frame(self,bg='brown')
+        nombreReserva = Label(frameReserva, text="Consultar si tiene reserva", font=("Segoe UI", 16), bg= 'bisque')
+        descReserva = Label(frameReserva, text="Ingrese la siguinete información para consultar su asiento", font=("Segoe UI", 12), background= 'ghost white')
+        frameformulario2 = Frame(frameReserva,height=200,bg='firebrick')
+        FFReserva= FieldFrame(frameformulario2, None, ["Nombre", "Cédula", "ID Boleta"],"Información", None, [True, True, True])
         framebotones2 = Frame(frameReserva, bg='ghost white')
         BotonComprar2 = Button(framebotones2, text="Consultar", command=comprobarReserva)
         Botonlimpiar2 = Button(framebotones2, text="Limpiar")
@@ -203,8 +203,8 @@ class VentanaSecundaria(tk.Tk):
             except errorAplicacion as e:
                 MessageBox.showerror("Error", e)
 
-        frameDevolucion= Frame(self,bg='ghost white')
-        nombreDevolucion = Label(frameDevolucion, text="Solicita la devolución", font=("Segoe UI", 16), bg= 'yellow')
+        frameDevolucion= Frame(self,bg='brown')
+        nombreDevolucion = Label(frameDevolucion, text="Solicita la devolución", font=("Segoe UI", 16), bg= 'bisque')
         descDevolucion = Label(frameDevolucion, text="Ingrese su documento para saber si se puede realizar la devolución de su dinero", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario3 = Frame(frameDevolucion,height=200,bg='green')
         FFDevolucion= FieldFrame(frameformulario3, None, ["Cedula", "ID Boleta"], None, None, [True, True])
@@ -235,8 +235,8 @@ class VentanaSecundaria(tk.Tk):
                 MessageBox.showerror("Error", e)
 
 
-        frameVIP= Frame(self,bg='ghost white')
-        nombreVIP= Label(frameVIP, text="Hazte miembor VIP", font=("Segoe UI", 16), bg= 'yellow')
+        frameVIP= Frame(self,bg='brown')
+        nombreVIP= Label(frameVIP, text="Hazte miembor VIP", font=("Segoe UI", 16), bg= 'bisque')
         descVIP = Label(frameVIP, text="Ingrese su documento para volverse VIP", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario5 = Frame(frameVIP,height=200,bg='green')
         FFVIP= FieldFrame(frameformulario5, None, ["Cedula"], None, None, [True])
@@ -260,7 +260,7 @@ class VentanaSecundaria(tk.Tk):
         #frame cartelera
         #funcion que cambie el nombre cartelera por el dia seleccionado
 
-        diasSemana=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
+        diasSemana=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]
         frameCartelera = Frame(self,bg='ghost white')
         frameCartelera.columnconfigure(0, weight=1)
         frameCartelera.columnconfigure(1, weight=1)
@@ -270,10 +270,10 @@ class VentanaSecundaria(tk.Tk):
         frameCartelera.rowconfigure(2, weight=1)
         frameCartelera.rowconfigure(3, weight=1)
         frameCartelera.rowconfigure(4, weight=1)
-        nombreCartelera = Label(frameCartelera, text="Dia de cartelera", font=("Segoe UI", 16), bg= 'yellow')
-        seleccion= Label(frameCartelera, text="Por favor selesccione el dia", font=("Segoe UI", 16), bg= "RED")
+        nombreCartelera = Label(frameCartelera, text="Día de cartelera", font=("Segoe UI", 16), bg= 'brown')
+        seleccion= Label(frameCartelera, text="Por favor seleccione el día", font=("Segoe UI", 16), bg= "bisque")
         descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'ghost white')
-        framePeliculas = Label(frameCartelera,text="Aqui aparceran la cartelera del dia seleccionado",bg="blue")
+        framePeliculas = Label(frameCartelera,text="Aquí aparcerá la cartelera del día seleccionado",bg="indian red")
         framebotones6 = Frame(frameCartelera, bg='ghost white')
         Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         diasbox=Combobox(frameCartelera,values=diasSemana,state="readonly",width=10,)
@@ -290,10 +290,10 @@ class VentanaSecundaria(tk.Tk):
         
         def cambiarNombreCartelera(event,diasbox,nombreCartelera):
             nombreCartelera.config(text=diasbox.get())
-            if diasbox.get()=="Lunes":
+            if   diasbox.get()=="Lunes":
                 framePeliculas.config(text="Pelicula 1")
             elif diasbox.get()=="Martes":
-                framePeliculas.config(text="Pelicula 2")
+                framePeliculas.config(text="Pelicula 2:14:00-16:00\n Pelicula 3: 20:00-22:00\n Pelicula 4: 00:00-00:00\n Pelicula 5: 02:00-00:00",anchor="nw",  font=("Arial", 20))      
             elif diasbox.get()=="Miercoles":
                 framePeliculas.config(text="Pelicula 3")
             elif diasbox.get()=="Jueves":
@@ -306,24 +306,47 @@ class VentanaSecundaria(tk.Tk):
                 framePeliculas.config(text="Pelicula 7")
 
         #frame tienda
-        frameTienda =  Frame(self,bg='ghost white')
-        nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'yellow')
-        descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'ghost white')
-        frameformulario4 = Frame(frameTienda,height=200,bg='green')
-        FFTienda= FieldFrame(frameformulario4, None, ["Saldo"], None, None, [True])
+        def comboboSeleccion(event):
+            comboboxProducto.set("")
+            comboboxProducto.config(values=opciones[comboboxTienda.get()])
+        def comboboSeleccion2(event):
+            Comida = [["Papas","2000"], ["hambuerguesa","23000"], ["Palomitas","15000"]]
+            Unal = [["Buso","20000"], ["Gorra","24000"], ["termo","13000"]]
+            if comboboxProducto.get()=="":
+                precio.configure(text="Precio: ")
+            else:
+                if comboboxTienda.get()=="Comida":
+                    for i in Comida:
+                        if comboboxProducto.get()==i[0]:
+                                precio.configure(text="Precio: "+i[1])
+                elif comboboxTienda.get()=="Unal":
+                    for i in Unal:
+                        if comboboxProducto.get()==i[0]:
+                            precio.configure(text="Precio: "+i[1])
+
+        opciones = {
+            "Comida": ("Papas", "hambuerguesa", "Palomitas"), 
+            "Unal": ("Buso", "Gorra", "termo")
+        }
+        frameTienda =  Frame(self,bg='brown')
+        nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'bisque')
+        descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'white')
+        comboboxTienda= Combobox(frameTienda,values=tuple(opciones.keys()),state="readonly")
+        comboboxProducto= Combobox(frameTienda,state="readonly")
+        precio=Label(frameTienda,text="Aqui dira el precio del producto")
         framebotones4 = Frame(frameTienda, bg='ghost white')
         BotonComprar4 = Button(framebotones4, text="Comprar")
-        Botonlimpiar4 = Button(framebotones4, text="Limpiar")
         Botonsalir4 = Button(framebotones4, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
-        nombreTienda.pack(pady=(10,80))
-        descTienda.pack(pady=15)
-        frameformulario4.pack(anchor='center')
-
-        framebotones4.pack(anchor='s')
+        nombreTienda.grid(row=0, column=0,sticky="nsew")
+        descTienda.grid(row=1, column=0,sticky="nsew")
+        comboboxTienda.grid(row=2, column=0,sticky="nsew")
+        comboboxTienda.bind("<<ComboboxSelected>>",comboboSeleccion)
+        comboboxProducto.grid(row=3, column=0,sticky="nsew")
+        comboboxProducto.bind("<<ComboboxSelected>>",comboboSeleccion2)
+        framebotones4.grid(row=4, column=0,sticky="nsew")
         BotonComprar4.grid(column=0, row=0, padx = 10,pady=10)
-        Botonlimpiar4.grid(column=1, row=0, padx = 10,pady=10)
-        Botonsalir4.grid(column=3, row=0, padx = 10,pady=10)
-        FFTienda.pack()
+        Botonsalir4.grid(column=1, row=0, padx = 10,pady=10)
+        precio.grid(row=5, column=0,sticky="nsew")
         self.framesEnPantalla.append(frameTienda)
 
         
@@ -358,7 +381,7 @@ class VentanaSecundaria(tk.Tk):
      # Este metodo muestra una breve descripcion de la app
     def descripcionApp(self):
         descripcion = messagebox.showinfo(title = "Mensaje", message = "Administrador de Cine",
-        detail = "El sistema permite brindar las funcionalidades que mas se desarían en un portal virtual de cine.")
+        detail = "El sistema permite brindar las funcionalidades que más se desarían en un portal virtual de cine.")
 
 #--------------------------------------------------------------------------------------------------------------
     # Retorna a la Ventana de Inicio del programa.
