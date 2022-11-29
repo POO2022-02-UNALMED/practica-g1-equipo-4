@@ -13,8 +13,10 @@ from excepcionesPy.errorUnexpected import errorUnexpected
 from excepcionesPy.excepcionesFuncionalidad import excepcionesFuncionalidad
 from excepcionesPy.excepcionesFormato import excepcionesFormato
 from excepcionesPy.errorDevolucion import errorDevolucion
+import os
+import pathlib
 
-
+path = os.path.join(pathlib.Path(__file__).parent.absolute())
 
 class VentanaSecundaria(tk.Tk):
 
@@ -24,7 +26,7 @@ class VentanaSecundaria(tk.Tk):
         self.title('Cine UNAL')
         self.option_add("*tearOff",  False)
         self.geometry("875x565")
-        self.iconbitmap('./Python/src/Front/imagenes/icono.ico')
+        self.iconbitmap(path+'\imagenes\icono.ico')
         
         #Barras de menus 
         self.menubar = Menu(self)
@@ -59,7 +61,7 @@ class VentanaSecundaria(tk.Tk):
         
        
     #------------------------------------------------------------------------------------------------------------------------
-        self.fotosfun = ['./Python/src/Front/imagenes/cartelera.png']
+        self.fotosfun = [path+'\imagenes\cartelera.png']
         self.listaFotos = []
         
 
