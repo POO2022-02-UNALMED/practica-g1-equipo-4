@@ -304,6 +304,8 @@ class VentanaSecundaria(tk.Tk):
             comboboxProducto.set("")
             comboboxProducto.config(values=opciones[comboboxTienda.get()])
         def comboboSeleccion2(event):
+            global Comida
+            global Unal
             Comida = [["Papas","2000"], ["hambuerguesa","23000"], ["Palomitas","15000"]]
             Unal = [["Buso","20000"], ["Gorra","24000"], ["termo","13000"]]
             if comboboxProducto.get()=="":
@@ -317,7 +319,20 @@ class VentanaSecundaria(tk.Tk):
                     for i in Unal:
                         if comboboxProducto.get()==i[0]:
                             precio.configure(text="Precio: "+i[1])
-
+        def comprar():
+            if comboboxTienda.get()=="":
+                messagebox.showerror("Error","Debe seleccionar una tienda")
+            elif comboboxProducto.get()=="":
+                messagebox.showerror("Error","Debe seleccionar un producto")
+            else:
+                if comboboxTienda.get()=="Comida":
+                    for i in Comida:
+                        if comboboxProducto.get()==i[0]:
+                            messagebox.showinfo("Compra exitosa","Su compra de "+i[0]+" por "+i[1]+" ha sido exitosa")
+                elif comboboxTienda.get()=="Unal":
+                    for i in Unal:
+                        if comboboxProducto.get()==i[0]:
+                            messagebox.showinfo("Compra exitosa","Su compra de "+i[0]+" por "+i[1]+" ha sido exitosa")
         opciones = {
             "Comida": ("Papas", "hambuerguesa", "Palomitas"), 
             "Unal": ("Buso", "Gorra", "termo")
@@ -336,7 +351,7 @@ class VentanaSecundaria(tk.Tk):
         comboboxProducto= Combobox(frameTienda,state="readonly")
         precio=Label(frameTienda,text="Aqui dira el precio del producto")
         framebotones4 = Frame(frameTienda, bg='ghost white')
-        BotonComprar4 = Button(framebotones4, text="Comprar")
+        BotonComprar4 = Button(framebotones4, text="Comprar",command=comprar)
         Botonsalir4 = Button(framebotones4, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreTienda.grid(row=0, column=0,sticky="nsew")
         descTienda.grid(row=1, column=0,sticky="nsew")
