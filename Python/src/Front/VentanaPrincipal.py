@@ -260,45 +260,52 @@ class VentanaSecundaria(tk.Tk):
         
         def cambiarNombreCartelera(event,diasbox,nombreCartelera):
             nombreCartelera.config(text=diasbox.get())
-            if diasbox.get()=="Lunes":
+            if   diasbox.get()=="Lunes           ":
                 framePeliculas.config(text="Pelicula 1")
-            elif diasbox.get()=="Martes":
-                framePeliculas.config(text="Pelicula 2")
-            elif diasbox.get()=="Miercoles":
+            elif diasbox.get()=="Martes          ":
+                #nombre de las pelicula y ubicarlo arriba a la izquierda letra arial tamaño 12
+                framePeliculas.config(text="Pelicula 2:14:00-16:00\n Pelicula 3: 20:00-22:00\n Pelicula 4: 00:00-00:00\n Pelicula 5: 02:00-00:00",anchor="nw",  font=("Arial", 20))      
+            elif diasbox.get()=="Miercoles       ":
                 framePeliculas.config(text="Pelicula 3")
-            elif diasbox.get()=="Jueves":
+            elif diasbox.get()=="Jueves          ":
                 framePeliculas.config(text="Pelicula 4")
-            elif diasbox.get()=="Viernes":
+            elif diasbox.get()=="Viernes         ":
                 framePeliculas.config(text="Pelicula 5")   
-            elif diasbox.get()=="Sabado":
+            elif diasbox.get()=="Sabado          ":
                 framePeliculas.config(text="Pelicula 6")
-            elif diasbox.get()=="Domingo":
+            elif diasbox.get()=="Domingo         ":
                 framePeliculas.config(text="Pelicula 7")
 
 
 
 
         #frame tienda
-
+        def comboboSeleccion(event):
+            comboboxProducto.set("")
+            comboboxProducto.config(values=opciones[comboboxTienda.get()])        
+        opciones = {
+            "Comida": ("Papas", "hambuerguesa", "Palomitas"), 
+            "Unal": ("Buso", "Gorra", "termo")
+        }   
         frameTienda =  Frame(self,bg='ghost white')
         nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'yellow')
         descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'ghost white')
-        frameformulario4 = Frame(frameTienda,height=200,bg='green')
-        FFTienda= FieldFrame(frameformulario4, None, ["Saldo"], None, None, [True])
+        comboboxTienda= Combobox(frameTienda,values=tuple(opciones.keys()),state="readonly")
+        comboboxProducto= Combobox(frameTienda,state="readonly")
         framebotones4 = Frame(frameTienda, bg='ghost white')
         BotonComprar4 = Button(framebotones4, text="Comprar")
-        Botonlimpiar4 = Button(framebotones4, text="Limpiar")
         Botonsalir4 = Button(framebotones4, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
-        nombreTienda.pack(pady=(10,80))
-        descTienda.pack(pady=15)
-        frameformulario4.pack(anchor='center')
-
-        framebotones4.pack(anchor='s')
+        nombreTienda.grid(row=0, column=0,sticky="nsew")
+        descTienda.grid(row=1, column=0,sticky="nsew")
+        comboboxTienda.grid(row=2, column=0,sticky="nsew")
+        comboboxTienda.bind("<<ComboboxSelected>>",comboboSeleccion)
+        comboboxProducto.grid(row=3, column=0,sticky="nsew")
+        framebotones4.grid(row=4, column=0,sticky="nsew")
         BotonComprar4.grid(column=0, row=0, padx = 10,pady=10)
-        Botonlimpiar4.grid(column=1, row=0, padx = 10,pady=10)
-        Botonsalir4.grid(column=3, row=0, padx = 10,pady=10)
-        FFTienda.pack()
+        Botonsalir4.grid(column=1, row=0, padx = 10,pady=10)
         self.framesEnPantalla.append(frameTienda)
+
+    
 
         def esUnNumero(numero):
             try:
