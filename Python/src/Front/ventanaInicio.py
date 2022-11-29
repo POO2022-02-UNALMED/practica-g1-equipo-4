@@ -2,6 +2,10 @@ from VentanaPrincipal import VentanaSecundaria
 from tkinter import messagebox as MessageBox, ttk 
 from tkinter import *
 import tkinter as tk
+import os
+import pathlib
+path = os.path.join(pathlib.Path(__file__).parent.absolute())
+
 class ventanaInicio(tk.Tk):
 
     def __init__(self,*args,**kwargs):
