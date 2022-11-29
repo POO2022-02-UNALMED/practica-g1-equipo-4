@@ -120,7 +120,7 @@ class ventanaInicio(tk.Tk):
     #Descripción
     def desno(self):
         descripcion = MessageBox.showinfo(title = "Mensaje", message = "Información de la App",
-        detail = "Con esta app podras hacer todo lo que se puede realizar en un portal de cine virtual \nCon todas la funcionalidades principales que podrías desear" )
+        detail = "Con esta app podrás hacer todo lo que se puede realizar en un portal de cine virtual, con todas la funcionalidades principales que podrías desear" )
         
     
     def cambioDescripcion(self,cont):

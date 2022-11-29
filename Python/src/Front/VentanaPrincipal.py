@@ -77,10 +77,10 @@ class VentanaSecundaria(tk.Tk):
         def comprobarBoleta():
             try:
                 nombre = FFCompraBoleta.getValue("Nombre")
-                cedula = FFCompraBoleta.getValue("Cedula")
+                cedula = FFCompraBoleta.getValue("Cédula")
                 cantidadBoletas = FFCompraBoleta.getValue("Cantidad de boletas")
-                diaFuncion = FFCompraBoleta.getValue("Dia de la funcion")
-                nombrePelicula = FFCompraBoleta.getValue("Nombre de la pelicula")
+                diaFuncion = FFCompraBoleta.getValue("Día de la función")
+                nombrePelicula = FFCompraBoleta.getValue("Nombre de la película")
 
                 if nombre == "" or cedula == "" or cantidadBoletas == "" or diaFuncion == "" or nombrePelicula == "":
                     if esUnNumero(cedula) == False or esUnNumero(cantidadBoletas) == False or esString(nombre) == False or esString(nombrePelicula) == False:
@@ -98,7 +98,7 @@ class VentanaSecundaria(tk.Tk):
         
         frameformulario = Frame(frameCompra, height=200,bg='BLACK')
 
-        FFCompraBoleta = FieldFrame(frameformulario, "", ["Nombre", "Cedula", "Cantidad de boletas","Dia de la funcion", "Nombre de la pelicula"], "Informacion Personal", None, [True, True, True,True, True])
+        FFCompraBoleta = FieldFrame(frameformulario, "", ["Nombre", "Cédula", "Cantidad de boletas","Día de la función", "Nombre de la película"], "Información Personal", None, [True, True, True,True, True])
 
         framebotones = Frame(frameCompra, bg='ghost white')
         
@@ -120,8 +120,8 @@ class VentanaSecundaria(tk.Tk):
         def comprobarReserva():
             try:
                 nombre = FFReserva.getValue("Nombre")
-                cedula = FFReserva.getValue("Cedula")
-                diaFuncion = FFReserva.getValue("Dia de la funcion")
+                cedula = FFReserva.getValue("Cédula")
+                diaFuncion = FFReserva.getValue("Día de la función")
                 
                 if nombre == "" or cedula == "" or diaFuncion == "" :
                     MessageBox.showerror("Error", "Por favor llene todos los campos")
@@ -134,10 +134,10 @@ class VentanaSecundaria(tk.Tk):
                 MessageBox.showerror("Error", e)
 
         frameReserva = Frame(self,bg='ghost white')
-        nombreReserva = Label(frameReserva, text="Consulta si tiene reserva", font=("Segoe UI", 16), bg= 'yellow')
-        descReserva = Label(frameReserva, text="Ingrese la siguinete informacion para consultar su asiento", font=("Segoe UI", 12), background= 'ghost white')
+        nombreReserva = Label(frameReserva, text="Consultar si tiene reserva", font=("Segoe UI", 16), bg= 'yellow')
+        descReserva = Label(frameReserva, text="Ingrese la siguinete información para consultar su asiento", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario2 = Frame(frameReserva,height=200,bg='green')
-        FFReserva= FieldFrame(frameformulario2, None, ["Nombre", "Cedula", "ID Boleta"],"Información", None, [True, True, True])
+        FFReserva= FieldFrame(frameformulario2, None, ["Nombre", "Cédula", "ID Boleta"],"Información", None, [True, True, True])
         framebotones2 = Frame(frameReserva, bg='ghost white')
         BotonComprar2 = Button(framebotones2, text="Consultar", command=comprobarReserva)
         Botonlimpiar2 = Button(framebotones2, text="Limpiar")
@@ -193,7 +193,7 @@ class VentanaSecundaria(tk.Tk):
         def comprobarVIP():
             try:
                 nombre = FFVIP.getValue("Nombre")
-                cedula = FFVIP.getValue("Cedula")
+                cedula = FFVIP.getValue("Cédula")
                 diaFuncion = FFVIP.getValue("Dia de la funcion")
                 if nombre == "" or cedula == "" or diaFuncion == "" :
                     MessageBox.showerror("Error", "Por favor llene todos los campos")
@@ -206,7 +206,7 @@ class VentanaSecundaria(tk.Tk):
 
 
         frameVIP= Frame(self,bg='ghost white')
-        nombreVIP= Label(frameVIP, text="Hazte miembor VIP", font=("Segoe UI", 16), bg= 'yellow')
+        nombreVIP= Label(frameVIP, text="Házte miembor VIP", font=("Segoe UI", 16), bg= 'yellow')
         descVIP = Label(frameVIP, text="Ingrese su documento para volverse VIP", font=("Segoe UI", 12), background= 'ghost white')
         frameformulario5 = Frame(frameVIP,height=200,bg='green')
         FFVIP= FieldFrame(frameformulario5, None, ["Cédula", "ID Boleta"], None, None, [True, True])
@@ -230,7 +230,7 @@ class VentanaSecundaria(tk.Tk):
         #frame cartelera
         #funcion que cambie el nombre cartelera por el dia seleccionado
 
-        diasSemana=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
+        diasSemana=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]
         frameCartelera = Frame(self,bg='ghost white')
         frameCartelera.columnconfigure(0, weight=1)
         frameCartelera.columnconfigure(1, weight=1)
@@ -240,10 +240,10 @@ class VentanaSecundaria(tk.Tk):
         frameCartelera.rowconfigure(2, weight=1)
         frameCartelera.rowconfigure(3, weight=1)
         frameCartelera.rowconfigure(4, weight=1)
-        nombreCartelera = Label(frameCartelera, text="Dia de cartelera", font=("Segoe UI", 16), bg= 'yellow')
-        seleccion= Label(frameCartelera, text="Por favor selesccione el dia", font=("Segoe UI", 16), bg= "RED")
+        nombreCartelera = Label(frameCartelera, text="Día de cartelera", font=("Segoe UI", 16), bg= 'yellow')
+        seleccion= Label(frameCartelera, text="Por favor seleccione el día", font=("Segoe UI", 16), bg= "RED")
         descCartelera = Label(frameCartelera, text="La Cartelera el día de hoy", font=("Segoe UI", 12), background= 'ghost white')
-        framePeliculas = Label(frameCartelera,text="Aqui aparceran la cartelera del dia seleccionado",bg="blue")
+        framePeliculas = Label(frameCartelera,text="Aquí aparcerá la cartelera del día seleccionado",bg="blue")
         framebotones6 = Frame(frameCartelera, bg='ghost white')
         Botonsalir6 = Button(framebotones6, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         diasbox=Combobox(frameCartelera,values=diasSemana,state="readonly",width=10,)
@@ -353,7 +353,7 @@ class VentanaSecundaria(tk.Tk):
      # Este metodo muestra una breve descripcion de la app
     def descripcionApp(self):
         descripcion = messagebox.showinfo(title = "Mensaje", message = "Administrador de Cine",
-        detail = "El sistema permite brindar las funcionalidades que mas se desarían en un portal virtual de cine.")
+        detail = "El sistema permite brindar las funcionalidades que más se desarían en un portal virtual de cine.")
 
 #--------------------------------------------------------------------------------------------------------------
     # Retorna a la Ventana de Inicio del programa.
