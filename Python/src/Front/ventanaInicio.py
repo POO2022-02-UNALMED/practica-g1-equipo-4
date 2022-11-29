@@ -198,3 +198,7 @@ class ventanaInicio(tk.Tk):
     #con esto nos salimos 
     def salir(self):
         return super().destroy()
+
+if __name__ == "__main__":
+    ventana_inicios = ventanaInicio()
+    ventana_inicios.mainloop()
