@@ -335,7 +335,7 @@ class VentanaSecundaria(tk.Tk):
         comboboxTienda= Combobox(frameTienda,values=tuple(opciones.keys()),state="readonly")
         comboboxProducto= Combobox(frameTienda,state="readonly")
         precio=Label(frameTienda,text="Aqui dira el precio del producto")
-        framebotones4 = Frame(frameTienda, bg='ghost white')
+        framebotones4 = Frame(frameTienda, bg='brown')
         BotonComprar4 = Button(framebotones4, text="Comprar")
         Botonsalir4 = Button(framebotones4, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
         nombreTienda.grid(row=0, column=0,sticky="nsew")
