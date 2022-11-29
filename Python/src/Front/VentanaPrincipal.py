@@ -253,7 +253,7 @@ class VentanaSecundaria(tk.Tk):
         #frame cartelera
         #funcion que cambie el nombre cartelera por el dia seleccionado
 
-        diasSemana=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]
+        diasSemana=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
         frameCartelera = Frame(self,bg='ghost white')
         frameCartelera.columnconfigure(0, weight=1)
         frameCartelera.columnconfigure(1, weight=1)
