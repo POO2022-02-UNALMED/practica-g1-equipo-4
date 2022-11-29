@@ -281,16 +281,32 @@ class VentanaSecundaria(tk.Tk):
         #frame tienda
         def comboboSeleccion(event):
             comboboxProducto.set("")
-            comboboxProducto.config(values=opciones[comboboxTienda.get()])        
+            comboboxProducto.config(values=opciones[comboboxTienda.get()])
+        def comboboSeleccion2(event):
+            Comida = [["Papas","2000"], ["hambuerguesa","23000"], ["Palomitas","15000"]]
+            Unal = [["Buso","20000"], ["Gorra","24000"], ["termo","13000"]]
+            if comboboxProducto.get()=="":
+                precio.configure(text="Precio: ")
+            else:
+                if comboboxTienda.get()=="Comida":
+                    for i in Comida:
+                        if comboboxProducto.get()==i[0]:
+                                precio.configure(text="Precio: "+i[1])
+                elif comboboxTienda.get()=="Unal":
+                    for i in Unal:
+                        if comboboxProducto.get()==i[0]:
+                            precio.configure(text="Precio: "+i[1])
+
         opciones = {
             "Comida": ("Papas", "hambuerguesa", "Palomitas"), 
             "Unal": ("Buso", "Gorra", "termo")
-        }   
+        }
         frameTienda =  Frame(self,bg='ghost white')
         nombreTienda = Label(frameTienda, text="Tienda", font=("Segoe UI", 16), bg= 'yellow')
         descTienda = Label(frameTienda, text="Para comprar tus productos favoritos", font=("Segoe UI", 12), background= 'ghost white')
         comboboxTienda= Combobox(frameTienda,values=tuple(opciones.keys()),state="readonly")
         comboboxProducto= Combobox(frameTienda,state="readonly")
+        precio=Label(frameTienda,text="Aqui dira el precio del producto")
         framebotones4 = Frame(frameTienda, bg='ghost white')
         BotonComprar4 = Button(framebotones4, text="Comprar")
         Botonsalir4 = Button(framebotones4, text="Salir", command=lambda: cambiarVista(framePantallaInicio))
@@ -299,9 +315,11 @@ class VentanaSecundaria(tk.Tk):
         comboboxTienda.grid(row=2, column=0,sticky="nsew")
         comboboxTienda.bind("<<ComboboxSelected>>",comboboSeleccion)
         comboboxProducto.grid(row=3, column=0,sticky="nsew")
+        comboboxProducto.bind("<<ComboboxSelected>>",comboboSeleccion2)
         framebotones4.grid(row=4, column=0,sticky="nsew")
         BotonComprar4.grid(column=0, row=0, padx = 10,pady=10)
         Botonsalir4.grid(column=1, row=0, padx = 10,pady=10)
+        precio.grid(row=5, column=0,sticky="nsew")
         self.framesEnPantalla.append(frameTienda)
 
     
